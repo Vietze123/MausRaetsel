@@ -1,4 +1,3 @@
-// Zwei eigenständige Kriminalfälle; Entscheidungen und Fortschritt pro Fall.
 window.MAUS_CASES = [
   {
     "id": "rosenhain",
@@ -1926,6 +1925,1080 @@ window.MAUS_CASES = [
         "summary": "Du gibst eine geordnete Akte mit weiteren Prüfpunkten ab.",
         "text": "Du legst noch keinen Hauptverdacht fest. Dein Team erhält die dokumentierten Quellen und einen Auftrag zur ergänzenden Prüfung. Die belastenden Hinweise auf Leona werden weiter untersucht; es gibt in diesem Ende weder ein abgeschlossen geprüftes Geständnis noch eine endgültige Aufklärung.",
         "epilogue": "Du hast offene Fragen benannt, statt Gewissheit vorzutäuschen. Das Theater bleibt bis zur Sicherheitsfreigabe geschlossen. Für heute endet dein Teil der Ermittlung – die Geschichte wartet auf ihre Fortsetzung."
+      }
+    }
+  },
+  {
+    "id": "weinfest-grasbrunn",
+    "version": 1,
+    "title": "Die verschwundene Festkasse",
+    "subtitle": "Ein Weinfest in Grasbrunn. Ein vermisster Kassenwart. Und zwei Boxen, die fast gleich aussehen.",
+    "tag": "Episode 03 · Weinfest in Grasbrunn",
+    "duration": "Etwa 45–75 Minuten pro Durchlauf · abhängig von Rätseltempo und Hinweisen",
+    "contentTag": "Vermisstenfall und Diebstahl · fiktive Handlung",
+    "description": "Unter den Lichterketten verschwinden die Spenden – und Anton, der Kassenwart. Maus folgt vertauschten Siegeln, Abholaufträgen und Dorfgerüchten. Deine Entscheidungen verändern den Weg und den Abschluss.",
+    "cover": "assets/grasbrunn-1.webp",
+    "branching": true,
+    "chapters": [
+      {
+        "title": "Lichter über Grasbrunn",
+        "icon": "🍇",
+        "steps": [
+          {
+            "title": "Lichter über der Festwiese",
+            "story": "Auf einer fiktiven Festwiese im Dorf Grasbrunn hängen Lichterketten zwischen weißen Zelten. Du bist als Gast da, Maus. Um 20:15 meldet eine Helferin: Die kontrolliert geöffnete Festkasse ist leer, und Kassenwart Anton Reiter ist seit seinem Gang zum Lager nicht zurückgekehrt. Die Spenden waren für einen erfundenen Jugendgartenverein bestimmt. Du verständigst dein Team.",
+            "question": "Welche beiden Fragen müssen zunächst getrennt geprüft werden?",
+            "type": "multi",
+            "items": [
+              "Wo Anton ist und ob er Hilfe braucht.",
+              "Was mit den dokumentierten Spenden geschah.",
+              "Welche Person allein wegen ihres Berufs schuldig ist.",
+              "Ob der Festwein automatisch die Ursache sein muss."
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "hint": "Die Meldung nennt einen vermissten Menschen und fehlendes Geld.",
+            "reveal": "Du koordinierst die Suche und lässt die Kassenunterlagen sichern. Eine Verbindung zwischen den beiden Ereignissen ist zunächst nur eine Möglichkeit.",
+            "note": "20:15: leere Festkasse gemeldet; Anton noch nicht zurückgekehrt.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Drei Personen, viele Aufgaben",
+            "story": "Eva Leitner koordiniert das Fest und verteilt schriftliche Aufträge. Benno Kranz transportiert Material und Kassenboxen. Jule Sommer betreut als eingeladene Winzerin einen Stand und hilft beim Zählen. Alle drei hatten am Abend berechtigten Zugang zum Kassenzelt.",
+            "question": "Ordne die genannten Aufgaben den Personen zu.",
+            "type": "match",
+            "left": [
+              "Eva Leitner",
+              "Benno Kranz",
+              "Jule Sommer"
+            ],
+            "right": [
+              "Festkoordination und schriftliche Aufträge.",
+              "Transport von Material und Kassenboxen.",
+              "Weinstand und Hilfe beim Zählen."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "hint": "Nutze die konkreten Aufgaben im Text.",
+            "reveal": "Die Zuordnung beschreibt Zuständigkeiten, noch keine Schuld. Du fragst jede Person nach ihren überprüfbaren Tätigkeiten.",
+            "note": "Eva koordiniert; Benno transportiert; Jule betreut einen Stand und half beim Zählen.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Was wurde wirklich gezählt?",
+            "story": "Anton und Jule unterschrieben um 20:00 gemeinsam den endgültigen Zählbogen: 30 Scheine zu 100 Euro, 20 Scheine zu 50 Euro und 43 Scheine zu 20 Euro. Jede Zeile beschreibt ein eigenes Bündel; es gibt keine weiteren Spendenbeträge in der Kasse.",
+            "question": "Wie hoch ist die bestätigte Gesamtsumme? Gib den Betrag in Euro ein.",
+            "type": "input",
+            "accepted": [
+              "4860"
+            ],
+            "label": "Betrag in Euro",
+            "normalize": "money",
+            "hint": "Addiere 30×100, 20×50 und 43×20.",
+            "reveal": "3.000 + 1.000 + 860 = 4.860 Euro. Du verwendest den gemeinsam unterschriebenen Zählbogen.",
+            "note": "Anton und Jule bestätigten um 20:00 eine Summe von 4.860 Euro.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Die letzte gesicherte Folge",
+            "story": "Die abgeglichenen Aufnahmen und Unterlagen zeigen: Zählung 20:00; Foto der vollen, verschlossenen Box um 20:06; Aufnahme einer anderen Box um 20:12; Abholung durch Benno um 20:13; Meldung der leeren Kasse um 20:15.",
+            "question": "Ordne die fünf Ereignisse chronologisch.",
+            "type": "order",
+            "items": [
+              "Zählung · 20:00",
+              "Volle Box fotografiert · 20:06",
+              "Andere Box im Kassenzelt · 20:12",
+              "Benno holt die bereitgestellte Box ab · 20:13",
+              "Leere Kasse gemeldet · 20:15"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "hint": "Orientiere dich an den geprüften Uhrzeiten.",
+            "reveal": "Die andere Box wurde bereits vor Bennos Abholung aufgenommen. Du prüfst, ob ein Austausch stattgefunden hat.",
+            "note": "Eine andere Box steht spätestens um 20:12 bereit; Abholung erst um 20:13.",
+            "kind": "Ermitteln"
+          },
+          {
+            "type": "decision",
+            "decisionKey": "focus",
+            "title": "Mensch oder Unterlagen zuerst?",
+            "story": "Dein Team sucht Anton und sichert parallel das Kassenzelt. Du kannst selbst zuerst seinem letzten Weg folgen oder die Kassenunterlagen vergleichen. Es gibt kein reales Zeitlimit; die Szenen erzählen unterschiedliche Ermittlungswege.",
+            "question": "Welchen Ansatz verfolgst du persönlich zuerst?",
+            "choices": [
+              {
+                "id": "rescue",
+                "label": "Antons letzten Weg zum Lager verfolgen",
+                "reveal": "Du gehst mit einem Helfer zum Lagerbereich. Dein nächstes Rätsel ist die Ortsangabe auf Antons Abholzettel.",
+                "note": "Erster Ansatz: Antons letzten Weg persönlich verfolgt."
+              },
+              {
+                "id": "records",
+                "label": "Zählbogen, Boxenfoto und Abholauftrag vergleichen",
+                "reveal": "Du beginnst mit den Quellen am Kassenzelt. Dein Team setzt die Suche nach Anton unabhängig davon fort.",
+                "note": "Erster Ansatz: Kassenunterlagen persönlich geprüft; Suche parallel fortgesetzt."
+              }
+            ],
+            "kind": "Deine Entscheidung",
+            "hint": "Diese Entscheidung hat keine vorgegebene richtige Antwort. Sie verändert den weiteren Weg."
+          }
+        ],
+        "art": "assets/grasbrunn-1.webp",
+        "artAlt": "Fiktives Weinfest auf einer Grasbrunner Festwiese mit Zelten und Lichterketten.",
+        "guide": "Ich trenne die Suche nach Anton von der Frage nach dem Geld."
+      },
+      {
+        "title": "Antons letzter Weg",
+        "icon": "🏮",
+        "steps": [
+          {
+            "title": "Der Zettel mit E3",
+            "story": "Ein Helfer sah Anton um 20:07 mit einem Zettel zum Lagerbereich gehen. Auf dem gesicherten Zettel steht: „Siegelrollen abholen – Lager E3.“ Der Festplan benutzt Buchstaben für Bereiche und Zahlen für die dortigen Lager.",
+            "question": "Welches Lager ist auf dem Zettel genannt?",
+            "type": "input",
+            "accepted": [
+              "E3"
+            ],
+            "label": "Lagerkennung",
+            "normalize": "text",
+            "hint": "Übernimm Buchstabe und Nummer gemeinsam.",
+            "reveal": "Ein Helfer begleitet dich zu E3. Anton ist dort hinter einer klemmenden Lagertür eingeschlossen. Dein Team lässt sie fachgerecht öffnen und prüft seinen Zustand. Es gibt in diesem Fall keinen Befund einer absichtlichen Einsperrung.",
+            "note": "Anton wird im Lager E3 gefunden; klemmende Tür, kein belegtes absichtliches Einsperren.",
+            "kind": "Ermitteln",
+            "variants": [
+              {
+                "when": {
+                  "focus": "records"
+                },
+                "patch": {
+                  "type": "match",
+                  "title": "Quellen am Kassenzelt",
+                  "story": "Du vergleichst zuerst den unterschriebenen Zählbogen, das Boxenfoto und den Abholauftrag. Dein Team setzt die Suche fort und findet Anton im Lager E3 hinter einer klemmenden Tür. Er ist ansprechbar. Eine technische Prüfung liefert keinen Befund einer absichtlichen Einsperrung.",
+                  "question": "Ordne den Quellen die belegten Angaben zu.",
+                  "left": [
+                    "Zählbogen",
+                    "Boxenfoto um 20:06",
+                    "Abholauftrag"
+                  ],
+                  "right": [
+                    "Bestätigte Spenden: 4.860 Euro.",
+                    "Ursprüngliche Box G-17 mit Siegel 614.",
+                    "G-17 soll am Materialplatz übergeben werden."
+                  ],
+                  "correct": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "hint": "Der Zählbogen nennt Geld, das Foto den Gegenstand, der Auftrag einen geplanten Weg.",
+                  "reveal": "Die drei Quellen sind getrennt gesichert. Dein Team meldet Anton aus E3; sein Ausbleiben erklärt sich durch die klemmende Tür. Du kannst ihn nun nach dem Lagerauftrag fragen.",
+                  "note": "Kassenquellen getrennt gesichert; Anton im Lager E3 gefunden."
+                }
+              }
+            ]
+          },
+          {
+            "title": "Eine Suche ist kein Schuldbeweis",
+            "story": "Anton ist ansprechbar. Er sagt: „Eva gab mir den Auftrag, Siegelrollen zu holen. Ich kam wegen der Tür nicht wieder hinaus.“ Die technische Prüfung bestätigt die klemmende Tür, aber keinen Befund dafür, dass Eva sie absichtlich blockierte.",
+            "question": "Welche zwei Angaben lassen sich daraus getrennt festhalten?",
+            "type": "multi",
+            "items": [
+              "Anton berichtet einen Auftrag von Eva.",
+              "Die klemmende Tür erklärt seine verzögerte Rückkehr.",
+              "Evas absichtliches Einsperren ist damit bewiesen.",
+              "Anton hat deshalb selbst die Spenden gestohlen."
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "hint": "Unterscheide den berichteten Auftrag von der Ursache der eingeschränkten Rückkehr.",
+            "reveal": "Du sicherst Antons Aussage, ohne aus der Türstörung eine unbelegte zusätzliche Tat abzuleiten. Der Auftrag könnte trotzdem für die Zeit am Kassenzelt relevant sein.",
+            "note": "Auftrag laut Anton von Eva; Türstörung erklärt das Ausbleiben, nicht automatisch eine Absicht.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Der Rückweg über die Wiese",
+            "story": "Der Festplan zeigt: Lager E3 → Materialweg → Rückseite des Kassenzelts → Eingang des Kassenzelts. Andere Wege führen zum Weinstand, nicht direkt zur Kasse.",
+            "question": "Lege den dokumentierten direkten Rückweg in die richtige Reihenfolge.",
+            "type": "order",
+            "items": [
+              "Lager E3",
+              "Materialweg",
+              "Rückseite des Kassenzelts",
+              "Eingang des Kassenzelts"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "hint": "Beginne an Antons Fundort.",
+            "reveal": "Du gehst den dokumentierten Weg mit Anton durch. Seine Route lässt sich mit den Außenaufnahmen abgleichen.",
+            "note": "Direkter Rückweg von E3 führt über Materialweg und Zelt-Rückseite.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Die Zahlen am Siegel",
+            "story": "Das Foto um 20:06 zeigt die volle Box mit eingravierter Kennung G-17 und Siegelnummer 614. Die um 20:13 abgeholte und später leer geöffnete Box trägt G-71 und Siegel 641. Die Kennungen sind in den Originalbildern lesbar.",
+            "question": "Welche eingravierte Kennung trägt die zuerst dokumentierte volle Box?",
+            "type": "input",
+            "accepted": [
+              "G-17",
+              "G17"
+            ],
+            "label": "Kennung der vollen Box",
+            "normalize": "text",
+            "hint": "Vergleiche die Gravur, nicht nur die ähnlichen Ziffernfolgen.",
+            "reveal": "G-17. Die ähnliche Kennung G-71 gehört zu einer anderen Box. Die Untersuchung bestätigt später, dass nicht nur ein Etikett gewechselt wurde.",
+            "note": "Volle Box: G-17 mit Siegel 614; abgeholte leere Box: G-71 mit Siegel 641.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Die Spanne des Austauschs",
+            "story": "Um 20:06 ist G-17 vollständig auf dem Foto dokumentiert. Eine abgeglichene Aufnahme um 20:12 zeigt G-71 an derselben Stelle, bevor Benno sie abholt. Die Materialprüfung bestätigt zwei verschiedene Boxen.",
+            "question": "Welches Zeitfenster ergibt sich für den Austausch?",
+            "type": "input",
+            "accepted": [
+              "20:06-20:12"
+            ],
+            "label": "Zeitfenster, z. B. 19:00–19:10",
+            "normalize": "interval",
+            "hint": "Zwischen dem letzten Bild der ersten und dem ersten Bild der zweiten Box liegt die gesuchte Spanne.",
+            "reveal": "Der Austausch geschah nach dem Foto um 20:06 und spätestens bis zur Aufnahme um 20:12. Die genaue Minute ist dadurch noch nicht bekannt.",
+            "note": "Austauschfenster: nach 20:06 bis spätestens 20:12.",
+            "kind": "Ermitteln"
+          }
+        ],
+        "art": "assets/grasbrunn-2.webp",
+        "artAlt": "Leeres Kassenzelt mit verschlossener Spendenbox und Zählunterlagen.",
+        "guide": "Ich höre zu und leite nicht mehr ab, als die Quellen zeigen."
+      },
+      {
+        "title": "Aussagen zwischen den Ständen",
+        "icon": "🍷",
+        "steps": [
+          {
+            "title": "Jules Verkostung",
+            "story": "Die durchgehenden, abgeglichenen Aufnahmen zeigen Jule von 20:04 bis 20:13 auf der kleinen Verkostungsbühne. Beide Kamerawinkel lassen ihre Anwesenheit ohne Unterbrechung erkennen.",
+            "question": "Wie lange ist Jule dort durchgehend dokumentiert? Gib Minuten ein.",
+            "type": "input",
+            "accepted": [
+              "9"
+            ],
+            "label": "Minuten",
+            "normalize": "number",
+            "hint": "Ziehe 20:04 von 20:13 ab.",
+            "reveal": "Neun Minuten. Das deckt auch das gesamte Austauschfenster ab. Jule kann den unmittelbaren Austausch am Kassenzelt in dieser Fallakte nicht selbst vorgenommen haben.",
+            "note": "Jule durchgehend 20:04–20:13 auf der Verkostungsbühne.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Bennos Transport",
+            "story": "Ein Besucher verdächtigt Benno, weil er die leere Box wegtrug. Die durchgehende Aufnahme des Materialplatzes zeigt ihn jedoch von 20:05 bis 20:12 dort. G-71 steht bereits um 20:12 im Kassenzelt. Benno tritt erst um 20:13 zur Abholung hinein.",
+            "question": "Welche Aussage verbindet die Reihenfolge und sein dokumentiertes Alibi richtig?",
+            "type": "choice",
+            "options": [
+              "Die Aufnahmen nennen keine zeitliche Reihenfolge.",
+              "Benno trug die bereits ausgetauschte Box; das beweist nicht, dass er sie vorher austauschte.",
+              "Wer eine leere Box trägt, hat sie immer selbst geleert."
+            ],
+            "answer": 1,
+            "hint": "Eine spätere Abholung ist nicht derselbe Vorgang wie ein früherer Austausch.",
+            "reveal": "Benno ist als Abholer belegt, aber für den unmittelbaren Austausch im früheren Fenster entlastet. Eine mögliche Kenntnis des Inhalts müsste gesondert geprüft werden.",
+            "note": "Benno 20:05–20:12 am Materialplatz; Abholung von G-71 erst um 20:13.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Drei Stände, drei Sorten",
+            "story": "Zur Zuordnung einer Helferbeobachtung prüfst du die Speisekarten: Am Stand Wiese gibt es weder Rotwein noch Rosé. Der Stand Laube bietet keinen Rotwein an. Jeder der drei Stände Wiese, Laube und Glocke schenkt genau eine der drei Sorten Weißwein, Rosé oder Rotwein aus. Jede Sorte gibt es nur einmal.",
+            "question": "Ordne die drei Sorten den Ständen zu.",
+            "type": "match",
+            "left": [
+              "Wiese",
+              "Laube",
+              "Glocke"
+            ],
+            "right": [
+              "Weißwein",
+              "Rosé",
+              "Rotwein"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "hint": "Wiese bleibt nur eine Sorte. Ordne diese zuerst zu.",
+            "reveal": "Wiese schenkt Weißwein aus, Laube Rosé und Glocke Rotwein. Diese Zuordnung hilft bei Ortsangaben, beweist aber keine Täterschaft.",
+            "note": "Standzuordnung: Wiese Weißwein, Laube Rosé, Glocke Rotwein.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Die doppelte Dorfgeschichte",
+            "story": "Zwei Gäste erzählen, Eva sei um 20:09 am Stand Glocke gewesen. Beide sagen auf Nachfrage, sie hätten das nur von Rosi gehört. Rosi selbst hat Eva dort nicht gesehen, sondern Evas telefonische Angabe wiedergegeben.",
+            "question": "Wie viele unabhängige Sichtbeobachtungen liegen damit vor?",
+            "type": "input",
+            "accepted": [
+              "0"
+            ],
+            "label": "Anzahl der Sichtbeobachtungen",
+            "normalize": "number",
+            "hint": "Verfolge die Aussage bis zu ihrer ursprünglichen Quelle.",
+            "reveal": "Keine. Beide Gäste und Rosi wiederholen letztlich Evas eigene Behauptung. Du benötigst eine unabhängige Quelle für ihren Aufenthaltsort.",
+            "note": "Evas behauptete Anwesenheit bei Glocke ist bisher nur ihre eigene Angabe.",
+            "kind": "Ermitteln"
+          },
+          {
+            "type": "decision",
+            "decisionKey": "interview",
+            "title": "Ein Gespräch auf der Bank",
+            "story": "Rosi möchte mit dir sprechen, ist aber verunsichert: Benno ist ihr Neffe, und im Dorf wird bereits getuschelt. Seine Aufnahme ist gesichert. Du brauchst ihre eigenen Beobachtungen, keine Gerüchte.",
+            "question": "Wie führst du das Gespräch?",
+            "choices": [
+              {
+                "id": "listen",
+                "label": "Rosi in Ruhe und abseits der Gäste nach eigenen Beobachtungen fragen",
+                "reveal": "Rosi erzählt, dass sie auf Evas Auftrag einen Umschlag zum Materialplatz brachte. Du protokollierst ihre eigenen Worte und prüfst sie an den Unterlagen. Sie bietet an, dem Team den damaligen Übergabeweg persönlich zu zeigen; diesen zusätzlichen Abgleich erhältst du nur auf diesem Weg.",
+                "note": "Rosi wurde ruhig nach eigenen Beobachtungen gefragt. Rosi bietet eine persönliche Rekonstruktion des Übergabewegs an."
+              },
+              {
+                "id": "pressure",
+                "label": "Vor den Gästen auf Bennos möglichen Vorteil bestehen",
+                "reveal": "Rosi bricht das freiwillige Gespräch ab. Gesicherte Aufnahmen und Unterlagen bleiben verfügbar; zusätzliche Angaben musst du aus anderen Quellen prüfen.",
+                "note": "Öffentlicher Druck auf Rosi; freiwillige Mitarbeit beendet."
+              }
+            ],
+            "kind": "Deine Entscheidung",
+            "hint": "Diese Entscheidung hat keine vorgegebene richtige Antwort. Sie verändert den weiteren Weg."
+          }
+        ],
+        "art": "assets/grasbrunn-3.webp",
+        "artAlt": "Lagerhütte mit geöffneter Tür und Laterne neben der Festwiese.",
+        "guide": "Gerüchte werden nicht wahrer, wenn viele sie weitererzählen."
+      },
+      {
+        "title": "Zwei Zeiten auf einer Aufnahme",
+        "icon": "🕰️",
+        "steps": [
+          {
+            "title": "Die zweite Zeitskala",
+            "story": "Die Kamera am Materialplatz speichert UTC-Zeiten. Für den Festivalabend nennt das geprüfte Referenzprotokoll ausdrücklich: örtliche Festzeit = UTC + 2 Stunden. Ein Kontrollbild mit 18:12 UTC gehört deshalb zu 20:12 örtlicher Zeit.",
+            "question": "Welche örtliche Zeit entspricht 18:08 UTC an diesem Festivalabend?",
+            "type": "input",
+            "accepted": [
+              "20:08"
+            ],
+            "label": "Örtliche Festzeit",
+            "normalize": "time",
+            "hint": "Addiere die im Referenzprotokoll angegebenen zwei Stunden.",
+            "reveal": "18:08 UTC entspricht 20:08 örtlicher Festzeit. Die bisherigen Zeiten der Fallakte sind bereits örtliche Zeiten.",
+            "note": "Für diese Aufnahmen gilt UTC + 2 Stunden; 18:08 entspricht örtlich 20:08.",
+            "kind": "Ermitteln",
+            "variants": [
+              {
+                "when": {
+                  "interview": "pressure"
+                },
+                "patch": {
+                  "type": "order",
+                  "title": "Zeitabgleich ohne Zusatzgespräch",
+                  "story": "Rosi hat das freiwillige Gespräch beendet. Das gesicherte Referenzprotokoll bleibt verfügbar: Für diesen Festivalabend liegt die örtliche Festzeit zwei Stunden vor UTC. Ein Kontrollbild 18:12 UTC gehört deshalb zu örtlich 20:12.",
+                  "question": "Ordne die Prüfschritte für 18:08 UTC.",
+                  "items": [
+                    "Zeitart der Kameramarkierung als UTC feststellen.",
+                    "Den bestätigten Zuschlag von zwei Stunden prüfen.",
+                    "Zwei Stunden zu 18:08 addieren.",
+                    "20:08 als örtliche Festzeit in der Akte notieren."
+                  ],
+                  "correct": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ],
+                  "hint": "Prüfe zuerst die Zeitart und die Referenz, bevor du rechnest.",
+                  "reveal": "Die örtliche Festzeit lautet 20:08. Der Abgleich stammt aus dem gesicherten Protokoll, nicht aus Rosis zusätzlicher Aussage."
+                }
+              }
+            ]
+          },
+          {
+            "title": "Der Eintritt ins Kassenzelt",
+            "story": "Die abgeglichene Außenaufnahme zeigt Eva um örtliche 20:08 beim Eintritt in das Kassenzelt und um 20:11 beim Verlassen. Die Kamera zeigt ihr Gesicht, aber nicht den Innenraum.",
+            "question": "Welche zwei Aussagen belegt die Aufnahme?",
+            "type": "multi",
+            "items": [
+              "Eva betritt das Kassenzelt im Austauschfenster.",
+              "Eva erscheint um 20:11 wieder außerhalb des Zelts.",
+              "Die Kamera zeigt jeden Handgriff an der Kasse.",
+              "Eine Außenaufnahme beweist allein die gesamte Tat."
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "hint": "Die Aufnahme identifiziert Eva und die Zeiten, nicht jede Handlung im Zelt.",
+            "reveal": "Du kannst Evas Anwesenheit einordnen. Was sie im Innenraum tat, muss aus weiteren Belegen rekonstruiert werden.",
+            "note": "Eva betritt um 20:08 das Kassenzelt; erscheint um 20:11 wieder draußen.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Ein Alibi am falschen Stand",
+            "story": "Eva sagt: „Ich stand von 20:07 bis 20:12 ununterbrochen bei der Verkostung am Stand Glocke.“ Das Kassenzelt liegt getrennt davon, und ihr Eintritt um 20:08 ist eindeutig aufgenommen.",
+            "question": "Welche konkrete Behauptung ist widerlegt?",
+            "type": "choice",
+            "options": [
+              "Dass Glocke einen Weinstand bezeichnet.",
+              "Dass Eva jemals bei Glocke stand.",
+              "Dass Eva von 20:07 bis 20:12 ununterbrochen bei Glocke war."
+            ],
+            "answer": 2,
+            "hint": "Widerlege nur die Aussage, die der Aufnahme tatsächlich widerspricht.",
+            "reveal": "Ihr behaupteter durchgehender Aufenthalt stimmt nicht. Die Aufnahme beweist nicht, dass sie den Stand niemals besuchte.",
+            "note": "Evas behauptetes ununterbrochenes Stand-Alibi ist widerlegt.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Sechs Minuten, drei Minuten",
+            "story": "Das Austauschfenster reicht von nach 20:06 bis spätestens 20:12. Evas dokumentierter Aufenthalt im Kassenzelt liegt zwischen ihrem Eintritt um 20:08 und ihrem Wiedererscheinen um 20:11.",
+            "question": "Wie viele Minuten liegen zwischen diesen beiden Beobachtungen?",
+            "type": "input",
+            "accepted": [
+              "3"
+            ],
+            "label": "Minuten",
+            "normalize": "number",
+            "hint": "Berechne 20:11 minus 20:08.",
+            "reveal": "Drei Minuten. Das begrenzt den beobachteten Aufenthalt; es sagt nicht, in welcher Sekunde ein Eingriff erfolgte.",
+            "note": "Zwischen Evas Eintritt und Wiedererscheinen liegen drei Minuten.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Der kurze Stromausfall",
+            "story": "Um 20:09 fällt die Festbeleuchtung für eine Minute aus. Die Außenkamera läuft mit eigener Batterie durchgehend weiter. Der geprüfte Videostream enthält weder eine Lücke noch einen Neustart.",
+            "question": "Welche zwei Schlussfolgerungen berücksichtigen diese Angaben?",
+            "type": "multi",
+            "items": [
+              "Die Beleuchtung war kurz aus.",
+              "Die Kameraaufnahme blieb trotzdem durchgehend.",
+              "Der Stromausfall vernichtete nachweislich jede Aufnahme.",
+              "Jeder Mensch mit einer Taschenlampe ist dadurch verdächtig."
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "hint": "Beleuchtung und Kameraversorgung sind hier getrennt.",
+            "reveal": "Du lässt den Beleuchtungsausfall dokumentieren, behandelst ihn aber nicht als erfundene Lücke in einer tatsächlich durchgehenden Aufnahme.",
+            "note": "20:09–20:10 Beleuchtungsausfall; batteriebetriebene Außenkamera ohne Lücke.",
+            "kind": "Ermitteln"
+          }
+        ],
+        "art": "assets/grasbrunn-4.webp",
+        "artAlt": "Bank und Weinstand im Laternenlicht nach dem Fest.",
+        "guide": "Ich gleiche Zeitarten ab, bevor ich Aussagen vergleiche."
+      },
+      {
+        "title": "Die Entnahme im Kassenordner",
+        "icon": "📓",
+        "steps": [
+          {
+            "title": "Der Kassenordner",
+            "story": "Anton nennt den kleinen Dokumentenkasten mit den Ausgabenbelegen. Seine Merkhilfe am Schloss lautet: „Die erste Ziffer ist dreimal so groß wie die zweite. Die dritte ist um vier größer als die zweite. Die Summe ist 14.“",
+            "question": "Welcher dreistellige Code erfüllt alle Bedingungen?",
+            "type": "input",
+            "accepted": [
+              "626"
+            ],
+            "label": "Dreistelliger Code",
+            "normalize": "code",
+            "hint": "Bezeichne die zweite Ziffer mit b: Dann lautet die Summe 3b+b+(b+4).",
+            "reveal": "626: 6=3×2, 6=2+4 und 6+2+6=14. Du sicherst die Belege aus dem geöffneten Kasten.",
+            "note": "Dokumentenkasten mit Code 626 geöffnet.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Eine Abweichung im Ausgabenblatt",
+            "story": "Der geprüfte Ausgabenbogen verbucht 1.540 Euro für eine Zeltrechnung. Das zugehörige authentische Original der Rechnung und die bestätigte Zahlung nennen jeweils 340 Euro. Eva hat die Zeile des Ausgabenbogens freigegeben.",
+            "question": "Um welchen Betrag liegt die verbuchte Ausgabe über der belegten Rechnung? Gib Euro ein.",
+            "type": "input",
+            "accepted": [
+              "1200"
+            ],
+            "label": "Abweichung in Euro",
+            "normalize": "money",
+            "hint": "Ziehe 340 von 1.540 ab.",
+            "reveal": "1.200 Euro. Du dokumentierst die Differenz. Ihre Verwendung und die Verantwortung dafür müssen anhand weiterer Unterlagen geprüft werden.",
+            "note": "Zeltrechnung: 340 Euro belegt, 1.540 Euro verbucht; Differenz 1.200 Euro.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Der Beleg ohne Gegenstück",
+            "story": "Ein zusätzliches, von Eva unterschriebenes Blatt nennt die Differenz von 1.200 Euro als „private Vorschussentnahme“. Die vollständige Buchungsübersicht enthält bis zum Festabend keinen bestätigten Rückzahlungseingang.",
+            "question": "Welche zwei Angaben sind damit dokumentiert?",
+            "type": "multi",
+            "items": [
+              "Eva bestätigte schriftlich eine private Vorschussentnahme von 1.200 Euro.",
+              "Bis zum Festabend ist in der vollständigen Übersicht keine bestätigte Rückzahlung verbucht.",
+              "Diese zwei Angaben allein beweisen schon den Austausch von G-17.",
+              "Eine spätere Rückzahlung in der Zukunft ist damit ausgeschlossen."
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "hint": "Trenne den dokumentierten bisherigen Stand von weiteren oder zukünftigen Vorgängen.",
+            "reveal": "Du sicherst das unterschriebene Blatt und die vollständige Übersicht. Die Entnahme könnte für einen Konflikt relevant sein; sie ist noch nicht der Nachweis des Boxenaustauschs.",
+            "note": "Private Vorschussentnahme von 1.200 Euro durch Eva dokumentiert; bislang keine verbuchte Rückzahlung.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Die angekündigte Klärung",
+            "story": "Antons authentische Nachricht von 19:40 an Eva lautet: „Ich habe die vollständigen Belege. Um 20:30 klären wir die Entnahme mit dem Festteam. Bitte bring die Rückzahlungsbestätigung mit.“ Eva antwortete um 19:43: „Warte mit dem Gespräch, bis die Abholung vorbei ist.“",
+            "question": "Ordne Nachricht, Antwort und den angekündigten Termin zeitlich.",
+            "type": "order",
+            "items": [
+              "Anton kündigt die Klärung an · 19:40",
+              "Eva bittet um Aufschub · 19:43",
+              "Geplanter Klärungstermin mit dem Festteam · 20:30"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "hint": "Die angekündigte Besprechung war erst für später vorgesehen.",
+            "reveal": "Eva wusste vor dem Austausch von der geplanten Klärung. Das kann Druck erklären, ersetzt aber keine Prüfung ihrer Handlung am Kassenzelt.",
+            "note": "Eva wusste seit dem Nachrichtenverlauf vor dem Festkassen-Austausch von der geplanten Klärung.",
+            "kind": "Ermitteln"
+          },
+          {
+            "type": "decision",
+            "decisionKey": "archive",
+            "title": "Original oder schnelle Kopie?",
+            "story": "Die vollständige digitale Kopie des Kassenordners ist bereits gesichert. Die Helfer möchten den Bürobereich abbauen. Du entscheidest, ob auch die Originalunterlagen im Zusammenhang erhalten bleiben.",
+            "question": "Wie gehst du mit den Originalbelegen um?",
+            "choices": [
+              {
+                "id": "seal",
+                "label": "Originalbelege dokumentieren und bis zur Sicherung zusammenhalten",
+                "reveal": "Die Originale werden geordnet gesichert. Unterschriften und Zusammenhang können später vollständig abgeglichen werden.",
+                "note": "Kassenoriginale im Zusammenhang dokumentiert und gesichert."
+              },
+              {
+                "id": "copy",
+                "label": "Nur die gesicherte Kopie nutzen und den Abbau freigeben",
+                "reveal": "Die digitale Kopie bleibt erhalten. Beim freigegebenen Abbau gehen jedoch einzelne Originalblätter verloren; ein späterer vollständiger Originalabgleich ist eingeschränkt.",
+                "note": "Digitale Kopie erhalten, einzelne Originale beim freigegebenen Abbau verloren."
+              }
+            ],
+            "kind": "Deine Entscheidung",
+            "hint": "Diese Entscheidung hat keine vorgegebene richtige Antwort. Sie verändert den weiteren Weg."
+          }
+        ],
+        "art": "assets/grasbrunn-5.webp",
+        "artAlt": "Logistikschreibtisch mit Uhr, Funkgerät, Abholzetteln und Festplan.",
+        "guide": "Eine Entnahme kann einen Konflikt erklären. Der Austausch braucht eigene Belege."
+      },
+      {
+        "title": "Eine Box zu viel",
+        "icon": "📦",
+        "steps": [
+          {
+            "title": "Welche Box wurde wohin geschickt?",
+            "story": "Der von Eva unterzeichnete Abholauftrag nennt ausdrücklich G-17 und die Übergabe am Materialplatz. Die gesicherte Rückmeldung von Benno nennt G-71 als tatsächlich abgeholte Box. Das Rückgabeprotokoll bestätigt G-71 und den leeren Inhalt.",
+            "question": "Ordne den Dokumenten ihre konkrete Aussage zu.",
+            "type": "match",
+            "left": [
+              "Abholauftrag",
+              "Bennos Rückmeldung",
+              "Rückgabeprotokoll"
+            ],
+            "right": [
+              "G-17 soll am Materialplatz übergeben werden.",
+              "G-71 wurde tatsächlich abgeholt.",
+              "G-71 wurde leer zurückgegeben."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "hint": "Geplanter Auftrag und tatsächliche Durchführung sind verschiedene Quellen.",
+            "reveal": "Der Auftrag passt nicht zur tatsächlich bereitgestellten Box. Benno meldete die gravierte Kennung seiner Abholung, statt eine Identität zwischen den Boxen zu beweisen.",
+            "note": "Auftrag nennt G-17; tatsächlich abgeholt und leer zurückgegeben wurde G-71.",
+            "kind": "Ermitteln",
+            "variants": [
+              {
+                "when": {
+                  "archive": "copy"
+                },
+                "patch": {
+                  "type": "multi",
+                  "title": "Was blieb nach dem Abbau?",
+                  "story": "Beim freigegebenen Büroabbau gingen einzelne Kassenoriginale verloren. Die vollständige frühere digitale Kopie ist gesichert. Bennos Rückmeldung und das Rückgabeprotokoll wurden unabhängig davon am Materialplatz gesichert. Der kopierte Abholauftrag nennt G-17; beide anderen Quellen nennen G-71.",
+                  "question": "Welche drei Quellen bleiben für diesen Vergleich verfügbar?",
+                  "items": [
+                    "Die gesicherte digitale Kopie des Abholauftrags",
+                    "Bennos separat gesicherte Rückmeldung",
+                    "Das separat gesicherte Rückgabeprotokoll",
+                    "Jedes verschwundene Kassenoriginal",
+                    "Ein vollständiger Materialabgleich ohne die Originalblätter"
+                  ],
+                  "correct": [
+                    0,
+                    1,
+                    2
+                  ],
+                  "hint": "Trenne verlorene Originalblätter von ihrer gesicherten Kopie und getrennt gesicherten Unterlagen.",
+                  "reveal": "Kopie, Rückmeldung und Rückgabeprotokoll bleiben nutzbar. Sie zeigen den Widerspruch zwischen geplanter und tatsächlicher Box; ein vollständiger Originalabgleich ist auf deinem Weg eingeschränkt.",
+                  "note": "Nach dem Abbau bleiben Auftragskopie, Rückmeldung und Rückgabeprotokoll erhalten."
+                }
+              }
+            ]
+          },
+          {
+            "title": "Die umgedrehte Notiz",
+            "story": "In Antons kleinen Merkhilfen steht „ESSAK“. Er schrieb daneben: „Vom Ende lesen.“ Die Notiz ist eine persönliche Eselsbrücke und kein verschlüsselter Notruf.",
+            "question": "Welches Wort ergibt die Notiz rückwärts?",
+            "type": "input",
+            "accepted": [
+              "KASSE"
+            ],
+            "label": "Entschlüsseltes Wort",
+            "normalize": "text",
+            "hint": "Beginne rechts mit K.",
+            "reveal": "KASSE. Die Merkhilfe verweist auf seinen Belegordner, nicht auf einen zusätzlichen geheimen Tatort.",
+            "note": "Antons umgekehrte Merkhilfe ergibt KASSE.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Drei Quellen für einen Austausch",
+            "story": "Du vergleichst: Foto von G-17 um 20:06; Aufnahme von G-71 um 20:12; Materialbericht, der zwei verschiedene Boxen bestätigt. Ein Gast behauptet dagegen, nur ein Etikett sei verrutscht.",
+            "question": "Welche drei Quellen stützen zusammen die Rekonstruktion des Austauschs?",
+            "type": "multi",
+            "items": [
+              "Foto der gravierten Kennung G-17 um 20:06",
+              "Aufnahme der gravierten Kennung G-71 um 20:12",
+              "Materialbericht über zwei verschiedene Boxen",
+              "Die unbelegte Vermutung eines verrutschten Etiketts",
+              "Bennos Beruf allein"
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "hint": "Wähle die überprüften Quellen für die zwei unterschiedlichen Gegenstände.",
+            "reveal": "Zeitlich abgeglichene Kennungen und Materialbericht stützen den Austausch. Eine Vermutung über ein Etikett erklärt die unterschiedlichen Gravuren und Gegenstände nicht.",
+            "note": "Austausch durch zwei Kennungsaufnahmen und Materialbericht gestützt.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Der Weg der leeren Box",
+            "story": "Der dokumentierte Transport lautet: G-71 steht im Kassenzelt bereit; Benno übernimmt sie um 20:13; er bringt sie zum Materialplatz; dort wird sie kontrolliert geöffnet. Der leere Inhalt wird protokolliert und um 20:15 gemeldet.",
+            "question": "Ordne diese vier Schritte.",
+            "type": "order",
+            "items": [
+              "G-71 steht im Kassenzelt bereit.",
+              "Benno übernimmt G-71 um 20:13.",
+              "G-71 wird zum Materialplatz gebracht.",
+              "Die kontrollierte Öffnung dokumentiert den leeren Inhalt."
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "hint": "Die Box muss bereitstehen, bevor sie transportiert und geöffnet wird.",
+            "reveal": "Du hast den tatsächlichen Transport der Ersatzbox geordnet. Der Weg der ursprünglichen Box G-17 bleibt eine weitere Frage.",
+            "note": "Transportkette der Ersatzbox G-71 dokumentiert.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Der Auftrag an Anton",
+            "story": "Der Papierzettel für Lager E3 stammt aus Evas Auftragsblock. Seine erhaltene Durchschrift passt zum selben Schreibvorgang und trägt Evas von ihr bestätigte Handschrift. Anton verließ die Kasse um 20:07; Eva trat um 20:08 hinein. Die erhaltene Durchschrift und eine Helferaufnahme bestätigen die Übergabe des Auftrags um 20:04. Die Durchschrift nennt außerdem 20:03 als Zeitpunkt der Erstellung.",
+            "question": "Welche Schlussfolgerung bleibt eng an den Befunden?",
+            "type": "choice",
+            "options": [
+              "Der Zettel belegt, dass Jule die Boxen austauschte.",
+              "Eva verfasste den Auftrag, der Anton vor ihrem Eintritt zum Lager führte.",
+              "Die Handschrift beweist allein eine absichtliche Blockade der Lagertür."
+            ],
+            "answer": 1,
+            "hint": "Der Zettel verbindet die Verfasserin mit einem Auftrag, nicht automatisch mit jeder späteren Wirkung.",
+            "reveal": "Eva ließ Anton im passenden Zeitraum Siegelrollen holen. Ob sie den Auftrag als Ablenkung nutzte, prüfst du im Zusammenhang mit dem Austausch und den übrigen Belegen.",
+            "note": "Evas bestätigte Handschrift auf dem Lagerauftrag; Anton ging vor ihrem Eintritt zum Lager.",
+            "kind": "Ermitteln"
+          }
+        ],
+        "art": "assets/grasbrunn-6.webp",
+        "artAlt": "Gesicherte Kassenunterlagen mit Originalbelegen und Siegelprobe.",
+        "guide": "Auftrag und tatsächlicher Transport sind verschiedene Dinge."
+      },
+      {
+        "title": "Der gesonderte Abholweg",
+        "icon": "🚐",
+        "steps": [
+          {
+            "title": "Die zweite Abholung",
+            "story": "In Evas unterschriebenem Ablaufblatt steht ein zusätzlicher Auftrag: „G-17 nach Ende des Festes gesondert an Fahrzeug F2 übergeben.“ Die normale Spendenübergabe sollte dagegen über den Materialplatz dokumentiert werden. Ein Fahrzeug F2 ist auf der Festliste tatsächlich vorhanden.",
+            "question": "Welche zwei Punkte müssen damit weiter geprüft werden?",
+            "type": "multi",
+            "items": [
+              "Die vom normalen Weg abweichende Sonderübergabe von G-17.",
+              "Wer über Fahrzeug F2 verfügen konnte und ob die Übergabe tatsächlich stattfand.",
+              "Dass F2 ohne weitere Angaben automatisch eine gestohlene Box enthält.",
+              "Dass ein unterschriebenes Blatt jede Durchführung beweist."
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "hint": "Eine Anweisung und ihre tatsächliche Durchführung sind zu unterscheiden.",
+            "reveal": "Das Sonderblatt liefert einen konkreten Ansatz für den Verbleib der vollen Box. Du lässt Fahrzeug und Übergabe prüfen.",
+            "note": "Sonderauftrag von Eva nennt G-17 und Fahrzeug F2; Durchführung noch zu prüfen.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Eine Rechnung erklärt keinen Boxenweg",
+            "story": "Eva sagt in ihrer ersten aufgezeichneten Aussage: „Die 1.200 Euro sind doch nur eine Buchungsfrage.“ Die Entnahme könnte eine Buchungsfrage sein. Der Kameraeintritt, der Lagerauftrag und die Sonderübergabe betreffen jedoch andere Vorgänge.",
+            "question": "Welche Einordnung berücksichtigt den Unterschied?",
+            "type": "choice",
+            "options": [
+              "Mit dem Wort Buchungsfrage sind alle übrigen Quellen widerlegt.",
+              "Eine Entnahme beweist ohne weitere Quellen jede spätere Tat.",
+              "Eine Erklärung zur Entnahme beantwortet nicht automatisch die unabhängigen Fragen zum Boxenaustausch."
+            ],
+            "answer": 2,
+            "hint": "Beziehe jede Erklärung auf genau die Quellen, die sie tatsächlich erklärt.",
+            "reveal": "Du lässt Eva die Entnahme erklären, hältst aber die dokumentierten Fragen zum Austausch und Sonderweg getrennt fest.",
+            "note": "Entnahme, Austausch und Sonderübergabe müssen jeweils an ihren Quellen geprüft werden.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Kennung, Siegel und Auftrag",
+            "story": "Die geprüften Unterlagen nennen drei getrennte Merkmale: G-17 ist die gravierte Kennung der vollen Box, 614 ist ihr Siegel und F2 ist das Fahrzeug im Sonderauftrag.",
+            "question": "Ordne jede Kennzeichnung ihrer Bedeutung zu.",
+            "type": "match",
+            "left": [
+              "G-17",
+              "614",
+              "F2"
+            ],
+            "right": [
+              "Gravierte Kennung der ursprünglichen vollen Box.",
+              "Siegelnummer dieser Box.",
+              "Fahrzeug im gesonderten Übergabeauftrag."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "hint": "Ähnliche kurze Kennungen können unterschiedliche Dinge bezeichnen.",
+            "reveal": "Du trennst Gegenstand, Siegel und Transportmittel. Dadurch wird der Bericht für das Team nachvollziehbar.",
+            "note": "G-17 Boxkennung; 614 Siegel; F2 Sonderfahrzeug.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Die Belege vor dem Gespräch",
+            "story": "Du hast Evas Anwesenheit im Austauschfenster, ihr widerlegtes Stand-Alibi, den Lagerauftrag und den Sonderauftrag. Jule und Benno sind für den unmittelbaren Austausch durch unabhängige Aufnahmen entlastet.",
+            "question": "Welche vier Angaben gehören in die belastende Rekonstruktion?",
+            "type": "multi",
+            "items": [
+              "Evas dokumentierte Anwesenheit im Austauschfenster",
+              "Der Widerspruch zu ihrem behaupteten durchgehenden Stand-Alibi",
+              "Ihre bestätigte Urheberschaft des Lagerauftrags",
+              "Der von ihr unterschriebene Sonderauftrag für G-17",
+              "Bennos Transportberuf allein",
+              "Die von Jule verkaufte Weinsorte allein"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "hint": "Wähle die konkret dokumentierten Verbindungen, nicht Beruf oder verkaufte Ware.",
+            "reveal": "Die Belege konzentrieren den Verdacht auf Eva. Der tatsächliche Verbleib von G-17 wird separat verfolgt.",
+            "note": "Verdacht auf Eva stützt sich auf Anwesenheit, Alibiwiderspruch und ihre beiden Aufträge.",
+            "kind": "Ermitteln"
+          },
+          {
+            "type": "decision",
+            "decisionKey": "approach",
+            "title": "Was erfährt das Fest zuerst?",
+            "story": "G-17 ist noch nicht wiedergefunden. Dein Team kann den Sonderweg diskret prüfen. Auf der Wiese drängen Gäste und eine Journalistin auf eine Erklärung. Du entscheidest über dein Vorgehen.",
+            "question": "Wie gehst du mit dem Verdacht um?",
+            "choices": [
+              {
+                "id": "quiet",
+                "label": "Den Fahrzeughinweis vertraulich an dein Team geben und diskret prüfen lassen",
+                "reveal": "Dein Team kann F2 und den Sonderweg kontrollieren, bevor die Information öffentlich wird. Du hältst die Gäste über die Suche und die Sicherung der Kasse auf dem Laufenden, ohne eine Person vorzeitig zu beschuldigen.",
+                "note": "Sonderweg vertraulich prüfen lassen; keine vorzeitige öffentliche Beschuldigung."
+              },
+              {
+                "id": "public",
+                "label": "Eva und den Fahrzeughinweis sofort öffentlich nennen",
+                "reveal": "Der Hinweis verbreitet sich auf der Wiese. Eva beendet das Gespräch. Am Sonderweg kommen nun zahlreiche Helfer und Gäste vorbei; die spätere Zuordnung einzelner Beobachtungen wird schwieriger.",
+                "note": "Eva und Fahrzeughinweis öffentlich genannt; Gesprächsabbruch und zusätzliche Unübersichtlichkeit."
+              }
+            ],
+            "kind": "Deine Entscheidung",
+            "hint": "Diese Entscheidung hat keine vorgegebene richtige Antwort. Sie verändert den weiteren Weg."
+          }
+        ],
+        "art": "assets/grasbrunn-7.webp",
+        "artAlt": "Zwei ähnliche Kassenboxen und ein Transportwagen hinter einem Zelt.",
+        "guide": "Ich prüfe den Sonderweg, ohne eine Person vorzeitig vorzuführen."
+      },
+      {
+        "title": "Wenn das Fest verstummt",
+        "icon": "🌅",
+        "steps": [
+          {
+            "title": "Ein Verweis auf Benno",
+            "story": "In Evas gesicherter erster Aussage steht: „Benno hat die Sonderfahrt angeordnet.“ Das von Eva unterschriebene Sonderblatt nennt jedoch keine entsprechende Beauftragung durch Benno.",
+            "question": "Welche zwei Nachfragen prüfen ihre Erklärung anhand von Quellen?",
+            "type": "multi",
+            "items": [
+              "Auf welchen dokumentierten Auftrag von Benno beziehen Sie sich?",
+              "Wer kann Bennos behaupteten Auftrag unabhängig bestätigen?",
+              "Warum lächeln Sie dabei?",
+              "Ist ein Fahrer nicht immer für jeden Inhalt verantwortlich?"
+            ],
+            "correct": [
+              0,
+              1
+            ],
+            "hint": "Frage nach dokumentierten oder unabhängig bestätigten Grundlagen.",
+            "reveal": "In der vorliegenden Aussage ist kein solcher Auftrag genannt. Du notierst die Prüffragen; auf dem öffentlichen Weg antwortet Eva vorerst nicht weiter.",
+            "note": "Evas Verweis auf Benno hat bisher keine dokumentierte Auftragsgrundlage.",
+            "kind": "Ermitteln",
+            "variants": [
+              {
+                "when": {
+                  "approach": "public"
+                },
+                "patch": {
+                  "title": "Eine offene Frage nach dem Auftritt",
+                  "story": "Eva hat nach der öffentlichen Konfrontation das Gespräch beendet. Du prüfst ihre zuvor gesicherte erste Aussage: „Benno hat die Sonderfahrt angeordnet.“ Im von ihr unterschriebenen Sonderblatt ist kein entsprechender Auftrag von Benno dokumentiert. Du formulierst Fragen für die weitere Ermittlung."
+                }
+              }
+            ]
+          },
+          {
+            "title": "Die Reihenfolge vor dem Austausch",
+            "story": "Vier Ereignisse sind belegt: Nachricht von Anton um 19:40; Eva verfasst laut bestätigter Durchschrift den Lagerauftrag um 20:03 und übergibt ihn um 20:04; Anton geht um 20:07 zum Lager; Eva betritt um 20:08 das Kassenzelt.",
+            "question": "Ordne die vier Ereignisse.",
+            "type": "order",
+            "items": [
+              "Anton kündigt die Klärung an · 19:40",
+              "Lagerauftrag wird spätestens um 20:04 übergeben.",
+              "Anton geht zum Lager · 20:07",
+              "Eva betritt das Kassenzelt · 20:08"
+            ],
+            "correct": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "hint": "Die Durchschrift und die beobachtete Übergabe gehören vor Antons Weg.",
+            "reveal": "Konfliktankündigung und Lagerauftrag liegen vor dem dokumentierten Eintritt. Du hältst die Reihenfolge fest, ohne aus ihr allein jedes Motiv als erwiesen darzustellen.",
+            "note": "Zeitliche Folge: angekündigte Klärung, Lagerauftrag, Antons Weg, Evas Eintritt.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Ein Verdacht aus mehreren Quellen",
+            "story": "Jule war durchgehend auf der Verkostungsbühne, Benno im Austauschfenster am Materialplatz. Eva betrat das Kassenzelt in diesem Fenster, behauptete ein widersprochenes Stand-Alibi und unterschrieb die relevanten Aufträge.",
+            "question": "Wen belasten die zusammengeführten Belege am stärksten?",
+            "type": "choice",
+            "options": [
+              "Jule Sommer",
+              "Benno Kranz",
+              "Eva Leitner"
+            ],
+            "answer": 2,
+            "hint": "Verbinde die unabhängigen Aufenthaltsquellen und die Dokumente.",
+            "reveal": "Das Gesamtbild konzentriert sich auf Eva. Du gibst deinem Team die Belege und die noch offenen Prüfpunkte zum Verbleib von G-17.",
+            "note": "Gesamtbild konzentriert sich auf Eva; Verbleib von G-17 bleibt gesonderter Prüfschritt.",
+            "kind": "Ermitteln"
+          },
+          {
+            "title": "Bevor das Dorf ein Urteil fällt",
+            "story": "Du bereitest den Abschlussbericht vor. Eine unterschriebene Anweisung, eine tatsächliche Übergabe und ein späteres Geständnis wären unterschiedliche Quellen. Ein Geständnis ist bisher nicht protokolliert.",
+            "question": "Ordne den Aussagen den jeweils nötigen zusätzlichen Prüfschritt zu.",
+            "type": "match",
+            "left": [
+              "Ein Sonderauftrag liegt vor.",
+              "Ein Fahrzeug wurde gesehen.",
+              "Eine Person nennt ein Geständnis."
+            ],
+            "right": [
+              "Die tatsächliche Durchführung anhand weiterer Quellen prüfen.",
+              "Die Zuordnung von Fahrzeug, Zeitpunkt und Gegenstand prüfen.",
+              "Die Angaben mit unabhängigen Spuren abgleichen."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ],
+            "hint": "Eine Aussage ersetzt nicht den nächsten unabhängigen Abgleich.",
+            "reveal": "Du dokumentierst, welche Fragen beantwortet und welche noch offen sind. Hinweise und Rätselhilfe ändern diese Quellen nicht.",
+            "note": "Abschlussprüfung trennt Anweisung, Durchführung, Fahrzeugbeobachtung und möglichen Spurenabgleich.",
+            "kind": "Ermitteln"
+          },
+          {
+            "type": "decision",
+            "decisionKey": "verdict",
+            "title": "Dein Bericht für das Festteam",
+            "story": "Anton ist wieder bei seinem Team. Du hast die Wege, Boxenkennungen und Unterlagen geordnet. Du entscheidest, welchen Hauptverdacht dein Bericht benennt – oder ob du zusätzliche Prüfungen anforderst. Eine Festnahme folgt nicht allein aus deiner Auswahl, sondern muss durch die dokumentierten Belege getragen werden.",
+            "question": "Wie schließt du deinen Ermittlungsdurchlauf ab?",
+            "choices": [
+              {
+                "id": "eva",
+                "label": "Eva als Hauptverdacht benennen und den Sonderweg von G-17 belegen lassen",
+                "reveal": "Du legst den Schwerpunkt auf Evas dokumentierten Eintritt und ihre Aufträge; der Verbleib der vollen Box wird anhand des Sonderwegs geprüft.",
+                "note": "Bericht: Hauptverdacht Eva; Sonderweg von G-17 weiter prüfen."
+              },
+              {
+                "id": "benno",
+                "label": "Benno als Hauptverdacht benennen",
+                "reveal": "Dein Team verweist auf seine Aufnahme im Austauschfenster. Die spätere Abholung allein trägt den unmittelbaren Austauschverdacht nicht.",
+                "note": "Bericht: Hauptverdacht Benno trotz Entlastung für den unmittelbaren Austausch."
+              },
+              {
+                "id": "jule",
+                "label": "Jule als Hauptverdacht benennen",
+                "reveal": "Dein Team verweist auf Jules durchgehendes Bühnen-Alibi. Das Helfen beim Zählen ersetzt keinen Tatbeleg.",
+                "note": "Bericht: Hauptverdacht Jule trotz unabhängigem Alibi."
+              },
+              {
+                "id": "defer",
+                "label": "Noch keinen Hauptverdacht benennen und zusätzliche Prüfung anfordern",
+                "reveal": "Du legst eine geordnete Akte mit klar bezeichneten offenen Fragen vor. Dein Team führt die Prüfung weiter.",
+                "note": "Bericht: zusätzliche Prüfung angefordert; Akte offen."
+              }
+            ],
+            "kind": "Deine Entscheidung",
+            "hint": "Diese Entscheidung hat keine vorgegebene richtige Antwort. Sie verändert den weiteren Weg."
+          }
+        ],
+        "art": "assets/grasbrunn-8.webp",
+        "artAlt": "Leere Festwiese im Morgenlicht mit geschlossener Box und Fallakte.",
+        "guide": "Ich halte fest, was belegt ist und was weiter geprüft werden muss."
+      }
+    ],
+    "suspects": [
+      {
+        "name": "Eva Leitner",
+        "role": "Fiktive Festkoordinatorin",
+        "detail": "Verteilt schriftliche Aufträge und gibt Ausgaben frei."
+      },
+      {
+        "name": "Benno Kranz",
+        "role": "Fiktiver Logistikhelfer",
+        "detail": "Transportiert Material und bereitgestellte Kassenboxen."
+      },
+      {
+        "name": "Jule Sommer",
+        "role": "Fiktive Gastwinzerin",
+        "detail": "Betreut einen Stand und half Anton beim Zählen."
+      }
+    ],
+    "ending": "Der Abschluss hängt von deinen festgehaltenen Entscheidungen ab.",
+    "epilogue": "Dein Team führt die Akte anhand der dokumentierten Quellen und offenen Prüfpunkte weiter.",
+    "endingRules": [
+      {
+        "when": {
+          "verdict": "defer"
+        },
+        "ending": "open"
+      },
+      {
+        "when": {
+          "verdict": [
+            "benno",
+            "jule"
+          ]
+        },
+        "ending": "wrong"
+      },
+      {
+        "when": {
+          "verdict": "eva",
+          "interview": "listen",
+          "archive": "seal",
+          "approach": "quiet"
+        },
+        "ending": "clear"
+      },
+      {
+        "when": {
+          "verdict": "eva"
+        },
+        "ending": "fractured"
+      }
+    ],
+    "consequenceRules": [
+      {
+        "when": {
+          "interview": "pressure"
+        },
+        "text": "Rosi beendete unter öffentlichem Druck ihre freiwillige Mitarbeit. Ihr zusätzlicher persönlicher Abgleich des Übergabewegs bleibt aus."
+      },
+      {
+        "when": {
+          "archive": "copy"
+        },
+        "text": "Beim freigegebenen Abbau gingen einzelne Kassenoriginale verloren; die digitale Kopie blieb erhalten."
+      },
+      {
+        "when": {
+          "approach": "public"
+        },
+        "text": "Die öffentliche Nennung des Fahrzeughinweises erschwerte die Zuordnung späterer Beobachtungen."
+      }
+    ],
+    "endings": {
+      "clear": {
+        "title": "Die Kasse kommt zurück",
+        "summary": "Die Spenden werden wiedergefunden, und der Ablauf ist unabhängig nachvollziehbar.",
+        "text": "Dein Team prüft den Sonderweg diskret und findet G-17 mit dem dokumentierten Siegel im zugeordneten Fahrzeug F2. Die kontrollierte Öffnung bestätigt die 4.860 Euro. Rosi zeigt den damaligen Übergabeweg; ihre Angaben werden mit den Unterlagen verglichen. Gesicherte Originale, Aufnahmen und Aufträge lassen sich vollständig abgleichen. Im vertraulichen Gespräch gesteht Eva den Austausch: Sie wollte die angekündigte Klärung der Entnahme umgehen und die Festkasse zunächst aus dem normalen Ablauf nehmen. Dein Team gleicht ihre Angaben mit den unabhängigen Quellen ab. Die Entnahme von 1.200 Euro bleibt als eigener Vorgang dokumentiert.",
+        "epilogue": "Anton sitzt wieder bei seinen Helfern. Jule und Benno werden nicht wegen ihrer Aufgaben verdächtigt, sondern anhand der Aufnahmen entlastet. Das Festteam sichert die Spenden für den fiktiven Jugendgarten. Du gehst durch den Morgentau, Maus. Heute bleibt nicht nur eine Geschichte zurück, sondern eine geordnete Akte."
+      },
+      "fractured": {
+        "title": "Spuren im Morgentau",
+        "summary": "Der Hauptverdacht ist schlüssig, doch Teile der Prüfung oder des Geldwegs bleiben offen.",
+        "text": "Dein Bericht benennt Eva anhand ihrer dokumentierten Anwesenheit und Aufträge. Die Quellen tragen den Verdacht weiter, aber eine vollständig abgeglichene Aufklärung und Rückgabe aller Spenden lassen sich in diesem Ende noch nicht melden. Dein Team setzt die Prüfung fort. Die Folgen deiner früheren Entscheidungen werden ausdrücklich in der Akte festgehalten.",
+        "epilogue": "Anton ist in Sicherheit. Zwischen den leeren Tischen bleiben Fragen zum Geld und zur weiteren Aufklärung. Du hast einen wichtigen Ansatz gefunden – aber nicht jeden Verlust verhindert."
+      },
+      "wrong": {
+        "title": "Verdacht im falschen Zelt",
+        "summary": "Deine Empfehlung widerspricht einer unabhängigen Entlastung.",
+        "text": "Du benennst Jule oder Benno trotz der für den unmittelbaren Austausch entlastenden Aufnahmen als Hauptverdacht. Dein Team übernimmt den Bericht nicht ungeprüft und veranlasst einen erneuten Quellenabgleich. Niemand wird allein wegen deiner Auswahl überführt. Der konkrete Verdacht auf Eva und der Sonderweg von G-17 müssen neu zusammengeführt werden.",
+        "epilogue": "Anton ist wieder da, die Akte jedoch noch offen. Du merkst, wie schnell ein Gerücht oder eine auffällige Aufgabe den Blick auf stärkere Belege verstellen kann. Im nächsten Durchlauf kannst du andere Entscheidungen treffen."
+      },
+      "open": {
+        "title": "Ein Fest ohne Schlusswort",
+        "summary": "Du übergibst eine geordnete Akte mit klar bezeichneten offenen Fragen.",
+        "text": "Du legst noch keinen Hauptverdacht fest. Die gesicherten Quellen, die unabhängigen Alibis und der Hinweis auf Fahrzeug F2 gehen an die weitere Ermittlung. Anton ist gefunden; die Fragen nach Verantwortung und Verbleib aller Spenden werden weiter geprüft. Eine vollständige Aufklärung wird in diesem Ende nicht vorgetäuscht.",
+        "epilogue": "Das Festteam packt die letzten Lichterketten ein. Du verabschiedest dich von Anton und notierst die nächsten Prüfpunkte. Dein Durchlauf endet – die Ermittlungen gehen weiter."
       }
     }
   }
