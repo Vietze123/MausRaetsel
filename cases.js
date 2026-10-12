@@ -1,12 +1,12 @@
-// Maus ermittelt selbst.
+// Maus ermittelt selbst. Redaktionell geprüfte Fassung.
 window.MAUS_CASES = [
   {
     "id": "rosenhain",
     "version": 3,
     "title": "Tod zwischen Rosen",
-    "subtitle": "Du bist die Ermittlerin, Maus. Ein Mord. Drei Alibis. Und eine Lüge, die sich selbst verrät.",
+    "subtitle": "Du bist die Ermittlerin, Maus. Ein Mord. Drei Verdächtige. Und eine Lüge, die sich selbst verrät.",
     "tag": "Episode 01 · Tod zwischen Rosen",
-    "duration": "Etwa 60–90 Minuten · 40 Aufgaben · jederzeit pausierbar",
+    "duration": "Etwa 60–90 Minuten · jederzeit pausierbar",
     "description": "Ein elegantes Gartenfest endet mit einem Mord. Als Ermittlerin Maus liest du zwischen den Zeilen, prüfst Alibis und stellst dem Täter eine Falle.",
     "chapters": [
       {
@@ -15,8 +15,8 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Ein Fest endet im Schweigen",
-            "story": "Der Regen trommelt gegen die Scheiben des Gartenhauses Rosenhain. Eben noch Musik, jetzt Stille: Um 20:20 findet die Gastgeberin den Kunsthändler Viktor Winter leblos im Arbeitszimmer. Du übernimmst die Ermittlungen, Maus. Die Spurensicherung bestätigt einen tödlichen Schlag mit einem schweren Gegenstand. Du stellst deine Teetasse ab. „Niemand geht. Und niemand erzählt mir, was ich hören soll.“ Dein erster Blick gilt der Uhr – nicht den Gesichtern.",
-            "question": "Die Tat geschah laut gesicherter medizinischer Eingrenzung dieser fiktiven Fallakte zwischen 20:10 und 20:15. Eine Gartenkamera zeigt um 20:08 eine Person am Tor und um 20:18 wieder. Was belegen die beiden Bilder allein?",
+            "story": "Der Regen trommelt gegen die Scheiben des Gartenhauses Rosenhain. Du bist als Gast beim Blumenfest, Maus. Um 20:20 findet die Gastgeberin Helena den Kunsthändler Viktor Winter leblos im Arbeitszimmer. Als Kriminalermittlerin vor Ort verständigst du dein Team, lässt den Raum sichern und beginnst mit den ersten Gesprächen. Im Laufe der Untersuchung bestätigt sich: Viktor starb durch einen Schlag mit einem schweren Gegenstand. Du stellst deine Teetasse ab. „Bitte bleiben Sie für die Befragung hier.“ Dein erster Blick gilt der Uhr – nicht den Gesichtern.",
+            "question": "Die abgeglichenen Aufzeichnungen und Zeugenaussagen grenzen die Tatzeit in dieser Fallakte auf 20:10 bis 20:15 ein. Eine Gartenkamera zeigt dieselbe Person um 20:08 und um 20:18 am Tor. Was belegen diese beiden Bilder allein?",
             "options": [
               "Die Person war die ganze Zeit am Tor",
               "Nur ihre Anwesenheit um 20:08 und 20:18",
@@ -30,7 +30,7 @@ window.MAUS_CASES = [
           },
           {
             "title": "Drei Namen auf der Gästeliste",
-            "story": "Drei Menschen standen Viktor nahe: Clara Winter, seine Cousine und Floristin; Jonas Berg, sein Assistent; und Ben Falk, sein Geschäftspartner. Viktor hatte alle drei um ein Gespräch gebeten. Auf seinem Schreibtisch liegt ein verschlüsselter Zettel.",
+            "story": "Drei Menschen standen Viktor nahe: Clara Winter, seine Cousine und Floristin; Jonas Berg, sein Assistent; und Ben Falk, sein Geschäftspartner. Viktor hatte alle drei um ein Gespräch gebeten. Auf seinem Schreibtisch liegt ein verschlüsselter Zettel. Viktor liebte kleine Denkspiele und kennzeichnete seine Unterlagen gelegentlich mit verschlüsselten Merkhilfen.",
             "question": "Die Anweisung lautet: „Jeder Buchstabe ist eine Stelle zu weit im Alphabet.“ Auf dem Zettel steht „BLUF“. Was ist gemeint?",
             "options": [
               "AKTE",
@@ -39,14 +39,14 @@ window.MAUS_CASES = [
             ],
             "answer": 0,
             "hint": "Gehe bei jedem Buchstaben eine Stelle zurück: B wird A.",
-            "reveal": "AKTE. Neben dem Zettel liegt eine Mappe mit der Aufschrift „Inventar“. Jemand hat die letzten Seiten herausgerissen. Dein erster wirklicher Ansatz, Maus.",
+            "reveal": "AKTE. Neben dem Zettel liegt eine Mappe mit der Aufschrift „Inventar“. Jemand hat zwei Seiten herausgerissen. Dein erster wirklicher Ansatz, Maus.",
             "note": "Viktors Zettel verweist auf eine Akte; in der Inventarmappe fehlen Seiten.",
             "kind": "Entschlüsseln"
           },
           {
             "title": "Die umgekehrte Einladung",
             "story": "Zwischen den Einladungen liegt eine Karte in Viktors Handschrift: „Was verborgen ist, liest sich vom Ende her.“ Darunter steht RATNEVNI. Du drehst die Karte zwischen den Fingern. Die Anweisung klingt wie ein letzter kleiner Test.",
-            "question": "Welches Wort ergibt die zweite Zeile, rückwärts gelesen?",
+            "question": "Welches Wort ergibt „RATNEVNI“, rückwärts gelesen?",
             "options": [
               "INVENTAR",
               "INTERVALL",
@@ -60,7 +60,7 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die verschwundenen Minuten",
-            "story": "Die Empfangskraft hat die Musikliste gesichert: Klavierstück 19:58–20:04, Pause 20:04–20:06, Streichquartett 20:06–20:14, Pause 20:14–20:17. Eine Zeugin erinnert sich nur: „Als ich die Arbeitszimmertür ins Schloss fallen hörte, spielte das Quartett.“",
+            "story": "Die Empfangskraft hat die tatsächlichen Spielzeiten der Musik anhand einer durchgehenden Festaufnahme überprüft: Klavierstück 19:58–20:04, Pause 20:04–20:06, Streichquartett 20:06–20:14, Pause 20:14–20:17. Eine Zeugin erinnert sich: „Als ich die Arbeitszimmertür ins Schloss fallen hörte, spielte das Quartett.“",
             "question": "Welcher Zeitraum bleibt für diese Beobachtung möglich?",
             "options": [
               "Nur 20:10–20:15",
@@ -79,7 +79,7 @@ window.MAUS_CASES = [
             "question": "Welche Angabe ist eine konkrete Beobachtung mit überprüfbarer Zeit?",
             "options": [
               "Die vermutete Eifersucht",
-              "Bens Einschätzung ihrer Beziehung",
+              "Bens Einschätzung seines Verhältnisses zu Viktor",
               "Der Fund durch die Gastgeberin um 20:20"
             ],
             "answer": 2,
@@ -98,8 +98,8 @@ window.MAUS_CASES = [
         "icon": "🚪",
         "steps": [
           {
-            "title": "Ein ruhiger Raum, eine fehlende Seite",
-            "story": "Das Arbeitszimmer hat nur eine Tür. Das Fenster ist von innen verriegelt und wurde laut Spurensicherung nicht geöffnet. Die Tür war nicht abgeschlossen. Wer zu Viktor wollte, musste vom Flur hereinkommen. Clara behauptet, niemand hätte Zugang gehabt.",
+            "title": "Ein zugänglicher Raum",
+            "story": "Das Arbeitszimmer hat nur eine Tür. Das Fenster ist von innen verriegelt und wurde laut Spurensicherung nicht geöffnet. Die Tür war nicht abgeschlossen. Wer zu Viktor wollte, musste vom Flur hereinkommen. Clara hatte angenommen, Viktor habe die Tür abgeschlossen. Die überprüften Spuren zeigen etwas anderes.",
             "question": "Welche Aussage ist durch die gesicherten Angaben widerlegt?",
             "options": [
               "Ein Gast konnte die Tür vom Flur aus öffnen",
@@ -115,7 +115,7 @@ window.MAUS_CASES = [
           {
             "title": "Der Platz auf dem Schreibtisch",
             "story": "Auf der Tischunterlage ist ein sauberer rechteckiger Abdruck. Auf einem Foto vom Nachmittag steht genau dort ein schwerer Messing-Briefbeschwerer. Jetzt fehlt er. Neben dem Abdruck liegt ein dunkelblauer Stofffaden. Ben trägt einen dunkelblauen Wollschal; Jonas einen dunkelblauen Wollmantel; Clara ein cremefarbenes Kleid.",
-            "question": "Was lässt sich aus der Farbe des Fadens allein sicher ableiten?",
+            "question": "Welche Aussage berücksichtigt, dass sowohl Ben als auch Jonas dunkelblaue Wollkleidung tragen?",
             "options": [
               "Ben ist der Täter",
               "Jonas ist der Täter",
@@ -123,7 +123,7 @@ window.MAUS_CASES = [
             ],
             "answer": 2,
             "hint": "Die Farbe passt zu mehr als einer Person.",
-            "reveal": "Der Faden grenzt die Spur zunächst auf Ben oder Jonas ein, beweist aber keine Täterschaft. Du lässt ihn mit den Kleidungsstücken vergleichen.",
+            "reveal": "Die Farbe passt sowohl zu Bens Schal als auch zu Jonas’ Mantel. Sie erlaubt noch keine eindeutige Zuordnung und beweist keine Täterschaft. Du lässt Material und Webstruktur vergleichen.",
             "note": "Messing-Briefbeschwerer fehlt. Dunkelblauer Faden könnte zunächst von Ben oder Jonas stammen.",
             "kind": "Ermitteln"
           },
@@ -159,7 +159,7 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die scheinbar verräterische Tasse",
-            "story": "Auf Viktors Tisch steht eine Tasse mit Claras Lippenstift. Ein datiertes Festfoto von 18:30 zeigt Clara mit genau dieser Tasse im Arbeitszimmer. Die Spur wurde nicht zeitlich eingegrenzt.",
+            "story": "Auf Viktors Tisch steht eine Tasse mit einem Lippenstiftabdruck in der Farbe, die Clara trägt. Ein datiertes Festfoto von 18:30 zeigt Clara mit genau dieser Tasse im Arbeitszimmer. Die Spur wurde nicht zeitlich eingegrenzt.",
             "question": "Welche Aussage bleibt mit diesen Angaben vereinbar?",
             "options": [
               "Clara muss während der Tat im Zimmer gewesen sein",
@@ -168,7 +168,7 @@ window.MAUS_CASES = [
             ],
             "answer": 2,
             "hint": "Frage dich, ob die Spur nur während der Tat entstanden sein kann.",
-            "reveal": "Die frühere Anwesenheit erklärt den Lippenstift. Die Tasse widerlegt Claras späteres Alibi nicht.",
+            "reveal": "Claras frühere Anwesenheit könnte den Lippenstiftabdruck erklären. Die Tasse beweist nicht, dass sie während der Tat im Zimmer war.",
             "note": "Lippenstift an der Tasse kann von Claras Besuch um 18:30 stammen.",
             "kind": "Falsche Fährte"
           }
@@ -183,7 +183,7 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Claras Blumen",
-            "story": "Clara umfasst ihre Teetasse so fest, dass ihre Finger weiß werden. „Ich war draußen und habe die Blumen für morgen sortiert.“ Nervosität ist kein Schuldbeweis. Du prüfst ihre Aussage, Maus: Zwei Lieferanten haben von 20:07 bis 20:17 ohne Unterbrechung mit Clara am Gartentor gesprochen. Sie konnten sie die ganze Zeit sehen.",
+            "story": "Clara umfasst ihre Teetasse so fest, dass ihre Finger weiß werden. „Ich war draußen bei den Blumenlieferanten. Wir haben die Lieferung für morgen besprochen.“ Nervosität ist kein Schuldbeweis. Du prüfst ihre Aussage, Maus: Zwei Lieferanten haben von 20:07 bis 20:17 ohne Unterbrechung mit Clara am Gartentor gesprochen. Sie konnten sie die ganze Zeit sehen.",
             "question": "Deckt dieses bestätigte Alibi die gesamte Tatzeit 20:10–20:15 ab?",
             "options": [
               "Ja, vollständig",
@@ -192,7 +192,7 @@ window.MAUS_CASES = [
             ],
             "answer": 0,
             "hint": "Vergleiche Anfang und Ende beider Zeiträume.",
-            "reveal": "Ja. Clara war während der gesamten Tatzeit am Tor. Sie bleibt eine wichtige Zeugin, aber als ausführende Täterin scheidet sie im Rahmen dieser Fallakte aus.",
+            "reveal": "Ja. Die beiden Lieferanten bestätigen Claras Anwesenheit während der gesamten Tatzeit. Damit scheidet sie in dieser Fallakte als die Person aus, die den tödlichen Schlag im Arbeitszimmer ausführte.",
             "note": "Clara: lückenlos bestätigtes Alibi von 20:07 bis 20:17.",
             "kind": "Ermitteln"
           },
@@ -214,7 +214,7 @@ window.MAUS_CASES = [
           {
             "title": "Zwei Zeugen, dieselbe Quelle",
             "story": "Ein Gast behauptet: „Jonas war um 20:12 im Flur.“ Ein zweiter bestätigt es. Auf Nachfrage erklärt der zweite, er habe Jonas nicht selbst gesehen, sondern nur den ersten Gast erzählen hören.",
-            "question": "Wie viele eigene Beobachtungen liegen tatsächlich vor?",
+            "question": "Wie viele voneinander unabhängige Wahrnehmungsberichte liegen hier vor?",
             "options": [
               "Eine",
               "Zwei unabhängige Beobachtungen",
@@ -244,7 +244,7 @@ window.MAUS_CASES = [
           {
             "title": "Eine Frage ohne Vorgabe",
             "story": "Clara schaut immer wieder zum Gartentor. Du möchtest erfahren, was sie dort gesehen hat, ohne eine Antwort vorzugeben.",
-            "question": "Welche Frage ist am wenigsten suggestiv?",
+            "question": "Welche Frage lässt Clara am ehesten in ihren eigenen Worten antworten?",
             "options": [
               "Ben ist doch sicher am Tor vorbeigegangen, oder?",
               "Du hast nichts gesehen, stimmt’s?",
@@ -267,7 +267,7 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Das Foto aus der Küche",
-            "story": "Das Originalfoto zeigt Jonas in der Küche. Laut verifizierten Metadaten wurde es um 20:10:30 aufgenommen. Vom Arbeitszimmer zur Küche braucht man auf dem einzigen Weg mindestens 90 Sekunden. Eine gesicherte Audiodatei aus Viktors Diktiergerät belegt: Um 20:10:00 war Viktor noch lebend allein im Zimmer. Danach fiel der tödliche Schlag. Die Gastgeberin bestätigt außerdem, Jonas seit dem Foto um 20:10:30 bis 20:16 ununterbrochen gesehen zu haben.",
+            "story": "Das Originalfoto zeigt Jonas in der Küche. Laut verifizierten Metadaten wurde es um 20:10:30 aufgenommen. Vom Arbeitszimmer zur Küche braucht man auf dem einzigen Weg mindestens 90 Sekunden. Eine gesicherte Audiodatei aus Viktors Diktiergerät belegt: Um 20:10:00 ist Viktors Stimme noch lebend zu hören. Die abgeglichenen Aufzeichnungen und Zeugenaussagen legen den tödlichen Schlag nach diesen Zeitpunkt. Die Gastgeberin bestätigt außerdem, Jonas seit dem Foto um 20:10:30 bis 20:16 ununterbrochen gesehen zu haben.",
             "question": "Konnte Jonas Viktor nach 20:10 töten und um 20:10:30 schon in der Küche sein?",
             "options": [
               "Ja, 30 Sekunden reichen",
@@ -282,7 +282,7 @@ window.MAUS_CASES = [
           },
           {
             "title": "Bens Empfang",
-            "story": "Ben behauptet: „Um 20:12 habe ich schon am Empfang unterschrieben.“ Seine Unterschrift steht im Besucherbuch direkt unter dem gedruckten Zeitstempel 20:18. Die Empfangskraft bestätigt, dass sie ihn beim Unterschreiben sah. Das Buch wird fortlaufend geführt und der Zeitstempel ist korrekt. Du lässt eine Pause entstehen. Ben antwortet auf die Stille, bevor du eine Frage stellst: „Die Uhr dort geht bestimmt falsch.“ Du bleibst bei den überprüften Angaben. Eine hektische Reaktion ist ein Ansatz für die nächste Frage, kein Beweis.",
+            "story": "Ben behauptet: „Um 20:12 habe ich schon am Empfang unterschrieben.“ Seine Unterschrift steht im Besucherbuch in einer eigenen Zeile mit dem beim Unterschreiben automatisch erzeugten Zeitstempel 20:18. Die Empfangskraft bestätigt, dass sie ihn beim Unterschreiben sah. Das Buch wird fortlaufend geführt und der Zeitstempel ist korrekt. Du lässt eine Pause entstehen. Ben antwortet auf die Stille, bevor du eine Frage stellst: „Die Uhr dort geht bestimmt falsch.“ Du bleibst bei den überprüften Angaben. Eine hektische Reaktion ist ein Ansatz für die nächste Frage, kein Beweis.",
             "question": "Welche Schlussfolgerung ist gerechtfertigt?",
             "options": [
               "Bens behauptete Unterschriftszeit stimmt nicht",
@@ -297,7 +297,7 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die Uhr auf dem Foto",
-            "story": "Ein Kontrollfoto zeigt das Küchenwandzifferblatt auf 20:07, während die kalibrierte Referenzuhr exakt 20:10 zeigt. Die Küchenwanduhr läuft konstant drei Minuten nach. Ein anderes Foto zeigt sie auf 20:08.",
+            "story": "Ein Kontrollfoto zeigt das Zifferblatt der Küchenwanduhr auf 20:07, während die kalibrierte Referenzuhr exakt 20:10 zeigt. Die Küchenwanduhr läuft konstant drei Minuten nach. Ein anderes Foto zeigt sie auf 20:08.",
             "question": "Welche tatsächliche Uhrzeit entspricht 20:08 auf dieser Wanduhr?",
             "options": [
               "20:11",
@@ -328,7 +328,7 @@ window.MAUS_CASES = [
           {
             "title": "Der Ausschnitt im Besucherbuch",
             "story": "Ben zeigt dir ein Foto seiner Unterschrift ohne den Rand des Buchs. Das gesicherte Original enthält den korrekten Zeitstempel 20:18 und die fortlaufende Seitenfolge.",
-            "question": "Welches Dokument prüfst du für seine behauptete Unterschriftszeit zuerst?",
+            "question": "Welche Quelle ist für die Prüfung seiner behaupteten Unterschriftszeit am aussagekräftigsten?",
             "options": [
               "Nur Bens beschnittenes Foto",
               "Seine Erinnerung an die Uhrzeit",
@@ -351,7 +351,7 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Viktors Zahlenschloss",
-            "story": "Die Inventarmappe nennt einen Archivkasten. Auf dem Schloss steht Viktors Eselsbrücke: „Drei Ziffern. Die erste ist doppelt so groß wie die zweite. Die dritte ist drei größer als die erste. Die Summe ist 13.“",
+            "story": "Die Inventarmappe nennt den Archivkasten in Viktors Schrank. Auf einer Karte am Schloss steht Viktors Eselsbrücke: „Drei Ziffern. Die erste ist doppelt so groß wie die zweite. Die dritte ist drei größer als die erste. Die Summe ist 13.“",
             "question": "Welcher Code erfüllt alle Bedingungen?",
             "options": [
               "427",
@@ -396,8 +396,8 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die Rechnung geht nicht auf",
-            "story": "Die beiden authentischen Rechnungen für R-17 nennen 4.800 Euro und 5.200 Euro. Der zugehörige Buchungsauszug weist beide Eingänge aus, zusammen aber nur 4.800 Euro als Erlös für R-17 in der Übersicht.",
-            "question": "Wie viel Geld fehlt in dieser Erlösübersicht gegenüber den beiden Zahlungseingängen?",
+            "story": "Die beiden authentischen Rechnungen für R-17 nennen 4.800 Euro und 5.200 Euro. Der Kontoauszug bestätigt beide Zahlungseingänge. In einer separat geführten Erlösübersicht sind für R-17 jedoch insgesamt nur 4.800 Euro eingetragen.",
+            "question": "Um welchen Betrag liegt die Erlösübersicht unter der Summe der beiden Zahlungseingänge?",
             "options": [
               "400 Euro",
               "5.200 Euro",
@@ -430,7 +430,7 @@ window.MAUS_CASES = [
         "guide": "Wer etwas verschwinden lässt, verrät oft, was ihm gefährlich werden könnte."
       },
       {
-        "title": "Die Nachricht um acht",
+        "title": "Die Frist um Viertel nach acht",
         "icon": "📜",
         "steps": [
           {
@@ -465,7 +465,7 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die Nachricht in Fragmenten",
-            "story": "Ein beschädigter Ausdruck enthält drei nummerierte Fragmente: 1 „Morgen übergebe ich“, 2 „alles der Polizei“, 3 „Gib mir bis 20:15 eine Erklärung.“ Die authentische Handyfassung beginnt mit der Frist und endet mit der angekündigten Übergabe.",
+            "story": "Ein beschädigter Ausdruck enthält drei nummerierte Fragmente: 1 „Morgen übergebe ich“, 2 „alles der Polizei“, 3 „Gib mir bis 20:15 eine Erklärung.“ Dieser Abschnitt der authentischen Nachricht beginnt mit der Frist und endet mit der angekündigten Übergabe.",
             "question": "Welche Reihenfolge stellt diese Aussage wieder her?",
             "options": [
               "3 → 1 → 2",
@@ -519,7 +519,7 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Ein Fund im Pflanzkasten",
-            "story": "Die Spurensicherung findet den Messing-Briefbeschwerer unter den weißen Rosen im Flur. Nach bestätigter Untersuchung ist er die Tatwaffe. Am Griff sitzt ein frischer Riss eines Stoffstücks. Der Materialvergleich ergibt: Es passt exakt in die neue Risskante von Bens Schal. Jonas’ Mantel hat eine andere Webstruktur.",
+            "story": "Am nächsten Morgen meldet die Spurensicherung einen Fund: In einem von mehreren Pflanzkästen mit weißen Rosen im Flur liegt der Messing-Briefbeschwerer unter der Erde, verborgen unter dem Wurzelballen. Der untersuchte Briefbeschwerer passt zu den gesicherten Tatspuren. An seiner Unterseite klemmt ein abgerissenes Stück dunkelblauen Wollstoffs. Seine Risskante schließt exakt an den Riss in Bens sichergestelltem Schal an. Jonas’ Mantel hat eine andere Webstruktur. Du lässt den Fundort gegenüber den Befragten geheim halten.",
             "question": "Welche frühere Unsicherheit löst der Vergleich?",
             "options": [
               "Der Stoff stammt von Bens Schal, nicht von Jonas’ Mantel",
@@ -528,13 +528,13 @@ window.MAUS_CASES = [
             ],
             "answer": 0,
             "hint": "Das ist mehr als dieselbe Farbe: Die Risskanten passen zusammen.",
-            "reveal": "Das Stoffstück lässt sich Bens Schal zuordnen. Der Briefbeschwerer verbindet ihn nun auch mit dem Tatmittel. Dein Blick wandert vom Rosenbeet zu Ben.",
-            "note": "Tatwaffe gesichert; frisches Stoffstück passt exakt in Bens Schalriss.",
+            "reveal": "Das abgerissene Stück lässt sich Bens Schal zuordnen. Damit besteht eine direkte Materialverbindung zwischen seinem Schal und der Tatwaffe. Du hältst fest, was der Vergleich zeigt, ohne daraus allein den gesamten Tatablauf abzuleiten.",
+            "note": "Tatwaffe verborgen im Pflanzkasten; Stoffstück an der Unterseite passt exakt an Bens Schalriss.",
             "kind": "Ermitteln"
           },
           {
             "title": "Die Spur richtig einordnen",
-            "story": "Ben sagt: „Ich war schon nachmittags am Schreibtisch. Der Faden könnte alt sein.“ Der einzelne Faden könnte tatsächlich älter sein. Aber das passende Stoffstück sitzt am Griff der versteckten Tatwaffe; der Riss am Schal wurde auf einem Foto um 19:50 noch nicht gesehen.",
+            "story": "Im ersten Gespräch erklärt Ben den losen Tischfaden: „Ich war schon nachmittags am Schreibtisch. Der Faden könnte alt sein.“ Das wäre für diesen Faden möglich. Inzwischen liegt aber eine weitere Spur vor: Das abgerissene Stück an der Unterseite der Tatwaffe passt exakt in seinen Schalriss. Ein vollständiges, scharfes Foto von 19:50 zeigt den Schal noch unbeschädigt.",
             "question": "Welche Bewertung berücksichtigt alle Angaben?",
             "options": [
               "Der alte Besuch erklärt jede neue Spur",
@@ -564,21 +564,21 @@ window.MAUS_CASES = [
           },
           {
             "title": "Vorher und nachher",
-            "story": "Das gesicherte Foto um 19:50 zeigt Bens Schal ohne Riss. Die dokumentierte Sicherstellung um 20:25 zeigt denselben Schal mit Riss. Dazwischen gibt es kein weiteres gesichertes Schalbild.",
+            "story": "Ein vollständiges, scharfes Foto von 19:50 zeigt Bens Schal ohne Riss. Ein Foto von der Sicherstellung um 21:05 zeigt denselben Schal mit Riss. Zwischen diesen beiden Zeitpunkten gibt es kein weiteres gesichertes Schalbild.",
             "question": "Was kann dieses Fotopaar zeitlich belegen?",
             "options": [
               "Der Riss entstand sicher exakt um 20:12",
-              "Der Riss entstand nach 19:50 und spätestens bis 20:25",
+              "Der Riss entstand nach 19:50 und spätestens bis 21:05",
               "Der Riss war bereits morgens vorhanden"
             ],
             "answer": 1,
             "hint": "Zwei Zustände begrenzen ein Zeitfenster, nennen aber keine genaue Minute.",
             "reveal": "Der Riss ist in diesem Fenster neu entstanden. Erst weitere Spuren verbinden ihn mit der Tat.",
-            "note": "Schalriss zeitlich eingegrenzt: nach 19:50 bis spätestens 20:25.",
+            "note": "Schalriss zeitlich eingegrenzt: nach 19:50 bis spätestens 21:05.",
             "kind": "Zeitfenster"
           },
           {
-            "title": "Eine Erklärung bleibt übrig",
+            "title": "Eine offene Frage",
             "story": "Ben erklärt den Tischfaden mit seinem Besuch am Nachmittag. Du hältst ihm noch keinen Fundort vor. Die Materialprüfung des frischen Stoffstücks an der Tatwaffe liegt bereits vor.",
             "question": "Welche Frage bleibt durch seine Erklärung unbeantwortet?",
             "options": [
@@ -663,7 +663,7 @@ window.MAUS_CASES = [
           },
           {
             "title": "Ein Detail zu viel",
-            "story": "Im aufgezeichneten Gespräch sagst du ruhig: „Der Briefbeschwerer lag draußen unter den roten Rosen.“ Ben lacht kurz. „Weiße Rosen. Im Flur, nicht draußen.“ Du hast ihm weder Farbe noch Ort genannt. Beide Details wurden seit dem Fund geheim gehalten; Ben war bei der Suche nicht anwesend und bekam keine Fundberichte. Dann schweigt er. Dein Bluff ist aufgegangen – aber du prüfst weiter.",
+            "story": "Im aufgezeichneten Gespräch am nächsten Morgen sagst du ruhig: „Der Briefbeschwerer lag draußen unter den roten Rosen.“ Ben lacht kurz. „Weiße Rosen. Im Flur. Sie hätten unter dem Wurzelballen suchen müssen.“ Du hast ihm absichtlich einen falschen Fundort genannt. Die richtigen Angaben – vor allem das Versteck unter dem Wurzelballen – wurden seit dem Fund geheim gehalten. Ben war bei der Suche nicht anwesend und bekam keine Fundberichte. Seine Korrektur ist ein neuer Ansatz. Du prüfst, woher er dieses Wissen haben könnte.",
             "question": "Wie ordnest du Bens Korrektur ein?",
             "options": [
               "Als überprüfbares Wissen über den geheim gehaltenen Fundort – ein weiterer belastender Hinweis",
@@ -671,9 +671,9 @@ window.MAUS_CASES = [
               "Als Beleg dafür, dass jede nervöse Person schuldig ist"
             ],
             "answer": 0,
-            "hint": "Er nennt zwei richtige Details, die ihm nach den vorliegenden Angaben nicht mitgeteilt wurden. Verbinde das mit den bisherigen Belegen.",
-            "reveal": "Du schiebst das Foto seines unbeschädigten Schals von 19:50 neben den Materialvergleich. „Woher wussten Sie es, Ben?“ Erst die Kombination aus Fundwissen, Tatwaffenspur, falschem Alibi und Motiv bringt ihn zum Geständnis: Er wollte die Betrugsbelege an sich nehmen, schlug Viktor im Streit, riss die Seiten heraus und versteckte den Briefbeschwerer unter den weißen Rosen im Flur. Die Polizei prüft seine Angaben an den gesicherten Spuren.",
-            "note": "Ben nennt geheim gehaltene Funddetails. Zusammen mit den unabhängigen Belegen führt die Falle zu einem überprüften Geständnis.",
+            "hint": "Er nennt richtige Funddetails, darunter das Versteck unter dem Wurzelballen. Diese wurden ihm nach den vorliegenden Angaben nicht mitgeteilt.",
+            "reveal": "Du schiebst das Foto des unbeschädigten Schals von 19:50 neben den Materialvergleich. „Woher wussten Sie von dem Versteck, Ben?“ Die Kombination aus Fundwissen, Tatwaffenspur, falscher Alibizeit und Motiv bringt ihn zum Geständnis: Er wollte die Betrugsbelege an sich nehmen, schlug Viktor im Streit, riss die Seiten heraus und vergrub den Briefbeschwerer im Pflanzkasten unter dem Wurzelballen der weißen Rosen. Dein Team überprüft die Einzelheiten seines Geständnisses anhand der gesicherten Spuren.",
+            "note": "Ben nennt geheim gehaltene Funddetails, einschließlich des Verstecks unter dem Wurzelballen. Sein anschließendes Geständnis wird mit den gesicherten Spuren abgeglichen.",
             "kind": "Psychologisch ermitteln"
           }
         ],
@@ -699,8 +699,8 @@ window.MAUS_CASES = [
         "detail": "Verantwortete die Verkäufe der Kunstobjekte."
       }
     ],
-    "ending": "Ben Falk tötete Viktor Winter, um die Aufdeckung seiner Doppelverkäufe zu verhindern. Seine angekündigte Begegnung, das falsche Alibi und der frische Schalriss an der Tatwaffe ergeben die Beweiskette. Deine gezielte falsche Angabe zum Fundort bringt Ben dazu, geheim gehaltene Details zu nennen. Sein anschließend überprüftes Geständnis bestätigt die Rekonstruktion. Clara und Jonas sind durch unabhängige Alibis entlastet. Du hast keine Gedanken gelesen, Maus – du hast genau hingesehen und deine Vermutungen geprüft.",
-    "epilogue": "Du schließt die Fallakte, Maus. Die Polizei übernimmt Ben und die gesicherten Beweise. Draußen hört der Regen auf. Dein Tee ist kalt geworden; du lächelst trotzdem. Für heute ist genug ermittelt. Zeit zum Einkuscheln. Bis zum nächsten Fall. ♡",
+    "ending": "Ben Falk tötete Viktor Winter, um die Aufdeckung seiner Doppelverkäufe zu verhindern. Seine Besuchsankündigung, das falsche Alibi und das an der Tatwaffe gefundene Stoffstück mit passender Risskante ergeben die Beweiskette. Deine gezielte falsche Angabe zum Fundort bringt Ben dazu, geheim gehaltene Details zu nennen. Sein anschließend überprüftes Geständnis bestätigt die Rekonstruktion. Clara und Jonas sind durch unabhängige Alibis entlastet. Du hast keine Gedanken gelesen, Maus – du hast genau hingesehen und deine Vermutungen geprüft.",
+    "epilogue": "Du schließt die Fallakte, Maus. Dein Team nimmt Ben fest und sichert die Beweise für die weiteren Ermittlungen. Draußen hört der Regen auf. Dein Tee ist kalt geworden; du lächelst trotzdem. Für heute ist genug ermittelt. Zeit zum Einkuscheln. Bis zum nächsten Fall. ♡",
     "cover": "assets/szene-1.webp"
   }
 ];
