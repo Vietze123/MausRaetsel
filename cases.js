@@ -898,7 +898,7 @@ window.MAUS_CASES = [
           },
           {
             "title": "Zwei Bilder, ein Zeitfenster",
-            "story": "Eine fest montierte Dokumentationskamera fotografiert die Kulisse regelmäßig. Das geprüfte Foto um 19:12 zeigt das Kontrollsiegel noch unbeschädigt. Um 19:18 ist es beschädigt. Die technische Untersuchung bestätigt: Die relevante Veränderung erforderte das Öffnen dieses versiegelten Bereichs. Der Materialbefund schließt ein früheres Öffnen mit anschließendem unbemerktem Wiederverschließen des Kontrollsiegels aus. Der Materialbefund schließt ein früheres Öffnen mit anschließendem unbemerktem Wiederverschließen des Kontrollsiegels aus.",
+            "story": "Eine fest montierte Dokumentationskamera fotografiert die Kulisse regelmäßig. Das geprüfte Foto um 19:12 zeigt das Kontrollsiegel noch unbeschädigt. Um 19:18 ist es beschädigt. Die technische Untersuchung bestätigt: Die relevante Veränderung erforderte das Öffnen dieses versiegelten Bereichs. Der Materialbefund schließt ein früheres Öffnen mit anschließendem unbemerktem Wiederverschließen des Kontrollsiegels aus.",
             "question": "Welches Zeitfenster folgt daraus für das Öffnen?",
             "options": [
               "Nach 19:12 und spätestens bis 19:18",
