@@ -1,12 +1,12 @@
 window.MAUS_CASES = [
   {
     "id": "rosenhain",
-    "version": 4,
+    "version": 5,
     "title": "Tod zwischen Rosen",
     "subtitle": "Du bist die Ermittlerin, Maus. Ein Mord. Drei Verdächtige. Und eine Lüge, die sich selbst verrät.",
     "tag": "Episode 01 · Tod zwischen Rosen",
     "duration": "Etwa 75–120 Minuten · abhängig von Rätseltempo und Hinweisen",
-    "description": "Ein elegantes Gartenfest endet mit einem Mord. Als Ermittlerin Maus liest du zwischen den Zeilen, prüfst Alibis und stellst dem Täter eine Falle. Anspruchsvolle Fassung: Quellen kombinieren, Zeiten abgleichen und Beweisketten prüfen.",
+    "description": "Ein elegantes Gartenfest endet mit einem Mord. Als Ermittlerin Maus liest du zwischen den Zeilen, prüfst Alibis und stellst dem Täter eine Falle. Anspruchsvolle Fassung: Quellen kombinieren, abgeglichene Zeitbelege prüfen und Beweisketten prüfen. Ohne Rechenaufgaben: Aussagen kombinieren und Zusammenhänge prüfen.",
     "chapters": [
       {
         "title": "Die letzte Einladung",
@@ -31,18 +31,18 @@ window.MAUS_CASES = [
           },
           {
             "title": "Drei Namen auf der Gästeliste",
-            "story": "Drei Menschen standen Viktor nahe: Clara Winter, seine Cousine und Floristin; Jonas Berg, sein Assistent; und Ben Falk, sein Geschäftspartner. Viktor hatte alle drei um ein Gespräch gebeten. Auf seinem Schreibtisch liegt ein verschlüsselter Zettel. Viktor liebte kleine Denkspiele und kennzeichnete seine Unterlagen gelegentlich mit verschlüsselten Merkhilfen. Ein Randvermerk präzisiert die Chiffre: Beim Schreiben wurden die vier Buchstaben abwechselnd um zwei und drei Stellen nach vorne verschoben; Z wird zyklisch zu A.",
-            "question": "Auf dem Zettel steht CNAF. Die Verschiebungen sind abwechselnd +2, +3, +2, +3 gegenüber dem Klartext. Welches Wort ist gemeint?",
-            "hint": "Nimm die Verschiebungen in umgekehrter Richtung zurück. Nach dem Alphabetanfang geht es rückwärts bei Z weiter.",
-            "reveal": "C→A, N→K, A→T, F→E ergeben AKTE. Bei A muss der Alphabetanfang rückwärts überschritten werden.",
-            "note": "Viktors Zettel verweist auf eine Akte; in der Inventarmappe fehlen Seiten.",
+            "story": "Auf Viktors Schreibtisch liegen vier Wortkarten: AKTE, BANK, BLUT und VASE. Sein Vermerk: „Nicht der Ort einer Zahlung. Nicht der verletzte Körper. Nicht das verkaufte Objekt.“ Die gesuchte Karte bezeichnet, was Viktor verborgen hatte.",
+            "question": "Welche Karte bleibt übrig?",
+            "hint": "Ordne die drei Ausschlüsse den vier Begriffen zu.",
+            "reveal": "BANK ist der Zahlungsort, BLUT gehört zum Körper, VASE zum Verkaufsobjekt. Übrig bleibt AKTE; sie verweist auf Viktors Unterlagen.",
+            "note": "BANK ist der Zahlungsort, BLUT gehört zum Körper, VASE zum Verkaufsobjekt. Übrig bleibt AKTE; sie verweist auf Viktors Unterlagen.",
             "kind": "Entschlüsseln",
             "type": "input",
             "accepted": [
               "AKTE"
             ],
             "normalize": "text",
-            "label": "Deine Antwort"
+            "label": "Deine Schlussfolgerung"
           },
           {
             "title": "Die umgekehrte Einladung",
@@ -61,18 +61,25 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die verschwundenen Minuten",
-            "story": "Die Empfangskraft hat die tatsächlichen Spielzeiten der Musik anhand einer durchgehenden Festaufnahme überprüft: Klavierstück 19:58–20:04, Pause 20:04–20:06, Streichquartett 20:06–20:14, Pause 20:14–20:17. Eine Zeugin erinnert sich: „Als ich die Arbeitszimmertür ins Schloss fallen hörte, spielte das Quartett.“ Die Zugehörigkeit zur Tat ist noch eine Hypothese. Nutze für diese Rechnung das Tatzeitfenster 20:10–20:15.",
-            "question": "Wenn das Türgeräusch zur Tat gehört: Welcher gemeinsame Zeitraum ergibt sich aus der Musikzeit und dem Tatzeitfenster? Antworte im Format HH:MM–HH:MM.",
-            "hint": "Notiere beide Untergrenzen und beide Obergrenzen. Nur der Bereich, den beide Quellen zulassen, bleibt übrig.",
-            "reveal": "Quartett 20:06–20:14 ∩ Tatzeit 20:10–20:15 ergibt 20:10–20:14; die Hypothese ist damit noch nicht bewiesen.",
-            "note": "Türgeräusch während des Quartetts: 20:06–20:14. Falls es zur Tat gehört, bleibt als gemeinsamer Zeitraum 20:10–20:14; die Person ist unbekannt.",
+            "story": "Die geprüfte Musikfolge lautet: Klavier, erste Pause, Quartett, zweite Pause. Die Tat liegt laut unabhängiger Aufnahme zwischen dem Beginn des Quartetts und dem Beginn der zweiten Pause. Die Zeugin hörte die Arbeitszimmertür während des Quartetts.",
+            "question": "Welche Schlussfolgerungen passen gleichzeitig zu beiden Quellen?",
+            "hint": "Ein zeitlich passender Vorgang ist noch kein eindeutig identifizierter Tatvorgang.",
+            "reveal": "Quartett und Tatfenster passen zusammen. Person und genaue Handlung bleiben offen; eine Wahrnehmung in der ersten Pause widerspräche der beschriebenen Erinnerung.",
+            "note": "Quartett und Tatfenster passen zusammen. Person und genaue Handlung bleiben offen; eine Wahrnehmung in der ersten Pause widerspräche der beschriebenen Erinnerung.",
             "kind": "Zeitfenster",
-            "type": "input",
-            "accepted": [
-              "20:10-20:14"
+            "type": "multi",
+            "items": [
+              "Das Türgeräusch kann zur Tat gehören.",
+              "Die Musik identifiziert die Person an der Tür.",
+              "Die Zeugenaussage legt keine genaue Tatminute fest.",
+              "Die Erinnerung allein beweist, dass das Geräusch der tödliche Schlag war.",
+              "Ein Türgeräusch während der ersten Pause würde dieser Erinnerung widersprechen."
             ],
-            "normalize": "interval",
-            "label": "Deine Antwort"
+            "correct": [
+              0,
+              2,
+              4
+            ]
           },
           {
             "title": "Was gehört zuerst in die Akte?",
@@ -153,35 +160,40 @@ window.MAUS_CASES = [
           },
           {
             "title": "Der Weg durch das Haus",
-            "story": "Der gesicherte Grundriss zeigt: Empfang ↔ Flur; Flur ↔ Arbeitszimmer; Flur ↔ Wintergarten; Wintergarten ↔ Küche. Weitere Türen gibt es nicht. Die geprüften Mindestzeiten gelten in beiden Richtungen: Empfang–Flur 7,5 Sekunden; Flur–Arbeitszimmer 37,5 Sekunden; Flur–Wintergarten 22,5 Sekunden; Wintergarten–Küche 30 Sekunden.",
-            "question": "Wie viele Sekunden dauert der kürzeste Hin- und Rückweg vom Empfang zur Küche mindestens? Keine Räume dürfen übersprungen werden.",
-            "hint": "Addiere die Zeiten aller Türverbindungen auf dem Hinweg. Der Rückweg benutzt dieselben Verbindungen.",
-            "reveal": "Empfang–Flur–Wintergarten–Küche dauert 7,5+22,5+30=60 Sekunden; Rückweg ebenfalls 60. Insgesamt 120 Sekunden. Arbeitszimmer–Küche dauert auf diesem Plan 37,5+22,5+30=90 Sekunden.",
-            "note": "Türzeiten ergeben Arbeitszimmer–Küche 90 Sekunden, Empfang–Küche 60 Sekunden. Kontrollrunde zur Küche und zurück: 120 Sekunden.",
+            "story": "Der Grundriss verbindet Empfang mit Flur, Flur mit Arbeitszimmer und Wintergarten, Wintergarten mit Küche. Weitere Türen gibt es nicht. Du sollst die Küche erreichen und zum Empfang zurückkehren, ohne das Arbeitszimmer zu betreten.",
+            "question": "Welche Abschnitte muss jeder mögliche Hin- und Rückweg enthalten?",
+            "hint": "Verfolge die offenen Verbindungen. Der Rückweg benutzt dieselben Türen, ohne einen neuen Durchgang zu schaffen.",
+            "reveal": "Jeder mögliche Weg führt über Flur und Wintergarten. Das Arbeitszimmer liegt als Sackgasse daneben und ist kein Durchgang zur Küche.",
+            "note": "Jeder mögliche Weg führt über Flur und Wintergarten. Das Arbeitszimmer liegt als Sackgasse daneben und ist kein Durchgang zur Küche.",
             "kind": "Weg rekonstruieren",
-            "type": "input",
-            "accepted": [
-              "120"
+            "type": "multi",
+            "items": [
+              "Empfang–Flur",
+              "Flur–Wintergarten",
+              "Wintergarten–Küche",
+              "Flur–Arbeitszimmer",
+              "Arbeitszimmer–Küche"
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              1,
+              2
+            ]
           },
           {
             "title": "Der zerrissene Seitenrand",
-            "story": "Auf den verbliebenen Inventarblättern steht die fortlaufende Nummerierung 11, 12, 15, 16. Der Abgleich mit einer archivierten Inhaltsübersicht bestätigt: Dazwischen fehlen genau zwei Seiten, keine weiteren. Die noch vorhandenen Blätter haben korrekte Nummern; die Prüfbuchstaben stehen auf einer separat gesicherten Inhaltsübersicht.",
-            "question": "Die Blätter 11–16 tragen Prüfbuchstaben. Teile die Blattnummer durch 3: Rest 0 bedeutet C, Rest 1 bedeutet A und Rest 2 bedeutet B. Gib die beiden fehlenden Blattnummern mit Prüfbuchstaben aufsteigend ein, z. B. 5B 6C.",
-            "hint": "Bestimme zuerst die Lücke in der fortlaufenden Nummerierung. Berechne anschließend für beide fehlenden Nummern den Rest bei der Division durch 3.",
-            "reveal": "Es fehlen 13 und 14. 13 mod 3=1→A; 14 mod 3=2→B. Ergebnis 13A 14B.",
-            "note": "Inventarseiten 13 und 14 fehlen.",
+            "story": "Im Inventarordner folgen die Kapitel Erwerb, Prüfung, Freigabe und Übergabe. Jedes Kapitel hat genau ein Deckblatt. Erwerb, Prüfung und Übergabe sind vorhanden. Ein abgerissener Registerreiter trägt „Unterschrift des Verkaufenden“; die Inhaltsübersicht ordnet ihn ausschließlich der Freigabe zu.",
+            "question": "Welches Kapitel fehlt?",
+            "hint": "Prüfe Deckblätter und Registerreiter gemeinsam.",
+            "reveal": "Das Kapitel Freigabe fehlt. Der Registerreiter bestätigt seine Funktion; die übrigen Deckblätter sind vorhanden.",
+            "note": "Das Kapitel Freigabe fehlt. Der Registerreiter bestätigt seine Funktion; die übrigen Deckblätter sind vorhanden.",
             "kind": "Dokumentvergleich",
             "type": "input",
             "accepted": [
-              "13A 14B",
-              "13A,14B",
-              "13A, 14B"
+              "Freigabe"
             ],
             "normalize": "text",
-            "label": "Deine Antwort"
+            "label": "Deine Schlussfolgerung"
           },
           {
             "title": "Die scheinbar verräterische Tasse",
@@ -215,33 +227,48 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Claras Blumen",
-            "story": "Clara umfasst ihre Teetasse so fest, dass ihre Finger weiß werden. „Ich war draußen bei den Blumenlieferanten. Wir haben die Lieferung für morgen besprochen.“ Nervosität ist kein Schuldbeweis. Du prüfst ihre Aussage, Maus: Zwei Lieferanten haben von 20:07 bis 20:17 ohne Unterbrechung mit Clara am Gartentor gesprochen. Sie konnten sie die ganze Zeit sehen. Rechne die Randabschnitte vor 20:10 und nach 20:15 getrennt.",
-            "question": "Wie viele Minuten des bestätigten Gesprächs liegen außerhalb des Tatzeitfensters insgesamt?",
-            "hint": "Berechne getrennt den Abschnitt vor dem Tatfenster und den Abschnitt nach seinem Ende.",
-            "reveal": "20:07–20:10 sind drei Minuten, 20:15–20:17 zwei. Insgesamt fünf Minuten außerhalb; das Alibi deckt außerdem die ganze Tatzeit.",
-            "note": "Clara: lückenlos bestätigtes Alibi von 20:07 bis 20:17.",
+            "story": "Claras Gespräch am Gartentor ist lückenlos bestätigt. Es beginnt vor der gesicherten Tat und endet danach. Einer der Lieferanten beobachtete ihren Standort durchgehend; der andere bestätigt den Gesprächsinhalt.",
+            "question": "Welche Angaben tragen das Ortsalibi, welche haben eine andere Aufgabe?",
+            "hint": "Verwechsle eine unabhängige Bestätigung des Inhalts nicht mit einer lückenlosen Standortbeobachtung.",
+            "reveal": "Sichtbeleg und vollständige zeitliche Abdeckung entlasten Clara für die Tatphase. Der zweite Bericht bestätigt den Gesprächsinhalt.",
+            "note": "Sichtbeleg und vollständige zeitliche Abdeckung entlasten Clara für die Tatphase. Der zweite Bericht bestätigt den Gesprächsinhalt.",
             "kind": "Ermitteln",
-            "type": "input",
-            "accepted": [
-              "5"
+            "type": "match",
+            "left": [
+              "Durchgehende Sicht auf Clara am Tor",
+              "Bestätigung des Gesprächsinhalts",
+              "Gespräch umfasst die ganze Tatphase"
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "right": [
+              "Belegt den Standort ohne unbeobachtete Unterbrechung.",
+              "Stützt den Inhalt, ersetzt allein kein durchgehendes Ortsalibi.",
+              "Verbindet den Standortbeleg mit dem relevanten Zeitraum."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
           },
           {
             "title": "Jonas und die Teetassen",
-            "story": "Jonas half der Gastgeberin von 20:11 bis 20:16 ununterbrochen in der Küche. Das ist bestätigt. Er sagt deshalb: „Ich habe ein Alibi für die ganze Tatzeit.“ Doch du schaust noch einmal auf deine Notizen. Für diese hypothetische Wegrechnung wird eine Ankunft exakt um 20:11:00 angenommen. Die später entdeckte Aufnahme ist noch nicht Teil dieser Rechnung.",
-            "question": "Jonas benötigt vom Arbeitszimmer zur Küche mindestens 90 Sekunden. Bis 20:11 ist noch keine Küchenbeobachtung gesichert. Welche späteste Abgangszeit aus dem Arbeitszimmer wäre allein mit dieser Ankunft vereinbar? Antworte als HH:MM:SS.",
-            "hint": "Ziehe die Mindestwegzeit von der angenommenen Ankunftszeit ab. Rechne dabei über die Minutengrenze hinweg.",
-            "reveal": "20:11:00 minus 90 Sekunden ergibt 20:09:30. Das ist eine Weggrenze, noch kein Nachweis eines tatsächlichen Besuchs.",
-            "note": "Jonas zunächst nur von 20:11 bis 20:16 bestätigt; eine frühe Lücke bleibt.",
+            "story": "Jonas ist zunächst nur ab dem Servieren des Tees in der Küche bestätigt. Die Tatphase begann schon zuvor. Der Wegabgleich wird von deinem Team erledigt; noch liegt kein durchgehender Ortsbeleg für die frühere Phase vor.",
+            "question": "Welche Aussage darf noch nicht als gesichert in die Akte?",
+            "hint": "Gesucht sind die noch nicht belegten Behauptungen, nicht die bestätigten Angaben.",
+            "reveal": "Die frühere Phase bleibt zunächst offen. Der spätere Küchenbeleg darf nicht rückwirkend zu einem vollständigen Alibi erweitert werden.",
+            "note": "Die frühere Phase bleibt zunächst offen. Der spätere Küchenbeleg darf nicht rückwirkend zu einem vollständigen Alibi erweitert werden.",
             "kind": "Ermitteln",
-            "type": "input",
-            "accepted": [
-              "20:09:30"
+            "type": "multi",
+            "items": [
+              "Jonas war beim Servieren in der Küche.",
+              "Jonas war auch während der früheren Phase ununterbrochen dort.",
+              "Ein früherer Aufenthalt im Arbeitszimmer muss gesondert geprüft werden.",
+              "Der spätere Küchenbeleg schließt rückwirkend jede frühe Abwesenheit aus."
             ],
-            "normalize": "seconds",
-            "label": "Uhrzeit als HH:MM:SS"
+            "correct": [
+              1,
+              3
+            ]
           },
           {
             "title": "Zwei Zeugen, dieselbe Quelle",
@@ -329,18 +356,25 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Das Foto aus der Küche",
-            "story": "Das Originalfoto zeigt Jonas in der Küche. Laut verifizierten Metadaten wurde es um 20:10:30 aufgenommen. Vom Arbeitszimmer zur Küche braucht man auf dem einzigen Weg mindestens 90 Sekunden. Eine gesicherte Audiodatei aus Viktors Diktiergerät belegt: Um 20:10:00 spricht Viktor noch. Die abgeglichenen Aufzeichnungen und Zeugenaussagen legen den tödlichen Schlag nach diesem Zeitpunkt. Die Gastgeberin bestätigt außerdem, Jonas seit dem Foto um 20:10:30 bis 20:16 ununterbrochen gesehen zu haben. Setze für die Rechnung 20:10:00 als frühestmöglichen Beginn an. Ein späterer Beginn lässt noch weniger Zeit bis zum Foto.",
-            "question": "Um wie viele Sekunden ist die maximal verfügbare Zeit ab 20:10:00 bis zum Foto kürzer als die Mindestwegzeit?",
-            "hint": "Vergleiche die Zeitspanne zwischen der lebenden Stimme und dem Foto mit der Mindestwegzeit.",
-            "reveal": "Bis 20:10:30 sind höchstens 30 Sekunden verfügbar, der Weg braucht mindestens 90. Es fehlen mindestens 60 Sekunden. Jonas’ ununterbrochene Küchenanwesenheit danach ergänzt die Entlastung.",
-            "note": "Jonas entlastet: Foto 20:10:30, Mindestwegzeit 90 Sekunden, danach durchgehendes Küchenalibi.",
+            "story": "Ein authentisches Foto zeigt Jonas um 20:10:30 in der Küche. Dein Team bestätigt unabhängig: Der tödliche Schlag geschah erst nach Viktors letzter lebender Sprachaufnahme um 20:10:00. Zwischen dieser Aufnahme und dem Foto konnte niemand den einzigen Weg vom Arbeitszimmer zur Küche rechtzeitig zurücklegen. Seit dem Foto wurde Jonas dort ununterbrochen gesehen.",
+            "question": "Welche gemeinsame Kette trägt Jonas’ Entlastung?",
+            "hint": "Eine Quelle liefert den Tatbeginn, eine die Weggrenze, eine den späteren Standort.",
+            "reveal": "Zusammen schließen Sprachaufnahme, geprüfte Weggrenze und fortgesetztes Küchenalibi Jonas für den tödlichen Schlag aus.",
+            "note": "Zusammen schließen Sprachaufnahme, geprüfte Weggrenze und fortgesetztes Küchenalibi Jonas für den tödlichen Schlag aus.",
             "kind": "Ermitteln",
-            "type": "input",
-            "accepted": [
-              "60"
+            "type": "multi",
+            "items": [
+              "Viktor lebte noch vor dem Küchenfoto.",
+              "Die geprüfte Weggrenze schließt einen rechtzeitigen Wechsel nach einem späteren Schlag aus.",
+              "Jonas bleibt danach durchgehend in der Küche.",
+              "Ein einzelnes Foto beweist immer den gesamten Abend.",
+              "Die Stimme beweist allein, wo Jonas war."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              1,
+              2
+            ]
           },
           {
             "title": "Bens Empfang",
@@ -365,33 +399,45 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die Uhr auf dem Foto",
-            "story": "Ein Kontrollfoto zeigt das Zifferblatt der Küchenwanduhr auf 20:07, während die kalibrierte Referenzuhr exakt 20:10 zeigt. Die Küchenwanduhr läuft konstant drei Minuten nach. Ein anderes Foto zeigt sie auf 20:08.",
-            "question": "Auf einem Foto zeigt die Küchenwanduhr 20:08. Der Weg bis zum Empfang dauert weitere 60 Sekunden. Welche früheste Referenzzeit ergibt sich für eine Ankunft dort?",
-            "hint": "Bestimme zuerst, ob die Küchenwanduhr vor- oder nachgeht. Korrigiere den Fotowert und addiere dann die Wegzeit.",
-            "reveal": "Die Küchenwanduhr geht drei Minuten nach: 20:08 entspricht 20:11. Plus 60 Sekunden ergibt 20:12.",
-            "note": "Küchenwanduhr drei Minuten hinter der Referenz: 20:08 entspricht 20:11. Früheste Ankunft am Empfang nach 60 Sekunden: 20:12.",
+            "story": "Auf demselben Kontrollfoto stehen Küchenwanduhr und kalibrierte Referenzuhr. Die Abgleichliste deines Teams ordnet die Küchenanzeige „20:08“ bereits der Referenz „20:11“ zu. Die originale Datei ist gesichert. Ben legt nur den ausgeschnittenen Küchenwert vor und behauptet, beide Uhren hätten denselben Wert gezeigt.",
+            "question": "Welche Quellenkombination widerlegt seine konkrete Behauptung?",
+            "hint": "Du musst die Uhrwerte nicht umrechnen. Prüfe, welche Quellen ihren Zusammenhang belegen.",
+            "reveal": "Vollständiges Foto und Abgleichliste belegen unterschiedliche Anzeigen. Ein Ausschnitt derselben Uhr liefert keinen unabhängigen Vergleich.",
+            "note": "Vollständiges Foto und Abgleichliste belegen unterschiedliche Anzeigen. Ein Ausschnitt derselben Uhr liefert keinen unabhängigen Vergleich.",
             "kind": "Zeit korrigieren",
-            "type": "input",
-            "accepted": [
-              "20:12"
+            "type": "multi",
+            "items": [
+              "Vollständiges Kontrollfoto mit beiden Anzeigen.",
+              "Geprüfte Abgleichliste derselben beiden Uhren.",
+              "Ein weiterer Ausschnitt derselben Küchenanzeige.",
+              "Bens Erinnerung an eine einzelne Uhr."
             ],
-            "normalize": "time",
-            "label": "Deine Antwort"
+            "correct": [
+              0,
+              1
+            ]
           },
           {
             "title": "Passt der Rundweg?",
-            "story": "Für einen kontrollierten Rundweg gelten Mindestzeiten: Empfang zum Arbeitszimmer 45 Sekunden, Arbeitszimmer zur Küche 90 Sekunden, Küche zum Empfang 60 Sekunden. Ben behauptet, er habe diesen ganzen Rundweg einschließlich eines Gesprächs in genau zwei Minuten zurückgelegt. Für die Rechnung dauert das Gespräch genau 35 Sekunden und findet ohne gleichzeitiges Gehen statt.",
-            "question": "Ben behauptet den Rundweg einschließlich eines 35-Sekunden-Gesprächs in zwei Minuten. Um wie viele Sekunden ist diese Behauptung mindestens zu kurz?",
-            "hint": "Addiere die drei Mindestwegzeiten und die Gesprächsdauer. Vergleiche das Ergebnis in Sekunden mit Bens Behauptung.",
-            "reveal": "45+90+60+35=230 Sekunden; behauptet sind 120. Es fehlen 110 Sekunden.",
-            "note": "Bens behaupteter Zweiminuten-Rundweg ist mit den Mindestwegzeiten unvereinbar.",
+            "story": "Ben schildert einen Rundweg: erst Empfang, dann Arbeitszimmer, dann Küche, danach wieder Empfang. Die Empfangskraft sah ihn beim ersten Aufenthalt; die Gastgeberin bestätigt einen Küchenaufenthalt. Beide Berichte enthalten keine durchgehende Beobachtung des Wegs. Ben nennt zusätzlich ein Gespräch im Arbeitszimmer.",
+            "question": "Welche Behauptungen bleiben durch diese Randbeobachtungen offen?",
+            "hint": "Ein beobachteter Anfang und ein beobachtetes Ende sind keine vollständige Wegaufzeichnung.",
+            "reveal": "Die Randorte sind bestätigt; Gespräch, Zwischenstationen und durchgehender Weg sind es nicht.",
+            "note": "Die Randorte sind bestätigt; Gespräch, Zwischenstationen und durchgehender Weg sind es nicht.",
             "kind": "Wegzeiten",
-            "type": "input",
-            "accepted": [
-              "110"
+            "type": "multi",
+            "items": [
+              "Das behauptete Gespräch im Arbeitszimmer fand tatsächlich statt.",
+              "Die Empfangskraft sah Ben am Empfang.",
+              "Der gesamte Weg wurde ohne Unterbrechung beobachtet.",
+              "Die Gastgeberin sah Ben in der Küche.",
+              "Welche Zwischenstationen Ben tatsächlich aufsuchte."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              2,
+              4
+            ]
           },
           {
             "title": "Der Ausschnitt im Besucherbuch",
@@ -424,19 +470,19 @@ window.MAUS_CASES = [
         "icon": "🗝️",
         "steps": [
           {
-            "title": "Viktors Zahlenschloss",
-            "story": "Die Inventarmappe verweist auf den Archivkasten in Viktors Schrank. Für dessen zusätzlichen vierstelligen Verschluss hat Viktor eine Eselsbrücke hinterlassen. Alle vier Ziffern müssen die angegebenen Bedingungen erfüllen.",
-            "question": "Ein zweiter Archivverschluss verwendet vier Ziffern a,b,c,d von 0 bis 9: a=2b, c=a+3, d=b−1 und a+b+c+d=14. Welcher Code ergibt sich?",
-            "hint": "Übersetze jede Bedingung in eine Gleichung oder eine Fragmentfolge. Prüfe am Ende sämtliche Bedingungen an allen Stellen.",
-            "reveal": "2b+b+(2b+3)+(b−1)=14 → 6b+2=14 → b=2. a=4,c=7,d=1: 4271.",
-            "note": "Zusätzlicher Archivverschluss mit Code 4271 geöffnet; Kopien der fehlenden Blätter gesichert.",
+            "title": "Viktors Symbolverschluss",
+            "story": "Am Archivkasten sind die Symbolkarten ROSE, SCHLÜSSEL, FEDER und SPIEGEL befestigt. Der Merkzettel nennt drei Regeln: Die Feder liegt unmittelbar rechts vom Schlüssel. Die Rose steht links vom Schlüssel. Der Spiegel steht ganz rechts. Jede Karte kommt genau einmal vor.",
+            "question": "Welches Symbol steht ganz links?",
+            "hint": "Setze zuerst das feste Nachbarpaar ein. Prüfe dann, wo Rose und Spiegel noch Platz haben.",
+            "reveal": "Die einzige Reihenfolge ist ROSE–SCHLÜSSEL–FEDER–SPIEGEL. Der Zusatzverschluss öffnet sich mit der linken Symbolkarte; die Belegkopien werden gesichert.",
+            "note": "Die einzige Reihenfolge ist ROSE–SCHLÜSSEL–FEDER–SPIEGEL. Der Zusatzverschluss öffnet sich mit der linken Symbolkarte; die Belegkopien werden gesichert.",
             "kind": "Kombinieren",
             "type": "input",
             "accepted": [
-              "4271"
+              "ROSE"
             ],
-            "normalize": "code",
-            "label": "Deine Antwort"
+            "normalize": "text",
+            "label": "Deine Schlussfolgerung"
           },
           {
             "title": "Ein doppelter Verkauf",
@@ -462,33 +508,40 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die zweite Verschlüsselung",
-            "story": "Im geöffneten Archivkasten findest du ein Etikett: „A=1, B=2 … Z=26“. Daneben stehen 13–17–18–11–7. Ein zweiter Randvermerk lautet: „Erst in Buchstaben umwandeln, dann jeden Buchstaben um zwei Stellen zurücksetzen.“ Die Merkhilfe verweist auf einen Unterlagentyp.",
-            "question": "Wende erst A=1…Z=26 auf 13–17–18–11–7 an, dann verschiebe jeden Buchstaben zwei Stellen rückwärts. Welches Wort bleibt?",
-            "hint": "Wandle zuerst jede Zahl in einen Buchstaben um. Gehe danach bei jedem entstandenen Buchstaben zwei Stellen im Alphabet zurück.",
-            "reveal": "13–17–18–11–7 ergibt MQRKG. Zwei Stellen zurück ergeben KOPIE.",
-            "note": "Zahlenfolge 13–17–18–11–7 ergibt zunächst MQRKG. Zwei Alphabetstellen zurück ergeben KOPIE.",
+            "story": "Im Kasten liegt eine Merkhilfe zu einem Unterlagentyp: „Er wurde erst nach dem vollständig fertiggestellten Original angefertigt und bewahrt dessen Wortlaut samt Unterschrift. Sein eigener Fund beweist nicht, dass das Original noch vorhanden ist.“ Zur Auswahl stehen Entwurf, Kopie, Quittung und Inhaltsverzeichnis.",
+            "question": "Welcher Begriff passt zu beiden Bedingungen?",
+            "hint": "Achte sowohl auf die mögliche Wortgleichheit als auch auf die getrennte Existenz des Originals.",
+            "reveal": "Eine KOPIE kann denselben Wortlaut bewahren, auch wenn das Original fehlt. Ein Entwurf oder Inhaltsverzeichnis erfüllt diese beiden Bedingungen nicht notwendig.",
+            "note": "Eine KOPIE kann denselben Wortlaut bewahren, auch wenn das Original fehlt. Ein Entwurf oder Inhaltsverzeichnis erfüllt diese beiden Bedingungen nicht notwendig.",
             "kind": "Entschlüsseln",
             "type": "input",
             "accepted": [
               "KOPIE"
             ],
             "normalize": "text",
-            "label": "Deine Antwort"
+            "label": "Deine Schlussfolgerung"
           },
           {
-            "title": "Die Rechnung geht nicht auf",
-            "story": "Die beiden authentischen Rechnungen für R-17 nennen 4.800 Euro und 5.200 Euro. Der Kontoauszug bestätigt beide Zahlungseingänge. In einer separat geführten Erlösübersicht sind für R-17 jedoch insgesamt nur 4.800 Euro eingetragen. Ein weiterer Kontobeleg bestätigt eine Rückzahlung von 600 Euro an Herrn Lind. Für die Nettobetrachtung wird dieser Betrag von den Zahlungseingängen abgezogen.",
-            "question": "Um welchen Betrag liegt die Erlösübersicht unter den bestätigten Nettoerlösen nach Abzug der Rückzahlung? Gib den Betrag in Euro ein.",
-            "hint": "Addiere beide Zahlungseingänge, ziehe die belegte Rückzahlung ab und vergleiche erst danach mit der Erlösübersicht.",
-            "reveal": "4.800+5.200−600=9.400 Euro netto. Gegenüber 4.800 in der Übersicht fehlen 4.600. Die Bruttodifferenz betrug weiterhin 5.200.",
-            "note": "R-17: Bruttodifferenz 5.200 Euro; nach belegter Rückzahlung von 600 Euro beträgt die Nettodifferenz 4.600 Euro.",
+            "title": "Der Verkauf hinter der Übersicht",
+            "story": "Die Vase R-17 ist ein einziges Original. Zwei authentische Verkaufsrechnungen nennen unterschiedliche Käufer und jeweils eine bestätigte Zahlung. Ein separater Beleg zeigt eine teilweise Rückzahlung an einen dieser Käufer. Die Erlösübersicht enthält dagegen nur den anderen Verkauf.",
+            "question": "Welche Aussagen bleiben auch ohne Berechnung der Geldbeträge gültig?",
+            "hint": "Unterscheide Vertrag, Zahlung, Rückzahlung und Übersicht. Diese Quellen erfüllen verschiedene Aufgaben.",
+            "reveal": "Der zweite Verkauf und sein Zahlungsweg bleiben trotz Teilrückzahlung zu prüfen. Die einseitige Erlösübersicht ersetzt diese Prüfung nicht.",
+            "note": "Der zweite Verkauf und sein Zahlungsweg bleiben trotz Teilrückzahlung zu prüfen. Die einseitige Erlösübersicht ersetzt diese Prüfung nicht.",
             "kind": "Buchungen prüfen",
-            "type": "input",
-            "accepted": [
-              "4600"
+            "type": "multi",
+            "items": [
+              "Die teilweise Rückzahlung beseitigt den zweiten Vertragsvorgang nicht automatisch.",
+              "Die Erlösübersicht bildet die beiden bestätigten Verkäufe nicht vollständig ab.",
+              "Zwei Rechnungen beweisen ohne Inventarnachweis zwei verschiedene Originale.",
+              "Für beide Käufer müssen die Vertrags- und Zahlungswege geprüft werden.",
+              "Ein Rückzahlungsbeleg ist ein Nachweis, dass niemals eine zweite Zahlung einging."
             ],
-            "normalize": "money",
-            "label": "Deine Antwort"
+            "correct": [
+              0,
+              1,
+              3
+            ]
           },
           {
             "title": "Nicht jede doppelte Zeile ist Betrug",
@@ -526,18 +579,25 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Eine Frist, keine Einladung",
-            "story": "Viktors Handy enthält eine Nachricht an Ben von 19:55: „Ich habe die Doppelverkäufe belegt. Gib mir bis 20:15 eine Erklärung. Morgen übergebe ich alles der Polizei.“ Ben antwortete um 19:57: „Ich komme ins Arbeitszimmer.“ Beide Nachrichten sind authentisch. Nutze Bens Antwort, nicht Viktors erste Nachricht, als Ausgangspunkt.",
-            "question": "Wie viele Minuten liegen zwischen Bens authentischer Antwort und dem Beginn des gesicherten Tatzeitfensters?",
-            "hint": "Beginne bei Bens Antwort und rechne bis zum Anfang des Tatzeitfensters, nicht bis zur gesetzten Frist.",
-            "reveal": "19:57 bis 20:10 sind 13 Minuten. Die Antwort belegt die angekündigte Begegnung, nicht deren genaue Durchführung.",
-            "note": "Ben kündigte um 19:57 einen Besuch an; Viktor drohte wegen der Doppelverkäufe mit der Polizei.",
+            "story": "Viktor kündigt Ben in einer authentischen Nachricht die Übergabe der Doppelverkaufsbelege an die Polizei an. Ben antwortet, er werde ins Arbeitszimmer kommen. Die Antwort stammt aus demselben gesicherten Verlauf.",
+            "question": "Welche Aussagen stützt der Verlauf unmittelbar?",
+            "hint": "Eine Ankündigung ist zunächst ein Plan, kein beobachteter Besuch.",
+            "reveal": "Konflikt und Besuchsankündigung sind dokumentiert. Die tatsächliche Begegnung und Tatzeit brauchen eigene Belege.",
+            "note": "Konflikt und Besuchsankündigung sind dokumentiert. Die tatsächliche Begegnung und Tatzeit brauchen eigene Belege.",
             "kind": "Ermitteln",
-            "type": "input",
-            "accepted": [
-              "13"
+            "type": "multi",
+            "items": [
+              "Ben reagierte auf die Konfliktnachricht.",
+              "Ben kündigte eine Begegnung an.",
+              "Ben führte den angekündigten Besuch damit schon nachweislich durch.",
+              "Die konkrete Tatminute folgt aus dem Wortlaut.",
+              "Ein möglicher Konflikthintergrund ist dokumentiert."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              1,
+              4
+            ]
           },
           {
             "title": "Wer wollte die Akte verschwinden lassen?",
@@ -706,18 +766,25 @@ window.MAUS_CASES = [
           },
           {
             "title": "Vorher und nachher",
-            "story": "Ein vollständiges, scharfes Foto von 19:50 zeigt Bens Schal ohne Riss. Ein Foto von der Sicherstellung um 21:05 zeigt denselben Schal mit Riss. Zwischen diesen beiden Zeitpunkten gibt es kein weiteres gesichertes Schalbild. Für die Dauerrechnung werden die Grenzen 19:50 bis 21:05 und 20:10 bis 20:15 verwendet; einzelne Grenzpunkte haben keine Dauer.",
-            "question": "Wie viele Minuten des durch das Fotopaar möglichen Risszeitraums liegen außerhalb der gesicherten Tatzeit?",
-            "hint": "Bestimme die gesamte Zeitspanne zwischen den beiden Fotos. Ziehe die darin liegende Dauer des Tatzeitfensters ab.",
-            "reveal": "Das Fotofenster dauert 75 Minuten, die darin liegende Tatzeit fünf. 70 Minuten bleiben außerhalb. Das Fotopaar allein datiert den Riss nicht auf die Tatminute.",
-            "note": "Schalriss zeitlich eingegrenzt: nach 19:50 bis spätestens 21:05.",
+            "story": "Auf einem gesicherten frühen Foto ist Bens Schal unbeschädigt. Ein späteres Foto der Sicherstellung zeigt denselben Schal mit Riss. Dazwischen liegt die Tat, aber es gibt kein weiteres gesichertes Schalbild.",
+            "question": "Welche zeitlichen Aussagen sind durch das Fotopaar allein gerechtfertigt?",
+            "hint": "Die Fotos bilden eine Grenze, keine Aufnahme der Beschädigung.",
+            "reveal": "Das Fotopaar grenzt die Veränderung ein. Erst der passende Stoff an der Tatwaffe verbindet den Riss zusätzlich mit dem Tatgegenstand.",
+            "note": "Das Fotopaar grenzt die Veränderung ein. Erst der passende Stoff an der Tatwaffe verbindet den Riss zusätzlich mit dem Tatgegenstand.",
             "kind": "Zeitfenster",
-            "type": "input",
-            "accepted": [
-              "70"
+            "type": "multi",
+            "items": [
+              "Der Riss entstand erst nach dem frühen Foto.",
+              "Er war spätestens bei der späteren Sicherstellung vorhanden.",
+              "Er entstand zwingend während der Tat.",
+              "Eine spätere Beschädigung nach der Tat ist durch dieses Paar allein ausgeschlossen.",
+              "Die Zuordnung zur Tat braucht zusätzlich den Materialanschluss an der Tatwaffe."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              1,
+              4
+            ]
           },
           {
             "title": "Eine offene Frage",
@@ -899,12 +966,12 @@ window.MAUS_CASES = [
   },
   {
     "id": "letzte-vorstellung",
-    "version": 3,
+    "version": 4,
     "title": "Die letzte Vorstellung",
     "subtitle": "Ein vorbereiteter Todesfall. Deine Entscheidungen verändern die Ermittlung – und ihr Ende.",
     "tag": "Episode 02 · Theater Morgenstern",
     "duration": "Etwa 75–120 Minuten · abhängig von Rätseltempo und Hinweisen",
-    "description": "Maus untersucht eine tödliche Premiere. Sichere Spuren, führe Gespräche und wähle deinen Abschlussbericht. Verschiedene Ermittlungswege führen zu vier möglichen Enden. Anspruchsvolle Fassung: Quellen kombinieren, Zeiten abgleichen und Beweisketten prüfen.",
+    "description": "Maus untersucht eine tödliche Premiere. Sichere Spuren, führe Gespräche und wähle deinen Abschlussbericht. Verschiedene Ermittlungswege führen zu vier möglichen Enden. Anspruchsvolle Fassung: Quellen kombinieren, abgeglichene Zeitbelege prüfen und Beweisketten prüfen. Ohne Rechenaufgaben: Aussagen kombinieren und Zusammenhänge prüfen.",
     "cover": "assets/theater-1.webp",
     "chapters": [
       {
@@ -949,33 +1016,38 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die Einsatzliste",
-            "story": "Eine Bühnenaufnahme und die geprüfte Einsatzliste stimmen überein: Szene 26 endet um 21:08, Umbau 21:08–21:10, Szene 27 sollte um 21:10 beginnen. Der Zusammenbruch ist genau um 21:10 aufgezeichnet. Die Premiere begann um 20:30; die Pause war für 21:15 geplant. Die nachfolgenden Programmpunkte wurden nach dem Vorfall abgesagt. Der erste Glockenschlag ertönt 80 Sekunden nach dem Ende von Szene 26. Der zweite folgt zehn Sekunden später.",
-            "question": "Wie viele Sekunden standen nach dem zweiten Glockenschlag noch bis zum geplanten Beginn von Szene 27 zur Verfügung?",
-            "hint": "Addiere die beiden Abstände zum Ende von Szene 26. Vergleiche das Ergebnis mit dem geplanten Beginn von Szene 27.",
-            "reveal": "Szene 26 endet 21:08. Glocke 1=21:09:20; Glocke 2=21:09:30. Bis 21:10 bleiben 30 Sekunden.",
-            "note": "Szene 26 endet 21:08. Zweiter Glockenschlag 21:09:30; bis zum geplanten Beginn von Szene 27 um 21:10 bleiben 30 Sekunden.",
+            "story": "Die Einsatzliste unterscheidet regulären Plan und späteren Änderungszettel. Regulär wartet Adrian bei K vor Szene 27. Der Änderungszettel schickt ihn nach M. Szene 26 ist beendet; Szene 27 beginnt erst danach. Die Änderung betrifft nur Adrians Warteort, nicht den Szenenbeginn.",
+            "question": "Welche Angaben widersprechen der Behauptung, der Änderungszettel sei nur eine Wiederholung des regulären Plans?",
+            "hint": "Ein unveränderter Szenenbeginn hebt einen veränderten Aufenthaltsort nicht auf.",
+            "reveal": "K und M sind verschiedene Warteorte. Der Zettel verändert Adrians Position, auch wenn der geplante Szenenbeginn gleich bleibt.",
+            "note": "K und M sind verschiedene Warteorte. Der Zettel verändert Adrians Position, auch wenn der geplante Szenenbeginn gleich bleibt.",
             "kind": "Zeitablauf",
-            "type": "input",
-            "accepted": [
-              "30"
+            "type": "multi",
+            "items": [
+              "Der reguläre Warteort ist K.",
+              "Der Änderungszettel nennt M.",
+              "Der Beginn von Szene 27 bleibt gleich.",
+              "Dasselbe Stück wird weiterhin aufgeführt."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              1
+            ]
           },
           {
             "title": "Das Programm als Wegweiser",
-            "story": "Adrian hat auf seinem Programmheft notiert: „A=1, B=2 … Z=26.“ Drei abgetrennte Zahlenblöcke sind vorhanden: 1=16–20; 2=19–11; 3=18–9. Ein Randvermerk verlangt ausdrücklich die Reihenfolge 2→3→1. Das Heft wurde aus seiner Garderobe gesichert.",
-            "question": "Drei Zahlenblöcke gehören in die Reihenfolge 2→3→1. Entschlüssle anschließend A=1…Z=26. Welches Wort ergibt sich?",
-            "hint": "Setze zuerst die Zahlenblöcke in der vorgegebenen Reihenfolge zusammen. Wandle dann jede Zahl einzeln in einen Buchstaben um.",
-            "reveal": "19–11 / 18–9 / 16–20 ergibt SKRIPT.",
-            "note": "Adrians Zahlenmerkzettel verweist auf das Skript.",
+            "story": "Adrians Programm enthält Wortfragmente: SK, RI, PT. Die Notiz verlangt, dass „RI“ direkt vor „PT“ liegt und „SK“ vor beiden. Alle Fragmente gehören zu einem gesuchten Unterlagentyp.",
+            "question": "Welches Wort ergibt sich?",
+            "hint": "Das feste Nachbarpaar bestimmt das Wortende.",
+            "reveal": "SK + RI + PT ergibt SKRIPT. Die Merkhilfe verweist auf Adrians Textunterlagen.",
+            "note": "SK + RI + PT ergibt SKRIPT. Die Merkhilfe verweist auf Adrians Textunterlagen.",
             "kind": "Entschlüsseln",
             "type": "input",
             "accepted": [
               "SKRIPT"
             ],
             "normalize": "text",
-            "label": "Deine Antwort"
+            "label": "Deine Schlussfolgerung"
           },
           {
             "title": "Wo beginnst du?",
@@ -1060,18 +1132,25 @@ window.MAUS_CASES = [
           },
           {
             "title": "Zwei Bilder, ein Zeitfenster",
-            "story": "Eine fest montierte Dokumentationskamera fotografiert die Kulisse regelmäßig. Das geprüfte Foto um 19:12 zeigt das Kontrollsiegel noch unbeschädigt. Um 19:18 ist es beschädigt. Die technische Untersuchung bestätigt: Die relevante Veränderung erforderte das Öffnen dieses versiegelten Bereichs. Der Materialbefund schließt ein früheres Öffnen mit anschließendem unbemerktem Wiederverschließen des Kontrollsiegels aus. Der ergänzende Materialbericht grenzt die relevante Veränderung unabhängig auf frühestens 19:10 und spätestens 19:16 ein. Die Fotogrenzen bleiben gültig.",
-            "question": "Welches gemeinsame Zeitfenster ergibt sich aus Siegelbefund und Materialanalyse?",
-            "hint": "Notiere beide Untergrenzen und beide Obergrenzen. Nur der Bereich, den beide Quellen zulassen, bleibt übrig.",
-            "reveal": "Nach 19:12 bis spätestens 19:18 ∩ 19:10–19:16 ergibt nach 19:12 bis spätestens 19:16. Die genaue Minute bleibt offen.",
-            "note": "Gemeinsames Eingriffsfenster aus Fotos und Material: nach 19:12 bis spätestens 19:16.",
+            "story": "Ein Foto zeigt das Kontrollsiegel noch intakt; ein späteres zeigt es beschädigt. Die Materialprüfung schließt ein früheres unbemerktes Öffnen und Wiederverschließen aus. Der ergänzende Prüfbericht grenzt den Eingriff bereits auf nach 19:12 bis spätestens 19:16 ein. Diese Zeiten sind fertig abgeglichen.",
+            "question": "Welche Aussagen dürfen daraus abgeleitet werden?",
+            "hint": "Verwende die fertige Eingrenzung als Beleg; frage, was sie darüber hinaus nicht zeigt.",
+            "reveal": "Geprüftes Eingriffsfenster: nach 19:12 bis spätestens 19:16. Die Person und genaue Minute folgen aus diesen Zustandsbelegen allein nicht.",
+            "note": "Geprüftes Eingriffsfenster: nach 19:12 bis spätestens 19:16. Die Person und genaue Minute folgen aus diesen Zustandsbelegen allein nicht.",
             "kind": "Zeitfenster",
-            "type": "input",
-            "accepted": [
-              "19:12-19:16"
+            "type": "multi",
+            "items": [
+              "Die relevante Veränderung liegt zwischen den geprüften Zuständen.",
+              "Der ergänzende Bericht verengt das grobe Fotofenster.",
+              "Das beschädigte Siegel identifiziert für sich die Person.",
+              "Ein früheres verdecktes Öffnen bleibt trotz des ausdrücklichen Materialausschlusses gleich gut belegt.",
+              "Die genaue Minute ist innerhalb der bestätigten Grenze noch offen."
             ],
-            "normalize": "interval",
-            "label": "Deine Antwort"
+            "correct": [
+              0,
+              1,
+              4
+            ]
           },
           {
             "title": "Die einzige Tür",
@@ -1153,33 +1232,48 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Mara vor laufender Kamera",
-            "story": "Mara behauptet, sie habe von 19:10 bis 19:20 im Probenraum an einer Choreografie gearbeitet. Die vollständige Aufnahme zeigt sie durchgehend dort; die Kamera war mit der Referenzuhr synchronisiert. Verwende das gemeinsame Fenster aus Station 7, nicht nur die beiden ursprünglichen Fotozeiten.",
-            "question": "Mara ist 19:10–19:20 durchgehend gefilmt. Wie viele Minuten dieser Aufnahme liegen außerhalb des gemeinsamen Fensters aus Fotos und Materialanalyse?",
-            "hint": "Bestimme die Dauer der durchgehenden Aufnahme und die Dauer des darin liegenden, verengten Eingriffsfensters.",
-            "reveal": "Das neue Fenster 19:12–19:16 dauert vier Minuten. Die Aufnahme dauert zehn: sechs Minuten liegen außerhalb.",
-            "note": "Mara durchgehend 19:10–19:20 im Probenraum.",
+            "story": "Mara ist vor, während und nach dem bestätigten Eingriffsfenster durchgehend im Probenraum gefilmt. Ein Gast bestätigt zusätzlich ihr Probenprogramm, sah sie aber nicht die ganze Zeit.",
+            "question": "Welche Quelle trägt welche Aussage?",
+            "hint": "Der Inhalt einer Probe und die durchgehende Anwesenheit sind verschiedene Fragen.",
+            "reveal": "Die Aufnahme entlastet Mara im Eingriffsfenster. Der zusätzliche Programmbericht ersetzt ihre vollständige Ortsaufnahme nicht.",
+            "note": "Die Aufnahme entlastet Mara im Eingriffsfenster. Der zusätzliche Programmbericht ersetzt ihre vollständige Ortsaufnahme nicht.",
             "kind": "Alibi prüfen",
-            "type": "input",
-            "accepted": [
-              "6"
+            "type": "match",
+            "left": [
+              "Durchgehende, abgeglichene Aufnahme",
+              "Gastbericht über das Programm",
+              "Aufnahme umfasst das gesamte Eingriffsfenster"
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "right": [
+              "Lückenloser Ortsbeleg.",
+              "Bestätigung des Probeninhalts ohne vollständiges Ortsalibi.",
+              "Verbindung des Ortsbelegs mit der relevanten Tatphase."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
           },
           {
             "title": "Nils’ scheinbare Lücke",
-            "story": "Nils sagt zunächst: „Ich war ab 19:15 am Lieferhof.“ Zwei Mitarbeiter bestätigen ihn ununterbrochen von 19:15 bis 19:20. Über die Minuten davor weißt du bisher nichts Sicheres. Die Wegrechnung ist hypothetisch und setzt eine Ankunft exakt um 19:15:00 voraus.",
-            "question": "Der Lieferhof liegt mindestens 80 Sekunden von der Seitenbühne entfernt. Welche späteste Abgangszeit wäre mit der zunächst allein bestätigten Anwesenheit ab 19:15 vereinbar? Antworte als HH:MM:SS.",
-            "hint": "Ziehe die Mindestwegzeit von der hypothetischen Ankunft am Lieferhof ab.",
-            "reveal": "19:15:00−80 Sekunden=19:13:40. Bis zur vollständigen Lieferhofaufnahme bleibt ein Teil des neuen Fensters rechnerisch offen.",
-            "note": "Nils zunächst erst ab 19:15 am Lieferhof bestätigt.",
+            "story": "Zwei Mitarbeiter bestätigen Nils erst ab dem Beginn des Entladens am Lieferhof. Das bestätigte Eingriffsfenster begann früher. Über die Zeit vor ihrem Eintreffen liegt noch keine gesicherte Beobachtung vor.",
+            "question": "Welche Aussage ist mit diesem vorläufigen Quellenstand vereinbar?",
+            "hint": "Fehlende Bestätigung und widerlegte Behauptung sind nicht dasselbe.",
+            "reveal": "Nils ist für die spätere Lieferphase bestätigt. Der frühere Abschnitt bleibt bis zur vollständigen Aufnahme offen.",
+            "note": "Nils ist für die spätere Lieferphase bestätigt. Der frühere Abschnitt bleibt bis zur vollständigen Aufnahme offen.",
             "kind": "Zeitfenster",
-            "type": "input",
-            "accepted": [
-              "19:13:40"
+            "type": "multi",
+            "items": [
+              "Ein früherer Abschnitt muss noch unabhängig geprüft werden.",
+              "Die spätere Anwesenheit ist bestätigt.",
+              "Die spätere Anwesenheit belegt schon die ganze frühere Phase.",
+              "Nils’ anfängliche Angabe ist automatisch bewusst gelogen."
             ],
-            "normalize": "seconds",
-            "label": "Uhrzeit als HH:MM:SS"
+            "correct": [
+              0,
+              1
+            ]
           },
           {
             "title": "Die vollständige Lieferung",
@@ -1205,18 +1299,22 @@ window.MAUS_CASES = [
           },
           {
             "title": "Zwei Erzählungen, ein Telefonat",
-            "story": "Zwei Gäste, A und B, berichten Leonas Behauptung aus demselben Telefonat: Sie sei um 19:14 im Archiv gewesen. C hörte nur B erzählen. D sah um 19:14 eine Person vor dem Archiv und hielt sie für Leona. Gesicht und Identität sind in diesem Bericht nicht unabhängig bestätigt; ein Betreten des Archivs hat D nicht gesehen.",
-            "question": "Wie viele unabhängige Sichtbeobachtungen belegen mit diesen vier Berichten einen Aufenthalt Leonas im Archiv?",
-            "hint": "Unterscheide eine weitergegebene Aussage, eine unbestätigte Identifizierung vor dem Raum und eine tatsächliche Beobachtung im Raum.",
-            "reveal": "Keine. A, B und C wiederholen dieselbe Ausgangsbehauptung. D berichtet eine Sichtung vor dem Archiv mit unbestätigter Identität und ohne beobachtetes Betreten.",
-            "note": "Kein unabhängiger Sichtbeleg für Leona im Archiv: Telefonangabe weitergegeben; zusätzliche Sichtung vor dem Raum ohne bestätigte Identität.",
+            "story": "A und B wiederholen Leonas Telefonangabe über das Archiv. C hörte nur B erzählen. D sah eine Person vor dem Archiv und hielt sie für Leona; das Gesicht und ein Betreten sind nicht unabhängig bestätigt.",
+            "question": "Welche Berichte liefern eine unabhängige Wahrnehmung, deren Reichweite noch begrenzt ist?",
+            "hint": "Ein eigener Bericht kann unabhängig sein, ohne die gesuchte Identität oder den Aufenthalt im Raum zu bestätigen.",
+            "reveal": "Nur D berichtet eine eigene Sichtung. Diese belegt weder die Identität Leona noch einen Aufenthalt im Archiv. A, B und C gehen auf dieselbe Telefonangabe zurück.",
+            "note": "Nur D berichtet eine eigene Sichtung. Diese belegt weder die Identität Leona noch einen Aufenthalt im Archiv. A, B und C gehen auf dieselbe Telefonangabe zurück.",
             "kind": "Zeugen prüfen",
-            "type": "input",
-            "accepted": [
-              "0"
+            "type": "multi",
+            "items": [
+              "A",
+              "B",
+              "C",
+              "D"
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              3
+            ]
           },
           {
             "title": "Wie gewinnst du eine Aussage?",
@@ -1251,14 +1349,14 @@ window.MAUS_CASES = [
         "guide": "Ich gleiche Uhren ab, bevor ich Aussagen gegeneinander halte.",
         "steps": [
           {
-            "title": "Vier Minuten zu viel",
-            "story": "Ein Kontrollfoto zeigt das Regieterminal auf 19:20 und die Referenzuhr auf 19:16. Das Terminal geht konstant vier Minuten vor. Ein angeschlossener Scanner zeigt gegenüber diesem Terminal zusätzlich 70 Sekunden mehr an. Beide Abweichungen sind im Prüfprotokoll für diesen Abend bestätigt.",
-            "question": "Ein Scanner geht gegenüber dem Regieterminal zusätzlich 70 Sekunden vor. Er meldet einen Vorgang um 19:18:10. Welche Referenzzeit ist gemeint? Antworte als HH:MM:SS.",
-            "hint": "Bringe zuerst jede Quelle auf dieselbe Uhr. Rechne in Sekunden und addiere erst danach einen Weg oder eine Zeitzonenkorrektur.",
-            "reveal": "19:18:10−70 Sekunden=19:17:00 Terminalzeit; minus vier Minuten=19:13:00 Referenz.",
-            "note": "Scanner 70 Sekunden vor dem Terminal; Terminal vier Minuten vor der Referenz. Scannerwert 19:18:10 entspricht Referenzzeit 19:13:00.",
+            "title": "Der Abgleich der Quellen",
+            "story": "Das Prüfteam hat die Gerätezeiten bereits abgeglichen: Ein Scannerwert bezeichnet denselben Eintritt wie der Terminaleintrag und die Referenzaufnahme um 19:13. Der Zugangsausweis kann weitergegeben werden. Die Referenzaufnahme zeigt jedoch Gesicht und Ausweis gemeinsam.",
+            "question": "Welche zwei unterschiedlichen Beweislücken werden durch diese Kombination geschlossen?",
+            "hint": "Zeitabgleich und Nutzeridentifizierung sind verschiedene Prüfungen.",
+            "reveal": "Der fertige Geräteabgleich verbindet die Zeitpunkte; die Gesicht-Aufnahme identifiziert die Nutzerin. Der Innenvorgang bleibt unbeobachtet.",
+            "note": "Der fertige Geräteabgleich verbindet die Zeitpunkte; die Gesicht-Aufnahme identifiziert die Nutzerin. Der Innenvorgang bleibt unbeobachtet.",
             "kind": "Zeit korrigieren",
-            "type": "input",
+            "type": "multi",
             "variants": [
               {
                 "when": {
@@ -1267,13 +1365,13 @@ window.MAUS_CASES = [
                 "patch": {
                   "type": "order",
                   "title": "Die Korrektur aus dem Protokoll",
-                  "story": "Mara beendet das freiwillige Gespräch. Das gesicherte Kontrollfoto zeigt Terminal 19:20 und Referenz 19:16. Der Scanner liegt konstant 70 Sekunden vor diesem Terminal. Sein Eintrag lautet 19:18:10. Beide Abweichungen gelten unabhängig vom Gespräch.",
-                  "question": "Ordne die Rechenschritte vom Scannerwert zur Referenzzeit.",
+                  "story": "Mara hat das Gespräch beendet. Gesicherte Originalaufnahmen und der fertig geprüfte Geräteabgleich bleiben verfügbar. Du dokumentierst, warum die widersprüchlich angezeigten Gerätewerte denselben Eintritt bezeichnen.",
+                  "question": "Ordne die Prüfung vom Originaleintrag zur belastbaren Zuordnung.",
                   "items": [
-                    "Scannerzeit 19:18:10 als Ausgangswert übernehmen.",
-                    "70 Sekunden abziehen: Terminalzeit 19:17:00.",
-                    "Den bestätigten Terminalvorsprung von vier Minuten als zweite Korrektur bestimmen.",
-                    "Vier Minuten abziehen: Referenzzeit 19:13:00."
+                    "Originaleintrag mit Gerät und Quelle sichern.",
+                    "Den unabhängigen Abgleich dieses Geräts heranziehen.",
+                    "Den abgeglichenen Vorgang mit der Referenzaufnahme verknüpfen.",
+                    "Die sichtbar handelnde Person anhand von Gesicht und Ausweis zuordnen."
                   ],
                   "correct": [
                     0,
@@ -1281,17 +1379,22 @@ window.MAUS_CASES = [
                     2,
                     3
                   ],
-                  "hint": "Erst prüfen, dann die bestätigte Differenz anwenden.",
-                  "reveal": "Beide Korrekturen müssen angewendet werden: 19:18:10−1:10−4:00=19:13:00.",
-                  "note": "Scanner und Terminal gemeinsam korrigiert: Referenz 19:13:00."
+                  "hint": "Eine Personenidentifizierung braucht zuerst die richtige Zuordnung des Vorgangs, aber kein eigenes Umrechnen.",
+                  "reveal": "Quellen, fertiger Abgleich und Referenzaufnahme verbinden den Eintritt um 19:13 mit Leona.",
+                  "note": "Eintritt um 19:13 anhand unabhängigen Geräteabgleichs und Gesicht-Aufnahme zugeordnet."
                 }
               }
             ],
-            "accepted": [
-              "19:13:00"
+            "items": [
+              "Vergleichbarkeit der aufgezeichneten Zeitpunkte.",
+              "Identifizierung der tatsächlich sichtbaren Ausweisnutzerin.",
+              "Beobachtung der Manipulation im Innenraum.",
+              "Nachweis, dass ein ausgegebener Ausweis niemals weitergegeben wurde."
             ],
-            "normalize": "seconds",
-            "label": "Uhrzeit als HH:MM:SS"
+            "correct": [
+              0,
+              1
+            ]
           },
           {
             "title": "Der Zugang mit D4",
@@ -1320,18 +1423,24 @@ window.MAUS_CASES = [
           },
           {
             "title": "Das Bild im Türspiegel",
-            "story": "Eine Kamera im Garderobenflur zeigt um Referenzzeit 19:13 Leonas Gesicht und den Ausweis D4, als sie die Seitenbühnentür öffnet. Ihr Eintritt ist sichtbar; im Flur wird sie erst um 19:17 wieder aufgenommen. Nutze die durch Uhrabgleich bestimmte Eintrittszeit und die Materialgrenze aus Station 7.",
-            "question": "Wie viele Sekunden liegen zwischen Leonas sichtbarem Eintritt und der oberen Grenze des neuen gemeinsamen Eingriffsfensters?",
-            "hint": "Suche die korrigierte Eintrittszeit und die obere Grenze des verengten Eingriffsfensters. Rechne die Differenz in Sekunden um.",
-            "reveal": "Eintritt 19:13, obere Grenze 19:16: drei Minuten oder 180 Sekunden. Das ist eine Gelegenheitsgrenze, keine Dauer einer beobachteten Manipulation.",
-            "note": "Leona betritt die Seitenbühne um 19:13 und erscheint um 19:17 wieder im Flur.",
+            "story": "Die Referenzaufnahme zeigt Leona beim Eintritt auf die Seitenbühne während des bestätigten Eingriffsfensters. Erst danach wird sie wieder im Flur aufgenommen. Der Innenraum wird nicht gefilmt.",
+            "question": "Welche Aussagekombination trennt ihre Gelegenheit von einer beobachteten Handlung?",
+            "hint": "Was außerhalb eines Raums sichtbar ist, ist keine Kameraaufnahme seines Innenraums.",
+            "reveal": "Leonas Gelegenheit ist belegt. Die konkrete Handlung wird aus Technik-, Dokument- und Zugangsbefunden rekonstruiert, nicht aus einer Innenaufnahme.",
+            "note": "Leonas Gelegenheit ist belegt. Die konkrete Handlung wird aus Technik-, Dokument- und Zugangsbefunden rekonstruiert, nicht aus einer Innenaufnahme.",
             "kind": "Beobachten",
-            "type": "input",
-            "accepted": [
-              "180"
+            "type": "multi",
+            "items": [
+              "Leona hatte dokumentierten Zugang in der relevanten Phase.",
+              "Die Aufnahme allein zeigt jede Handlung an der Kulisse.",
+              "Eintritt und späteres Wiedererscheinen lassen den Innenvorgang offen.",
+              "Der technische Befund muss mit den Ortsbelegen zusammengeführt werden."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              2,
+              3
+            ]
           },
           {
             "title": "Kann das Archiv passen?",
@@ -1351,18 +1460,24 @@ window.MAUS_CASES = [
           },
           {
             "title": "Wann fiel die Kulisse?",
-            "story": "Das Regieterminal protokolliert den Vorfall mit 21:14. Die Bühnenaufnahme zeigt ihn zur Referenzzeit 21:10. Das Terminal geht vier Minuten vor. Ein zusätzliches Exportsystem zeigt stets 90 Sekunden weniger an als das Terminal.",
-            "question": "Welche Uhrzeit zeigt das zusätzliche Exportsystem für diesen Vorfall? Antworte als HH:MM:SS.",
-            "hint": "Bringe zuerst jede Quelle auf dieselbe Uhr. Rechne in Sekunden und addiere erst danach einen Weg oder eine Zeitzonenkorrektur.",
-            "reveal": "21:14:00−90 Sekunden=21:12:30. Dieser Export liegt noch 2:30 vor der Referenzzeit 21:10.",
-            "note": "Vorfall: Referenz 21:10:00, Terminal 21:14:00, zusätzlicher Export 21:12:30.",
+            "story": "Die Bühnenkamera und ein Terminalexport zeigen unterschiedliche Anzeigen für den Zusammenbruch. Das Prüfteam bestätigt unabhängig, dass beide Einträge denselben Vorgang zur Referenzzeit 21:10 bezeichnen. Eine Zeugin erklärt daraus: „Dann sind sämtliche Geräte desselben Abends korrekt.“",
+            "question": "Welche Aussagen sind gerechtfertigt?",
+            "hint": "Ein geprüfter Vergleich zweier Quellen ist keine pauschale Freigabe aller Geräte.",
+            "reveal": "Vorfallzeit 21:10 ist abgeglichen. Andere Geräte sind damit nicht automatisch überprüft.",
+            "note": "Vorfallzeit 21:10 ist abgeglichen. Andere Geräte sind damit nicht automatisch überprüft.",
             "kind": "Zeit korrigieren",
-            "type": "input",
-            "accepted": [
-              "21:12:30"
+            "type": "multi",
+            "items": [
+              "Der geprüfte Vorgang ist zwischen den beiden Quellen zugeordnet.",
+              "Die Abgleichbestätigung gilt automatisch für jedes andere Gerät.",
+              "Die globale Behauptung der Zeugin ist weitergehend als der einzelne Nachweis.",
+              "Andere Geräte brauchen bei widersprüchlichen Einträgen einen eigenen Abgleich."
             ],
-            "normalize": "seconds",
-            "label": "Uhrzeit als HH:MM:SS"
+            "correct": [
+              0,
+              2,
+              3
+            ]
           }
         ]
       },
@@ -1375,18 +1490,18 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Der Schlüssel zum Text",
-            "story": "Adrians Merkzettel beschreibt einen zusätzlichen vierstelligen Verschluss am Dokumentenkasten im Archiv. Seine vier Ziffern erfüllen die angegebenen Bedingungen und liegen jeweils zwischen 0 und 9.",
-            "question": "Für einen zweiten Verschluss gilt: a=b+2, c=2b, d=c−a+2; die vier Ziffern summieren sich zu 17. Welcher Code öffnet ihn?",
-            "hint": "Übersetze jede Bedingung in eine Gleichung oder eine Fragmentfolge. Prüfe am Ende sämtliche Bedingungen an allen Stellen.",
-            "reveal": "a=b+2,c=2b,d=b. Also 5b+2=17, b=3: 5363.",
-            "note": "Zusätzlicher vierstelliger Dokumentenverschluss mit Code 5363 geöffnet.",
+            "story": "Adrians Archivkasten trägt vier Symbolkarten: MASKE, FEDER, BÜHNE, SCHLÜSSEL. Hinweise: Der Schlüssel liegt rechts von der Bühne. Die Feder liegt unmittelbar links vom Schlüssel. Die Maske ist nicht außen. Jede Karte kommt einmal vor.",
+            "question": "Welches Symbol liegt ganz links?",
+            "hint": "Das feste Paar Feder–Schlüssel lässt für eine nicht außen liegende Maske nur eine zulässige Anordnung.",
+            "reveal": "Nur BÜHNE–MASKE–FEDER–SCHLÜSSEL erfüllt alle Bedingungen. Die linke Symbolkarte öffnet den Dokumentenkasten.",
+            "note": "Nur BÜHNE–MASKE–FEDER–SCHLÜSSEL erfüllt alle Bedingungen. Die linke Symbolkarte öffnet den Dokumentenkasten.",
             "kind": "Kombinieren",
             "type": "input",
             "accepted": [
-              "5363"
+              "BÜHNE"
             ],
-            "normalize": "code",
-            "label": "Deine Antwort"
+            "normalize": "text",
+            "label": "Deine Schlussfolgerung"
           },
           {
             "title": "Zwei Fassungen derselben Szene",
@@ -1410,18 +1525,28 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die fehlenden Seiten",
-            "story": "Das Inventar des Dokumentenkastens nummeriert die Blätter von 1 bis 24. Vorhanden sind die Blätter 1 bis 16 und 19 bis 24. Jedes Blatt ist beidseitig bedruckt. Eine frühere vollständige Kopie zeigt auf den fehlenden Blättern die Korrespondenz über Nutzungsrechte.",
-            "question": "Wie viele bedruckte Blattseiten fehlen insgesamt, wenn jede fehlende Inventarnummer ein beidseitig bedrucktes Blatt bezeichnet?",
-            "hint": "Bestimme zuerst die fehlenden Blattnummern. Rechne erst danach von Blättern auf bedruckte Seiten um.",
-            "reveal": "Zwei fehlende Blätter × zwei bedruckte Seiten=vier. Die ursprünglichen Inventarnummern 17 und 18 bleiben unverändert.",
-            "note": "Inventarblätter 17 und 18 fehlen: zusammen vier bedruckte Seiten. Eine vollständige frühere Kopie ist gesichert.",
+            "story": "Im Archiv fehlt das Kapitel Nutzungsrechte. Die vollständige frühere Kopie enthält Hartmanns Ablehnung und Leonas Zusicherung; beide Originalblätter fehlen. Andere Originalblätter sind vorhanden.",
+            "question": "Welche Prüfungen bleiben möglich, welche sind eingeschränkt?",
+            "hint": "Trenne erhaltenen Inhalt von erhaltenem Material.",
+            "reveal": "Die Kopie bewahrt den Wortlaut. Sie ersetzt nicht den Materialvergleich der fehlenden Originalblätter; vorhandene Originale bleiben vergleichbar.",
+            "note": "Die Kopie bewahrt den Wortlaut. Sie ersetzt nicht den Materialvergleich der fehlenden Originalblätter; vorhandene Originale bleiben vergleichbar.",
             "kind": "Dokumentvergleich",
-            "type": "input",
-            "accepted": [
-              "4"
+            "type": "match",
+            "left": [
+              "Wortlaut der fehlenden Korrespondenz",
+              "Direkter Materialvergleich der fehlenden Blätter",
+              "Abgleich vorhandener Originale mit ihrer Kopie"
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "right": [
+              "Anhand der authentischen früheren Kopie prüfbar.",
+              "Ohne diese Originalblätter nicht vollständig durchführbar.",
+              "Weiterhin anhand der erhaltenen Blätter möglich."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
           },
           {
             "title": "Eine Unterschrift, zwei Rollen",
@@ -1520,18 +1645,28 @@ window.MAUS_CASES = [
           },
           {
             "title": "Der Plan der Wege",
-            "story": "Im Bühnenplan liegen K und M in verschiedenen Bereichen. Der Weg vom Ausgang der Garderobe nach K dauert mindestens 50 Sekunden; nach M mindestens 20 Sekunden. Die Botin beobachtete Adrian um 21:09:30 an diesem Ausgang. Der Vorfall geschah um 21:10. Die neue, abgeglichene Aufnahme bestätigt einen achtsekündigen Halt unmittelbar nach 21:09:30; die Wegzeiten enthalten diesen Halt nicht.",
-            "question": "Adrian benötigt nach M mindestens 20 Sekunden, nach K mindestens 50. Nach Verlassen der Garderobe hält er zusätzlich acht Sekunden an. Wie viele Sekunden verbleiben nach frühestmöglicher Ankunft bei M bis zum Vorfall?",
-            "hint": "Berechne die Zeit bis zum Vorfall. Ziehe dann den zusätzlichen Halt und die Mindestwegzeit nach M ab.",
-            "reveal": "30 Sekunden verfügbar−8 Sekunden Halt−20 Sekunden Weg=2 Sekunden. K wäre erst nach 58 Sekunden erreichbar.",
-            "note": "30 Sekunden bis zum Vorfall: acht Sekunden Halt plus mindestens 20 Sekunden nach M lassen höchstens zwei Sekunden übrig. K ist nicht rechtzeitig erreichbar.",
+            "story": "Dein Team hat die Wege bereits praktisch überprüft: Adrian konnte nach seinem beobachteten Garderobenabgang rechtzeitig M erreichen, aber nicht K. Die Änderungsanweisung nennt M; der reguläre Ablaufplan nennt K. Die Bühne zeigt Adrian später tatsächlich bei M.",
+            "question": "Welche Quellen erfüllen dabei unterschiedliche Aufgaben?",
+            "hint": "Möglichkeit, Anweisung und tatsächliche Durchführung dürfen nicht ineinander aufgehen.",
+            "reveal": "Wegprüfung, Anweisung und Aufnahme stützen unterschiedliche Teile des Positionswechsels. Eigene Zeitrechnungen sind dafür nicht erforderlich.",
+            "note": "Wegprüfung, Anweisung und Aufnahme stützen unterschiedliche Teile des Positionswechsels. Eigene Zeitrechnungen sind dafür nicht erforderlich.",
             "kind": "Wegzeiten",
-            "type": "input",
-            "accepted": [
-              "2"
+            "type": "match",
+            "left": [
+              "Praktisch geprüfter Wegeabgleich",
+              "Änderungsanweisung statt regulärem Plan",
+              "Bühnenaufnahme bei M"
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "right": [
+              "Belegt die erreichbare Position, ohne die Anweisung selbst zu erklären.",
+              "Dokumentiert den beabsichtigten Positionswechsel.",
+              "Bestätigt die tatsächliche spätere Anwesenheit."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
           },
           {
             "title": "Keine normale Textänderung",
@@ -1913,13 +2048,13 @@ window.MAUS_CASES = [
   },
   {
     "id": "weinfest-grasbrunn",
-    "version": 2,
+    "version": 3,
     "title": "Die verschwundene Festkasse",
     "subtitle": "Ein Weinfest in Grasbrunn. Ein vermisster Kassenwart. Und zwei Boxen, die fast gleich aussehen.",
     "tag": "Episode 03 · Weinfest in Grasbrunn",
     "duration": "Etwa 75–120 Minuten · abhängig von Rätseltempo und Hinweisen",
     "contentTag": "Vermisstenfall und Diebstahl · fiktive Handlung",
-    "description": "Unter den Lichterketten verschwinden die Spenden – und Anton, der Kassenwart. Maus folgt vertauschten Siegeln, Abholaufträgen und Dorfgerüchten. Deine Entscheidungen verändern den Weg und den Abschluss. Anspruchsvolle Fassung: Quellen kombinieren, Zeiten abgleichen und Beweisketten prüfen.",
+    "description": "Unter den Lichterketten verschwinden die Spenden – und Anton, der Kassenwart. Maus folgt vertauschten Siegeln, Abholaufträgen und Dorfgerüchten. Deine Entscheidungen verändern den Weg und den Abschluss. Anspruchsvolle Fassung: Quellen kombinieren, abgeglichene Zeitbelege prüfen und Beweisketten prüfen. Ohne Rechenaufgaben: Aussagen kombinieren und Zusammenhänge prüfen.",
     "cover": "assets/grasbrunn-1.webp",
     "branching": true,
     "chapters": [
@@ -1974,18 +2109,24 @@ window.MAUS_CASES = [
           },
           {
             "title": "Was wurde wirklich gezählt?",
-            "story": "Anton und Jule unterschrieben um 20:00 gemeinsam den endgültigen Zählbogen: 30 Scheine zu 100 Euro, 20 Scheine zu 50 Euro und 43 Scheine zu 20 Euro. Jede Zeile beschreibt ein eigenes Bündel; es gibt keine weiteren Spendenbeträge in der Kasse. Der Hilfszettel ist keine zusätzliche Spendensumme: Die sieben Scheine gehören ausdrücklich zu den 43 Zwanzigern des unterschriebenen Bogens.",
-            "question": "Der Zählbogen nennt 30 Hunderter, 20 Fünfziger und 43 Zwanziger. In der Kontrolltüte lagen davon bereits 7 Zwanziger, die noch einmal auf einem Hilfszettel auftauchen. Welche bestätigte Gesamtsumme bleibt nach Vermeidung dieser Doppelzählung?",
-            "type": "input",
-            "hint": "Der Hilfszettel zählt keine neuen Scheine. Entscheide zuerst, welche Mengen bereits im unterschriebenen Gesamtbogen enthalten sind.",
-            "reveal": "3.000+1.000+860=4.860 Euro. Die 140 Euro auf dem Hilfszettel dürfen nicht erneut addiert werden.",
-            "note": "Anton und Jule bestätigten um 20:00 eine Summe von 4.860 Euro.",
+            "story": "Anton und Jule bestätigen auf demselben unterschriebenen Zählbogen 4.860 Euro. Ein Hilfszettel listet Scheine aus einer Kontrolltüte. Der Begleitvermerk erklärt ausdrücklich, dass diese Scheine bereits im Zählbogen enthalten sind. Die Tütenkennung stimmt in beiden Unterlagen überein.",
+            "question": "Welche Angaben verhindern, dass der Hilfszettel als zusätzliche Spende behandelt wird?",
+            "type": "multi",
+            "hint": "Ein zweiter Beleg kann denselben Gegenstand beschreiben, ohne einen neuen Eingang zu belegen.",
+            "reveal": "Bestätigte Gesamtsumme bleibt 4.860 Euro. Hilfszettel und Zählbogen beziehen sich auf dieselben bereits erfassten Scheine.",
+            "note": "Bestätigte Gesamtsumme bleibt 4.860 Euro. Hilfszettel und Zählbogen beziehen sich auf dieselben bereits erfassten Scheine.",
             "kind": "Ermitteln",
-            "accepted": [
-              "4860"
+            "items": [
+              "Vermerk über die bereits enthaltenen Scheine.",
+              "Übereinstimmende Tütenkennung.",
+              "Ein höherer Betrag ohne Quellenvergleich.",
+              "Unterschriften bestätigen die Gesamtsumme, nicht einen zusätzlichen Eingang."
             ],
-            "normalize": "money",
-            "label": "Deine Antwort"
+            "correct": [
+              0,
+              1,
+              3
+            ]
           },
           {
             "title": "Die letzte gesicherte Folge",
@@ -2111,18 +2252,23 @@ window.MAUS_CASES = [
           },
           {
             "title": "Der Rückweg über die Wiese",
-            "story": "Der Festplan zeigt: Lager E3 → Materialweg → Rückseite des Kassenzelts → Eingang des Kassenzelts. Andere Wege führen zum Weinstand, nicht direkt zur Kasse. Der Festplan nennt in beiden Richtungen: E3–Materialweg 40 Sekunden, Materialweg–Zeltrückseite 55 Sekunden, Zeltrückseite–Zelteingang 40 Sekunden. Der Weg über den Weinstand dauert 80 Sekunden, endet aber an einer versiegelten Tür.",
-            "question": "Wie viele Sekunden dauert der kürzeste offene Rückweg von E3 zum Kassenzelteingang mindestens?",
-            "type": "input",
-            "hint": "Schließe zuerst den versiegelten Zugang aus. Addiere anschließend die Teilzeiten des verbleibenden Wegs.",
-            "reveal": "Nur der dokumentierte offene Weg führt hinein: 40+55+40=135 Sekunden. Die 80-Sekunden-Route ist trotz kürzerer Laufzeit kein möglicher Zugang.",
-            "note": "Direkter Rückweg von E3 führt über Materialweg und Zelt-Rückseite.",
+            "story": "Der Festplan führt von E3 über den Materialweg zur Rückseite des Kassenzelts und von dort zum Eingang. Ein scheinbar direkter Weg über den Weinstand endet an einer versiegelten Tür. Weitere Zugänge sind nicht vorhanden.",
+            "question": "Welche Quellen brauchst du, um einen behaupteten Rückweg über den Weinstand zu prüfen?",
+            "type": "multi",
+            "hint": "Ein gezeichneter Weg ist nicht automatisch ein benutzbarer Zugang.",
+            "reveal": "Plan und Türzustand schließen die versiegelte Abkürzung aus. Der offene Weg führt über Materialweg und Zeltrückseite.",
+            "note": "Plan und Türzustand schließen die versiegelte Abkürzung aus. Der offene Weg führt über Materialweg und Zeltrückseite.",
             "kind": "Ermitteln",
-            "accepted": [
-              "135"
+            "items": [
+              "Festplan mit den tatsächlichen Verbindungen.",
+              "Nachweis über den Zustand der versiegelten Tür während der relevanten Phase.",
+              "Die Behauptung, ein kürzer aussehender Weg sei immer offen.",
+              "Allein die Beschriftung „Weinstand“."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              1
+            ]
           },
           {
             "title": "Die Zahlen am Siegel",
@@ -2147,18 +2293,28 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die Spanne des Austauschs",
-            "story": "Um 20:06 ist G-17 vollständig auf dem Foto dokumentiert. Eine abgeglichene Aufnahme um 20:12 zeigt G-71 an derselben Stelle, bevor Benno sie abholt. Die Materialprüfung bestätigt zwei verschiedene Boxen. Der Materialbericht setzt eine zusätzliche Untergrenze; er verändert weder Fotozeit noch Boxenkennung.",
-            "question": "Ein separater Materialbericht verengt den Austausch auf frühestens 20:08 und spätestens 20:14. Welche gemeinsame Spanne bleibt mit den beiden Aufnahmen vereinbar?",
-            "type": "input",
-            "hint": "Notiere beide Untergrenzen und beide Obergrenzen. Nur der Bereich, den beide Quellen zulassen, bleibt übrig.",
-            "reveal": "Fotofenster nach 20:06–20:12 ∩ Materialfenster 20:08–20:14 ergibt 20:08–20:12. Es ist eine Eingrenzung, keine beobachtete genaue Minute.",
-            "note": "Austauschspanne aus Aufnahmen und Materialbericht gemeinsam: 20:08–20:12.",
+            "story": "Die abgeglichenen Aufnahmen zeigen erst die volle G-17, später G-71 an derselben Stelle. Ein separater Prüfbericht legt das gemeinsame Austauschfenster bereits auf 20:08–20:12 fest. Die Gravuren und der Materialvergleich unterscheiden zwei Boxen.",
+            "question": "Welche Befunde stützen welche Teile der Rekonstruktion?",
+            "type": "match",
+            "hint": "Zeitliche Einordnung und Identität des Gegenstands sind verschiedene Fragen.",
+            "reveal": "Zwei Boxen und der Wechsel sind gestützt. Das fertig geprüfte Austauschfenster lautet 20:08–20:12; die handelnde Person folgt daraus noch nicht.",
+            "note": "Zwei Boxen und der Wechsel sind gestützt. Das fertig geprüfte Austauschfenster lautet 20:08–20:12; die handelnde Person folgt daraus noch nicht.",
             "kind": "Ermitteln",
-            "accepted": [
-              "20:08-20:12"
+            "left": [
+              "Aufnahmen vor und nach dem Wechsel",
+              "Unterschiedliche Gravuren und Material",
+              "Gemeinsamer geprüfter Bericht"
             ],
-            "normalize": "interval",
-            "label": "Deine Antwort"
+            "right": [
+              "Belegen die Änderung des bereitstehenden Gegenstands.",
+              "Unterscheiden die Boxen unabhängig von einer Etikettverwechslung.",
+              "Grenzt den Wechsel bereits auf die relevante Phase ein."
+            ],
+            "correct": [
+              0,
+              1,
+              2
+            ]
           }
         ],
         "art": "assets/grasbrunn-2.webp",
@@ -2171,18 +2327,23 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Jules Verkostung",
-            "story": "Die durchgehenden, abgeglichenen Aufnahmen zeigen Jule von 20:04 bis 20:13 auf der kleinen Verkostungsbühne. Beide Kamerawinkel lassen ihre Anwesenheit ohne Unterbrechung erkennen. Verwende die verengte Spanne aus der vorigen Station.",
-            "question": "Wie viele Minuten von Jules ununterbrochener Bühnenaufnahme liegen außerhalb der gemeinsamen Austauschspanne?",
-            "type": "input",
-            "hint": "Berechne die Dauer der Aufnahme und ziehe die darin vollständig enthaltene Dauer des verengten Austauschfensters ab.",
-            "reveal": "Jule 20:04–20:13: neun Minuten. Austauschspanne 20:08–20:12: vier Minuten. Außerhalb liegen fünf Minuten.",
-            "note": "Jule durchgehend 20:04–20:13 auf der Verkostungsbühne.",
+            "story": "Jule ist vor, während und nach dem gesamten bestätigten Austauschfenster durchgehend auf der Verkostungsbühne aufgenommen. Eine Erzählung von Gästen beschreibt nur, dass sie irgendwann dort Wein vorstellte.",
+            "question": "Welche Aussage trägt ihre Entlastung für den unmittelbaren Austausch?",
+            "type": "multi",
+            "hint": "Achte auf durchgehende Beobachtung und auf die richtige Ermittlungsphase.",
+            "reveal": "Das abgeglichene, durchgehende Bühnenbild entlastet Jule für den unmittelbaren Austausch. Die zeitlich offene Erzählung allein würde das nicht leisten.",
+            "note": "Das abgeglichene, durchgehende Bühnenbild entlastet Jule für den unmittelbaren Austausch. Die zeitlich offene Erzählung allein würde das nicht leisten.",
             "kind": "Ermitteln",
-            "accepted": [
-              "5"
+            "items": [
+              "Die Aufnahme erfasst sie ohne Unterbrechung während der ganzen relevanten Phase.",
+              "Die bloße Erzählung „irgendwann auf der Bühne“ reicht allein aus.",
+              "Die Kamerazeiten wurden unabhängig abgeglichen.",
+              "Eine Anwesenheit nach dem Austausch beweist immer auch die Anwesenheit davor."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              2
+            ]
           },
           {
             "title": "Bennos Transport",
@@ -2233,18 +2394,22 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die doppelte Dorfgeschichte",
-            "story": "Zwei Gäste erzählen, Eva sei um 20:09 am Stand Glocke gewesen. Beide sagen auf Nachfrage, sie hätten das nur von Rosi gehört. Rosi selbst hat Eva dort nicht gesehen, sondern Evas telefonische Angabe wiedergegeben. Ein weiterer Gast berichtet eine eigene Sichtung vor dem Stand. Sein Bericht enthält jedoch weder eine überprüfbare Uhrzeit noch einen Bezug zur Musikfolge.",
-            "question": "Zwei Gäste wiederholen Rosis Wiedergabe von Evas Telefonangabe. Ein dritter sah Eva vor dem Stand, aber ohne Zeitquelle. Wie viele unabhängige Sichtbeobachtungen belegen Eva um 20:09 genau am Stand?",
-            "type": "input",
-            "hint": "Eine eigene Sichtung kann unabhängig sein, ohne den behaupteten Zeitpunkt zu belegen. Prüfe Ort und Uhrzeit getrennt.",
-            "reveal": "Keine. Der dritte Bericht ist eine eigene Sichtung mit offenem Zeitpunkt. Die beiden übrigen Aussagen gehen auf Evas Behauptung zurück.",
-            "note": "Evas behauptete Anwesenheit bei Glocke ist bisher nur ihre eigene Angabe.",
+            "story": "Die Gäste A und B wiederholen Rosis Wiedergabe von Evas Telefonangabe. Rosi sah Eva nicht selbst am Stand. C berichtet eine eigene Sichtung vor dem Stand, kann sie aber zeitlich nicht einordnen.",
+            "question": "Welche Berichte liefern eine eigene Sichtung, die trotzdem Evas behauptete Anwesenheit zur entscheidenden Zeit nicht bestätigt?",
+            "type": "multi",
+            "hint": "Eine eigene Sichtung und ein zeitlich belastbares Alibi sind nicht dasselbe.",
+            "reveal": "C ist die einzige eigene Sichtung, aber ohne Zeitbezug. A, B und Rosi geben letztlich Evas Behauptung weiter.",
+            "note": "C ist die einzige eigene Sichtung, aber ohne Zeitbezug. A, B und Rosi geben letztlich Evas Behauptung weiter.",
             "kind": "Ermitteln",
-            "accepted": [
-              "0"
+            "items": [
+              "A",
+              "B",
+              "Rosi",
+              "C"
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              3
+            ]
           },
           {
             "type": "decision",
@@ -2279,13 +2444,13 @@ window.MAUS_CASES = [
         "icon": "🕰️",
         "steps": [
           {
-            "title": "Die zweite Zeitskala",
-            "story": "Die Kamera am Materialplatz speichert UTC-Zeiten. Das geprüfte Referenzprotokoll nennt für diesen Festabend: örtliche Festzeit = UTC + 2 Stunden. Ein Kontrollbild mit 18:12 UTC entspricht daher 20:12 örtlicher Zeit. Das Exportgerät zeigt gegenüber der UTC-Kamera zusätzlich 45 Sekunden mehr an; auch diese Abweichung ist geprüft.",
-            "question": "Die Kamera speichert UTC. Ihr Exportgerät geht zusätzlich 45 Sekunden vor. Welche örtliche Festzeit entspricht Exportzeit 18:08:45? Antworte als HH:MM:SS.",
-            "type": "input",
-            "hint": "Bringe zuerst jede Quelle auf dieselbe Uhr. Rechne in Sekunden und addiere erst danach einen Weg oder eine Zeitzonenkorrektur.",
-            "reveal": "18:08:45−45 Sekunden=18:08:00 UTC; plus zwei Stunden=20:08:00 Festzeit.",
-            "note": "Export 45 Sekunden vor der UTC-Kamera; örtliche Festzeit = UTC + 2 Stunden. Export 18:08:45 entspricht örtlich 20:08:00.",
+            "title": "Die Zeitquelle hinter dem Eintrag",
+            "story": "Die Kamera speichert UTC, der Export nutzt eine andere Geräteanzeige. Das Prüfteam liefert eine fertige, unabhängig geprüfte Zuordnung: Der fragliche Export gehört zur örtlichen Festzeit 20:08. Rohdatei, Gerätekennung und Vergleichsbild sind gesichert.",
+            "question": "Welche Prüfungen machen diese Zuordnung belastbar, ohne selbst Uhren umzurechnen?",
+            "type": "multi",
+            "hint": "Prüfe Herkunft und Geltungsbereich des fertigen Abgleichs.",
+            "reveal": "Die Quelle wird dem geprüften Gerät zugeordnet und die fertige örtliche Festzeit 20:08 übernommen. Eine erneute eigene Umrechnung ist nicht nötig.",
+            "note": "Die Quelle wird dem geprüften Gerät zugeordnet und die fertige örtliche Festzeit 20:08 übernommen. Eine erneute eigene Umrechnung ist nicht nötig.",
             "kind": "Ermitteln",
             "variants": [
               {
@@ -2295,13 +2460,13 @@ window.MAUS_CASES = [
                 "patch": {
                   "type": "order",
                   "title": "Zeitabgleich ohne Zusatzgespräch",
-                  "story": "Rosi beendet das Gespräch. Das gesicherte Protokoll nennt örtliche Festzeit = UTC + 2 Stunden. Das Exportgerät liegt konstant 45 Sekunden vor der UTC-Kamera. Exportwert: 18:08:45.",
-                  "question": "Ordne die notwendigen Schritte zur örtlichen Festzeit.",
+                  "story": "Rosi beendet das Gespräch. Gesicherte Rohdatei, Gerätekennung, Vergleichsbild und fertiger unabhängiger Zeitabgleich bleiben verfügbar. Du dokumentierst den Eintrag als örtliche Festzeit 20:08.",
+                  "question": "Ordne die Quellenprüfung bis zum Fallakteneintrag.",
                   "items": [
-                    "Exportwert 18:08:45 als Ausgangspunkt nehmen.",
-                    "Den Vorsprung abziehen: 18:08:00 UTC.",
-                    "Den bestätigten Zuschlag von zwei Stunden anwenden.",
-                    "20:08:00 als örtliche Festzeit notieren."
+                    "Die originale Datei mit dem fraglichen Eintrag sichern.",
+                    "Das Gerät über seine Kennung dem Prüfbericht zuordnen.",
+                    "Die Zuordnung mit dem unabhängigen Vergleichsbild prüfen.",
+                    "Die bestätigte örtliche Festzeit 20:08 in der Akte notieren."
                   ],
                   "correct": [
                     0,
@@ -2309,17 +2474,23 @@ window.MAUS_CASES = [
                     2,
                     3
                   ],
-                  "hint": "Prüfe zuerst die Zeitart und die Referenz, bevor du rechnest.",
-                  "reveal": "Erst den Gerätefehler korrigieren, dann die Zeitzone: 18:08:45−0:45+2:00=20:08:00.",
-                  "note": "Exportvorsprung und UTC-Zuschlag getrennt angewandt."
+                  "hint": "Erst die Herkunft zuordnen, dann den geprüften Befund dokumentieren.",
+                  "reveal": "Der Quellenweg stützt die örtliche Zeit 20:08 auch ohne Rosis Ergänzung und ohne eigenes Umrechnen.",
+                  "note": "Örtliche Festzeit 20:08 durch Rohdatei, Gerätezuordnung und unabhängigen Prüfbericht gestützt."
                 }
               }
             ],
-            "accepted": [
-              "20:08:00"
+            "items": [
+              "Rohdatei und Gerätekennung verbinden den fraglichen Eintrag mit dem geprüften Gerät.",
+              "Ein unabhängiges Vergleichsbild stützt die Zuordnung.",
+              "Eine beliebige andere Geräteanzeige ersetzt den geprüften Abgleich.",
+              "Die bereits örtlich eingeordnete Zeit wird als solche gekennzeichnet."
             ],
-            "normalize": "seconds",
-            "label": "Uhrzeit als HH:MM:SS"
+            "correct": [
+              0,
+              1,
+              3
+            ]
           },
           {
             "title": "Der Eintritt ins Kassenzelt",
@@ -2360,19 +2531,25 @@ window.MAUS_CASES = [
             "kind": "Ermitteln"
           },
           {
-            "title": "Die Minute danach",
-            "story": "Aus Aufnahmen und Materialbericht ergibt sich die verengte Austauschspanne 20:08–20:12. Eva tritt um 20:08 ins Kassenzelt und wird um 20:11 wieder draußen aufgenommen. Vergleiche ihr Wiedererscheinen mit der oberen Grenze des Fensters.",
-            "question": "Wie viele Sekunden des verengten Austauschfensters liegen nach Evas Wiedererscheinen auf der Außenaufnahme?",
-            "type": "input",
-            "hint": "Gesucht ist die verbleibende Zeit nach dem Wiedererscheinen, nicht die Dauer ihres vorherigen Aufenthalts.",
-            "reveal": "Fensterende 20:12, Wiedererscheinen 20:11: 60 Sekunden. Das belegt nicht, dass der Austausch in dieser letzten Minute geschah.",
-            "note": "Eva tritt um 20:08 ein und erscheint um 20:11 wieder draußen. Bis zum Fensterende um 20:12 bleibt eine Minute.",
+            "title": "Die Grenze der Außenaufnahme",
+            "story": "Eva wird während des bestätigten Austauschfensters beim Eintritt und später beim Verlassen des Kassenzelts aufgenommen. Der Innenraum bleibt unbeobachtet. Ein Helfer behauptet: „Weil ich ihren Austritt sah, weiß ich, dass sie vorher nichts mitgenommen hat.“",
+            "question": "Welche Schlüsse sind gerechtfertigt?",
+            "type": "multi",
+            "hint": "Ein beobachteter Austritt ist kein Rückblick durch geschlossene Wände.",
+            "reveal": "Evas Gelegenheit ist belegt, der Innenvorgang nicht. Boxen- und Transportbelege müssen separat geprüft werden.",
+            "note": "Evas Gelegenheit ist belegt, der Innenvorgang nicht. Boxen- und Transportbelege müssen separat geprüft werden.",
             "kind": "Ermitteln",
-            "accepted": [
-              "60"
+            "items": [
+              "Der Austritt allein zeigt nicht sämtliche Handlungen im Innenraum.",
+              "Der Zugang in der relevanten Phase ist dokumentiert.",
+              "Der Helfer hat den gesamten Innenvorgang dadurch unabhängig bestätigt.",
+              "Gegenstands- und Transportbelege müssen gesondert geprüft werden."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              1,
+              3
+            ]
           },
           {
             "title": "Der kurze Stromausfall",
@@ -2407,49 +2584,56 @@ window.MAUS_CASES = [
         "steps": [
           {
             "title": "Der Kassenordner",
-            "story": "Anton nennt den Dokumentenkasten mit den Ausgabenbelegen. Am zusätzlichen vierstelligen Verschluss steht seine Eselsbrücke. Alle vier Ziffern liegen zwischen 0 und 9 und müssen die angegebenen Bedingungen erfüllen.",
-            "question": "Für einen zweiten Verschluss gelten vier Ziffern a,b,c,d: a=3b, c=b+4, d=a−c+5 und a+b+c+d=19. Welcher Code ergibt sich?",
+            "story": "Antons Kassenordner trägt vier Symbolkarten: REBE, GLAS, SIEGEL, SCHLÜSSEL. Der Schlüssel liegt unmittelbar rechts vom Siegel. Das Glas liegt unmittelbar links vom Siegel. Die Rebe steht nicht zwischen zwei Karten. Jede Karte kommt genau einmal vor. Der Schlüssel steht ganz rechts.",
+            "question": "Welches Symbol liegt ganz links?",
             "type": "input",
-            "hint": "Übersetze jede Bedingung in eine Gleichung oder eine Fragmentfolge. Prüfe am Ende sämtliche Bedingungen an allen Stellen.",
-            "reveal": "d=2b+1, Gesamtsumme 7b+5=19 → b=2. a=6,c=6,d=5: 6265.",
-            "note": "Zusätzlicher vierstelliger Dokumentenverschluss mit Code 6265 geöffnet.",
+            "hint": "Setze die feste Dreiergruppe so ein, dass der Schlüssel ganz rechts liegt.",
+            "reveal": "GLAS–SIEGEL–SCHLÜSSEL bilden eine feste Gruppe. Nur REBE–GLAS–SIEGEL–SCHLÜSSEL lässt für alle vier Karten Platz; der Symbolverschluss öffnet den Ordner.",
+            "note": "GLAS–SIEGEL–SCHLÜSSEL bilden eine feste Gruppe. Nur REBE–GLAS–SIEGEL–SCHLÜSSEL lässt für alle vier Karten Platz; der Symbolverschluss öffnet den Ordner.",
             "kind": "Ermitteln",
             "accepted": [
-              "6265"
+              "REBE"
             ],
-            "normalize": "code",
-            "label": "Deine Antwort"
+            "normalize": "text",
+            "label": "Deine Schlussfolgerung"
           },
           {
             "title": "Eine Abweichung im Ausgabenblatt",
-            "story": "Eva hat im Ausgabenbogen eine Zeile über 1.540 Euro als Zeltkosten freigegeben. Die authentische Zeltrechnung und ihre bestätigte Zahlung nennen 340 Euro. Eine Kontrollübersicht weist zusätzlich 85 Euro belegte Lieferkosten aus, die in den 1.540 Euro bereits enthalten sind, aber nicht zur Zeltrechnung gehören.",
-            "question": "Wie hoch ist der noch unbelegte Anteil dieser Buchungszeile nach Abzug beider belegten Kostenposten? Gib den Betrag in Euro ein.",
-            "type": "input",
-            "hint": "Ziehe nur die Kosten ab, die unabhängig belegt und bereits in der fraglichen Buchungszeile enthalten sind.",
-            "reveal": "1.540 − 340 − 85 = 1.115 Euro. Dieser Betrag ist im erweiterten Buchungsvergleich noch nicht erklärt. Ob eine private Entnahme vorliegt, muss aus einer eigenen Quelle geprüft werden.",
-            "note": "Buchungszeile 1.540 Euro; belegt sind 340 Euro Zeltkosten und 85 Euro Lieferkosten. Ungeklärter Anteil: 1.115 Euro.",
+            "story": "Evas Ausgabenzeile fasst Zeltkosten und Lieferkosten zusammen. Beide haben eigene authentische Belege; der unabhängige Prüfbericht meldet einen weiteren ungeklärten Anteil. Ein Helfer möchte allein die Zeltrechnung als Erklärung der gesamten Zeile übernehmen.",
+            "question": "Welche Quellen braucht die vollständige Prüfung?",
+            "type": "multi",
+            "hint": "Eine Sammelzeile kann mehrere Vorgänge enthalten. Prüfe Herkunft und Zuordnung statt Beträge auszurechnen.",
+            "reveal": "Zeltkosten, Lieferkosten und ungeklärter Anteil bleiben getrennt dokumentiert. Die eine Rechnung erklärt nicht automatisch die ganze Sammelzeile.",
+            "note": "Zeltkosten, Lieferkosten und ungeklärter Anteil bleiben getrennt dokumentiert. Die eine Rechnung erklärt nicht automatisch die ganze Sammelzeile.",
             "kind": "Ermitteln",
-            "accepted": [
-              "1115"
+            "items": [
+              "Zeltrechnung mit Zahlungsnachweis.",
+              "Lieferkostenbeleg mit Zuordnung zur selben Zeile.",
+              "Prüfbericht über den weiterhin ungeklärten Anteil.",
+              "Nur die Beschriftung „Zeltkosten“ ohne Abgleich.",
+              "Evas Erklärung als Ersatz aller Originalbelege."
             ],
-            "normalize": "money",
-            "label": "Deine Antwort"
+            "correct": [
+              0,
+              1,
+              2
+            ]
           },
           {
             "title": "Der Beleg ohne Gegenstück",
-            "story": "Ein separates, von Eva unterschriebenes Blatt dokumentiert eine „private Vorschussentnahme“ von 1.200 Euro. Dieser Betrag stammt aus einer eigenen Buchung und darf nicht automatisch mit den 1.115 Euro des erweiterten Ausgabenvergleichs gleichgesetzt werden. Die vollständige Buchungsübersicht enthält bis zum Festabend keinen bestätigten Rückzahlungseingang für die Entnahme.",
-            "question": "Welche Folgerungen lassen sich halten, obwohl die erweiterte Buchungsdifferenz und die private Entnahme nicht denselben Betrag haben?",
+            "story": "Ein separates, von Eva unterschriebenes Blatt dokumentiert eine private Vorschussentnahme von 1.200 Euro. Die vollständige Buchungsübersicht enthält keine bestätigte Rückzahlung. Der ungeklärte Anteil der anderen Ausgabenzeile stammt dagegen aus einem eigenen Prüfvergleich.",
+            "question": "Welche Aussagen dürfen gemeinsam festgehalten werden?",
             "type": "multi",
-            "hint": "Prüfe jede Aussage einzeln gegen die Quellen. Eine plausible Ergänzung ist nicht automatisch ein belegter Schluss.",
-            "reveal": "Du sicherst das unterschriebene Blatt und die vollständige Übersicht. Die Entnahme könnte für einen Konflikt relevant sein; sie ist noch nicht der Nachweis des Boxenaustauschs.",
-            "note": "Private Vorschussentnahme von 1.200 Euro durch Eva dokumentiert; bislang keine verbuchte Rückzahlung.",
+            "hint": "Ähnliche Verdachtsmomente sind nicht automatisch ein einziger Buchungsvorgang.",
+            "reveal": "Private Entnahme, fehlende Rückzahlung und anderer Ausgabenvergleich werden getrennt festgehalten. Der Austausch braucht eigene Sachbelege.",
+            "note": "Private Entnahme, fehlende Rückzahlung und anderer Ausgabenvergleich werden getrennt festgehalten. Der Austausch braucht eigene Sachbelege.",
             "kind": "Ermitteln",
             "items": [
-              "Das unterschriebene Entnahmeblatt dokumentiert 1.200 Euro.",
-              "Der fehlende Rückzahlungseintrag betrifft diese Entnahme.",
-              "Die 1.115 Euro beweisen, dass das Entnahmeblatt gefälscht ist.",
-              "Ein Buchungsvergleich muss die zusätzlich belegten Lieferkosten berücksichtigen.",
-              "Die Entnahme allein weist den Austauschzeitpunkt nach."
+              "Die unterschriebene Entnahme ist ein eigenständiger Vorgang.",
+              "Eine bestätigte Rückzahlung fehlt in der vollständigen Übersicht.",
+              "Jede Unstimmigkeit einer anderen Zeile ist automatisch dieselbe Entnahme.",
+              "Der Ausgabenvergleich und die private Entnahme dürfen nicht ohne Verbindungsbeleg gleichgesetzt werden.",
+              "Die Entnahme allein zeigt, wer die Boxen tauschte."
             ],
             "correct": [
               0,
@@ -2459,18 +2643,25 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die angekündigte Klärung",
-            "story": "Antons authentische Nachricht von 19:40 an Eva lautet: „Ich habe die vollständigen Belege. Um 20:30 klären wir die Entnahme mit dem Festteam. Bitte bring die Rückzahlungsbestätigung mit.“ Eva antwortete um 19:43: „Warte mit dem Gespräch, bis die Abholung vorbei ist.“ Rechne über die volle Stunde hinweg; Ausgangspunkt ist Evas Antwort, nicht Antons Nachricht.",
-            "question": "Wie viele Minuten lagen zwischen Evas authentischer Antwort und dem angekündigten Klärungstermin?",
-            "type": "input",
-            "hint": "Rechne von Evas Antwort bis zur vollen Stunde und dann weiter bis zum angekündigten Termin.",
-            "reveal": "19:43 bis 20:00 sind 17 Minuten, bis 20:30 weitere 30: insgesamt 47.",
-            "note": "Anton kündigt um 19:40 die Klärung um 20:30 an. Eva antwortet um 19:43; bis zum Termin bleiben 47 Minuten.",
+            "story": "Anton kündigt Eva eine Klärung der Entnahme mit dem Festteam an. Eva antwortet im authentischen Verlauf: „Warte mit dem Gespräch, bis die Abholung vorbei ist.“ Beide Nachrichten liegen vor dem Boxenwechsel.",
+            "question": "Welche Schlüsse trägt diese Reihenfolge?",
+            "type": "multi",
+            "hint": "Der Verlauf belegt Kenntnis und Wunsch, nicht automatisch eine spätere Handlung.",
+            "reveal": "Eva kannte den Konflikt und wollte die Klärung verschieben. Die Boxenhandlung und die Türstörung müssen aus anderen Quellen geprüft werden.",
+            "note": "Eva kannte den Konflikt und wollte die Klärung verschieben. Die Boxenhandlung und die Türstörung müssen aus anderen Quellen geprüft werden.",
             "kind": "Ermitteln",
-            "accepted": [
-              "47"
+            "items": [
+              "Eva wusste vor dem Wechsel von der angekündigten Klärung.",
+              "Ihre Antwort enthält den Wunsch nach Aufschub.",
+              "Die Nachricht zeigt den körperlichen Austausch der Box.",
+              "Ein möglicher Konflikthintergrund ist dokumentiert.",
+              "Der Aufschub beweist eine absichtliche Blockade der Lagertür."
             ],
-            "normalize": "number",
-            "label": "Zahlenwert ohne Einheit"
+            "correct": [
+              0,
+              1,
+              3
+            ]
           },
           {
             "type": "decision",
@@ -2559,18 +2750,18 @@ window.MAUS_CASES = [
           },
           {
             "title": "Die umgedrehte Notiz",
-            "story": "In Antons Merkhilfen steht FUTCL. Sein Randvermerk: „Beim Schreiben wurden die Buchstaben abwechselnd um +1,+2,+1,+2,+1 verschoben. Erst zurücksetzen, dann vom Ende lesen.“ A–Z wird zyklisch verwendet. Die Notiz ist eine persönliche Eselsbrücke und kein verschlüsselter Notruf.",
-            "question": "Setze die angegebenen Verschiebungen bei FUTCL zurück. Lies das entstandene Wort anschließend rückwärts. Welches Wort ergibt sich?",
+            "story": "Antons Merkhilfe nennt vier Begriffe: LAGER, KASSE, BÜHNE, FAHRZEUG. Der gesuchte Begriff bezeichnet weder seinen Fundort noch Jules Auftrittsort noch das Transportmittel. Er bezeichnet die Unterlagen, auf die sich sein Streit mit Eva bezieht.",
+            "question": "Welcher Begriff erfüllt sämtliche Bedingungen?",
             "type": "input",
-            "hint": "Entschlüssle jede Stelle mit ihrer eigenen Verschiebung. Kehre erst danach die Reihenfolge aller Buchstaben um.",
-            "reveal": "F→E, U→S, T→S, C→A, L→K: ESSAK. Rückwärts KASSE.",
-            "note": "Antons umgekehrte Merkhilfe ergibt KASSE.",
+            "hint": "Ordne jedem ausgeschlossenen Begriff seine Funktion in der bisherigen Akte zu.",
+            "reveal": "LAGER ist Antons Fundort, BÜHNE Jules Auftrittsort, FAHRZEUG das Transportmittel. KASSE bleibt als Bezug der umstrittenen Unterlagen.",
+            "note": "LAGER ist Antons Fundort, BÜHNE Jules Auftrittsort, FAHRZEUG das Transportmittel. KASSE bleibt als Bezug der umstrittenen Unterlagen.",
             "kind": "Ermitteln",
             "accepted": [
               "KASSE"
             ],
             "normalize": "text",
-            "label": "Deine Antwort"
+            "label": "Deine Schlussfolgerung"
           },
           {
             "title": "Drei Quellen für einen Austausch",
